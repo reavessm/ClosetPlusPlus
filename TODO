@@ -1,0 +1,5 @@
+- Change 'ToXML' functions to use TinyXML-2
+- Edit 'ToXML' function to only show attribute if it does not equal n/a (or N/A, N/a, n/A)
+- Create function to rebuild closet from .clo file (Rebuild Closet?)
+- Create function to pick random article of clothing and suggested clothing
+- Create function for suggested clothing

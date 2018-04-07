@@ -1,0 +1,43 @@
+
+*********** Shirts ************
+
+Name: wut
+ID:   100
+  -> Primary Color:   asd
+  -> Secondary Color: asdk
+  -> Tertiary Color:  asdk
+  -> Pattern:         ka
+  -> Sleeve Length:   ndfasdfasdf
+  -> Collar:          ddfdfdd
+
+********** Pants **************
+
+Name: please
+ID:   200
+  -> Primary Color:   no
+  -> Secondary Color: go away
+  -> Tertiary Color:  ughhhh
+  -> Material:        stop
+  -> Length:          too much
+
+Name: 
+ID:   201
+  -> Primary Color:   fuck
+  -> Secondary Color: lemme
+  -> Tertiary Color:  try
+  -> Material:        again
+  -> Length:          shit
+
+Name: here we go
+ID:   202
+  -> Primary Color:   fuck
+  -> Secondary Color: bad name
+  -> Tertiary Color:  i suck
+  -> Material:        at life
+  -> Length:          kdfkdjfasldkfjalsdkfjalksdfjasdjf
+
+********** Socks **************
+
+********** Shoes **************
+
+********** Belts **************
