@@ -12,6 +12,8 @@
 #include <string>
 #include <map>
 #include <fstream>
+#include <ncurses.h>
+#include <cstring>
 
 #include "shirt.h"
 #include "pants.h"

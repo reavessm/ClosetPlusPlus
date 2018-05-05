@@ -1,4 +1,4 @@
-GCC = g++ -O3 -Wall -std=c++11
+GCC = g++ -O3 -Wall -std=c++11 -lncurses
 
 A = main.o
 C = myCloset.o

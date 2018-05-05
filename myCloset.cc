@@ -38,8 +38,20 @@ void Closet::MakeCloset() {
   char ans = 'k'; //dummy character
 
   //Name Closet
-  cout << "Please enter a name for your closet (Stephen's, BigDaddy's, etc.):" << endl;
-  getline(cin, closet_name_);
+/*  cout << "Please enter a name for your closet (Stephen's, BigDaddy's, etc.):" << endl;
+  getline(cin, closet_name_);*/
+  char mesg[]="Enter a Closet Name: ";
+  char str[80];
+  int row,col;
+  initscr();
+  getmaxyx(stdscr,row,col);
+  mvprintw(row/2,(col-strlen(mesg))/2,"%s",mesg);
+  getstr(str);
+  mvprintw(LINES -2, 0, "You Entered: %s", str);
+  getch();
+  endwin();
+
+  closet_name_ = str;
  
 //  cin.ignore();
   //Add Shirt(s)
@@ -109,7 +121,7 @@ void Closet::MakeCloset() {
  */
 void Closet::MakeCloset(string filename) {
   // Use TinyXML-2
-  }
+  //}
 }
 
 /******************************************************************************
