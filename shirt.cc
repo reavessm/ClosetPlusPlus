@@ -35,6 +35,7 @@ Shirt::~Shirt() {}
  * Accessors and Mutators
  */
 
+/* Implemented by Interface
 int Shirt::GetID() { return this->id_; }
 string Shirt::GetName() { return this->name_; }
 string Shirt::GetPrimColor() { return this->primary_color_; }
@@ -51,12 +52,15 @@ void Shirt::SetTertColor(string color) { this->tertiary_color_ = color; }
 void Shirt::SetPattern(string pattern) { this->pattern_ = pattern; }
 void Shirt::SetSleeveLength(string length) { this->sleeve_length_ = length; }
 void Shirt::SetCollar(string collar) { this->collar_ = collar; }
+*/
 
 /******************************************************************************
  * General Functions
  */
 
 /******************************************************************************
+ * DEPRECATED
+ *
  * Function 'ToXML'
  * Returns:
  *    XML representing the shirt.

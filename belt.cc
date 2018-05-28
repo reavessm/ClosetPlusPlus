@@ -34,6 +34,7 @@ Belt::~Belt() {}
  * Accessors and Mutators
  */
 
+/* Implemented by Interface
 int Belt::GetID() { return this->id_; }
 string Belt::GetName() { return this->name_; }
 string Belt::GetPrimColor() { return this->primary_color_; }
@@ -48,6 +49,7 @@ void Belt::SetSecColor(string color) { this->secondary_color_ = color; }
 void Belt::SetTertColor(string color) { this->tertiary_color_ = color; }
 void Belt::SetMaterial(string material) { this->material_ = material; }
 void Belt::SetPattern(string pattern) { this->pattern_ = pattern; }
+*/
 
 /******************************************************************************
  * General Functions

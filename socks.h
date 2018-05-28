@@ -11,6 +11,8 @@
 #include <iostream>
 #include <string>
 
+#include "clothes.h"
+
 using namespace std;
 
 #ifndef SOCKS_H
@@ -23,7 +25,7 @@ const string kDummySocksSecColor = "Fake Secondary Color";
 const string kDummySocksTertColor = "Fake Tertiary Color";
 const string kDummySocksPattern = "Fake Pattern"; */
 
-class Socks {
+class Socks : public Clothes {
   public:
     //Constructors and Deconstructors
     Socks();
@@ -32,6 +34,7 @@ class Socks {
     virtual ~Socks();
 
     //General Functions
+/* Implemented by Interface    
     int GetID();
     string GetName();
     string GetPrimColor();
@@ -44,6 +47,7 @@ class Socks {
     void SetSecColor(string color);
     void SetTertColor(string color);
     void SetPattern(string pattern);
+*/    
 
     //bool IsDirty();
 
@@ -52,12 +56,14 @@ class Socks {
   
   private:
     //Variables
+/* Implemented by Interface    
     int id_ = kDummySocksID;
     string name_ = kDummySocksName;
     string primary_color_ = kDummySocksPrimColor;
     string secondary_color_ = kDummySocksSecColor;
     string tertiary_color_ = kDummySocksTertColor;
     string pattern_ = kDummySocksPattern;
+*/
 
     //Private Functions
 

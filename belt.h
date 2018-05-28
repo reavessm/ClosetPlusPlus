@@ -34,6 +34,7 @@ class Belt : public Clothes{
     virtual ~Belt();
 
     //General Functions
+/* Implemented by Interface    
     int GetID();
     string GetName();
     string GetPrimColor();
@@ -48,6 +49,7 @@ class Belt : public Clothes{
     void SetTertColor(string color);
     void SetMaterial(string material);
     void SetPattern(string pattern);
+*/
 
     //bool IsDirty();
 
@@ -56,6 +58,7 @@ class Belt : public Clothes{
   
   private:
     //Variables
+/* Implemented by Interface
     int id_ = kDummyBeltID;
     string name_ = kDummyBeltName;
     string primary_color_ = kDummyBeltPrimColor;
@@ -63,6 +66,7 @@ class Belt : public Clothes{
     string tertiary_color_ = kDummyBeltTertColor;
     string material_ = kDummyBeltMaterial;
     string pattern_ = kDummyPattern;
+*/
 
     //Private Functions
 

@@ -35,7 +35,7 @@ class Clothes {
   public:
     //Constructors and Deconstructors
     Clothes();
-    virtual ~Clothes();
+    virtual ~Clothes(){}
 
     //General Functions
     int GetID() { return id_; }

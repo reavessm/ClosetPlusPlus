@@ -33,6 +33,7 @@ Shoes::~Shoes() {}
  * Accessors and Mutators
  */
 
+/* Implemented by Interface
 int Shoes::GetID() { return this->id_; }
 string Shoes::GetName() { return this->name_; }
 string Shoes::GetPrimColor() { return this->primary_color_; }
@@ -47,12 +48,15 @@ void Shoes::SetSecColor(string color) { this->secondary_color_ = color; }
 void Shoes::SetTertColor(string color) { this->tertiary_color_ = color; }
 void Shoes::SetMaterial(string material) { this->material_ = material; }
 void Shoes::SetStyle(string style) { this->style_ = style; }
+*/
 
 /******************************************************************************
  * General Functions
  */
 
 /******************************************************************************
+ * DEPRECATED
+ *
  * Function 'ToXML'
  * Returns:
  *    XML representing the shoes.

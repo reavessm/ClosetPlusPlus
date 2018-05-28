@@ -15,7 +15,7 @@
 #include <ncurses.h>
 #include <cstring>
 
-#include "clothes.h"
+//#include "clothes.h"
 #include "shirt.h"
 #include "pants.h"
 #include "belt.h"

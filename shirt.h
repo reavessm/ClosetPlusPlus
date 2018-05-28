@@ -31,7 +31,7 @@ const string kDummyShirtSleeveLength = "Fake Sleeve Length";
 const string kDummyShirtCollar = "Fake Collar"; 
 */
 
-class Shirt {
+class Shirt : public Clothes {
   public:
     //Constructors and Deconstructors
     Shirt();
@@ -48,19 +48,17 @@ class Shirt {
     string GetSecColor();
     string GetTertColor();
     string GetPattern();
-*/
     string GetSleeveLength() { return sleeve_length_; }
     string GetCollar() { return collar_; }
 
-/* Implemented with Interface
     void SetName(string name);
     void SetPrimColor(string color);
     void SetSecColor(string color);
     void SetTertColor(string color);
     void SetPattern(string pattern);
-*/
     void SetSleeveLength(string length) { sleeve_length_ = length; }
     void SetCollar(string collar) { collar_ = collar; }
+*/
 
     //bool IsDirty();
 
@@ -76,9 +74,9 @@ class Shirt {
     string secondary_color_ = kDummyShirtSecColor;
     string tertiary_color_ = kDummyShirtTertColor;
     string pattern_ = kDummyShirtPattern;
-*/
     string sleeve_length_ = kDummySleeveLength;
     string collar_ = kDummyCollar;
+*/
 
     //Private Functions
 

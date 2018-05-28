@@ -345,6 +345,7 @@ Belt Closet::AddBelt() {
   string beltSecColor = "N/A";
   string beltTertColor = "N/A";
   string beltMaterial = "N/A";
+  string beltPattern = "N/A";
 
   cin.ignore();
 
@@ -364,12 +365,15 @@ Belt Closet::AddBelt() {
   cout << "Please enter the material for " << beltName << " (leather, tweed, etc.)." << endl;
   getline(cin, beltMaterial);
 
+  cout << "Please enter the pattern for " << beltName << " (solid, striped, etc.)." << endl;
+  getline(cin, beltPattern);
+
   do {
     beltID = AssignID("belt");
   } while (beltID == -1); //AssignID returns -1 if there is an error
 
   //Create Belt using filled in variables
-  Belt belt(beltID, beltName, beltPrimColor, beltSecColor, beltTertColor, beltMaterial);
+  Belt belt(beltID, beltName, beltPrimColor, beltSecColor, beltTertColor, beltMaterial, beltPattern);
 
   return belt;
 }

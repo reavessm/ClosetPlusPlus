@@ -33,7 +33,7 @@ Pants::~Pants() {}
 /******************************************************************************
  * Accessors and Mutators
  */
-
+/* Implemented by Interface
 int Pants::GetID() { return this->id_; }
 string Pants::GetName() { return this->name_; }
 string Pants::GetPrimColor() { return this->primary_color_; }
@@ -48,12 +48,15 @@ void Pants::SetSecColor(string color) { this->secondary_color_ = color; }
 void Pants::SetTertColor(string color) { this->tertiary_color_ = color; }
 void Pants::SetMaterial(string material) { this->material_ = material; }
 void Pants::SetCut(string cut) { this->cut_ = cut; }
+*/
 
 /******************************************************************************
  * General Functions
  */
 
 /*****************************************************************************
+ * DEPRECATED
+ *
  * Function 'ToXML'
  * Returns:
  *    XML representation of the shirt

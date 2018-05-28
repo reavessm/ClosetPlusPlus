@@ -11,6 +11,8 @@
 #include <iostream>
 #include <string>
 
+#include "clothes.h"
+
 using namespace std;
 
 #ifndef PANTS_H
@@ -25,7 +27,7 @@ const string kDummyPantsMaterial = "Fake Material";
 const string kDummyPantsLength = "Fake Length";
 const string kDummyPantsCut = "Fake Cut"; */
 
-class Pants {
+class Pants : public Clothes {
   public:
     //Constructors and Deconstructors
     Pants();
@@ -35,6 +37,7 @@ class Pants {
     virtual ~Pants();
 
     //General Functions
+/* Implemented by Interface    
     int GetID();
     string GetName();
     string GetPrimColor();
@@ -51,6 +54,7 @@ class Pants {
     void SetMaterial(string material);
     void SetLength(string length);
     void SetCut(string cut);
+*/
 
     //bool IsDirty();
 
@@ -59,6 +63,7 @@ class Pants {
   
   private:
     //Variables
+/* Implemented by Interface
     int id_ = kDummyPantsID;
     string name_ = kDummyPantsName;
     string primary_color_ = kDummyPantsPrimColor;
@@ -67,6 +72,7 @@ class Pants {
     string material_ = kDummyPantsMaterial;
     string length_ = kDummyPantsLength;
     string cut_ = kDummyPantsCut;
+*/
 
     //Private Functions
 
