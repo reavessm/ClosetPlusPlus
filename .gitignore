@@ -34,3 +34,6 @@
 # Closet Files
 *.clo
 *.txt
+
+# Vim Open File things
+*.swp
