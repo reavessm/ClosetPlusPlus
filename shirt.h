@@ -18,14 +18,14 @@
 using namespace std;
 
 
-const int kDummyShirtID = -1;
+/* const int kDummyShirtID = -1;
 const string kDummyShirtName = "Fake Name";
 const string kDummyShirtPrimColor = "Fake Primary Color";
 const string kDummyShirtSecColor = "Fake Secondary Color";
 const string kDummyShirtTertColor = "Fake Tertiary Color";
 const string kDummyShirtPattern = "Fake Pattern";
 const string kDummyShirtSleeveLength = "Fake Sleeve Length";
-const string kDummyShirtCollar = "Fake Collar";
+const string kDummyShirtCollar = "Fake Collar"; */
 
 class Shirt {
   public:

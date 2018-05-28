@@ -16,12 +16,12 @@ using namespace std;
 #ifndef SOCKS_H
 #define SOCKS_H
 
-const int kDummySocksID = -1;
+/* const int kDummySocksID = -1;
 const string kDummySocksName = "Fake Name";
 const string kDummySocksPrimColor = "Fake Primary Color";
 const string kDummySocksSecColor = "Fake Secondary Color";
 const string kDummySocksTertColor = "Fake Tertiary Color";
-const string kDummySocksPattern = "Fake Pattern";
+const string kDummySocksPattern = "Fake Pattern"; */
 
 class Socks {
   public:

@@ -16,13 +16,13 @@ using namespace std;
 #ifndef SHOES_H
 #define SHOES_H
 
-const int kDummyShoesID = -1;
+/* const int kDummyShoesID = -1;
 const string kDummyShoesName = "Fake Name";
 const string kDummyShoesPrimColor = "Fake Primary Color";
 const string kDummyShoesSecColor = "Fake Secondary Color";
 const string kDummyShoesTertColor = "Fake Tertiary Color";
 const string kDummyShoesMaterial = "Fake Material";
-const string kDummyShoesStyle = "Fake Style";
+const string kDummyShoesStyle = "Fake Style"; */
 
 class Shoes {
   public:
