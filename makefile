@@ -33,4 +33,4 @@ socks.o: socks.h socks.cc
 	$(GCC) -c socks.cc
 
 clean:
-	$(RM) Closet++ *.o *~ *.gch
+	$(RM) Closet++ *.o *.gch *~
