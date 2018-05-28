@@ -34,7 +34,7 @@ static const string kDummyCollar = "Fake Collar";
 class Clothes {
   public:
     //Constructors and Deconstructors
-    Clothes();
+    Clothes(){};
     virtual ~Clothes(){}
 
     //General Functions
