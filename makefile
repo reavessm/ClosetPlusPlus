@@ -31,3 +31,6 @@ shoes.o: shoes.h shoes.cc
 
 socks.o: socks.h socks.cc
 	$(GCC) -c socks.cc
+
+clean:
+	$(RM) Closet++ *.o *~ *.gch
