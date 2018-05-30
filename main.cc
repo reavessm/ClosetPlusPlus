@@ -33,7 +33,10 @@ int main(int argc, char** argv) {
 //		closet.MakeCloset();
 //	  }
 //  } else {
+
+    initscr();
   	closet.MakeCloset();
+    endwin();
 //  }
 
   fileFrontName = closet.GetClosetName();

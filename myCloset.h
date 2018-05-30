@@ -63,6 +63,7 @@ class Closet {
     Belt AddBelt();
     
     int AssignID(string type);
+    static string Window(string message);
 
 };
 

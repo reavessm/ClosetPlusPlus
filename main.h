@@ -10,13 +10,10 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
+#include <ncurses.h>
 #include <string>
+
 #include "myCloset.h"
-/* #include "shirt.cc"
-#include "pant.cc"
-#include "sock.cc"
-#include "belt.cc"
-#include "shoes.cc"*/
 
 using namespace std;
 

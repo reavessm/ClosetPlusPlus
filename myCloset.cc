@@ -36,19 +36,21 @@ string Closet::GetClosetName() { return this->closet_name_; }
  */
 void Closet::MakeCloset() {
   char ans = 'k'; //dummy character
+  string str = "";
+  string message = "";
 
   //Name Closet
 /*  cout << "Please enter a name for your closet (Stephen's, BigDaddy's, etc.):" << endl;
   getline(cin, closet_name_);*/
-  char mesg[]="Enter a Closet Name: ";
-  char str[80];
-  int row,col;
-  initscr();
-  getmaxyx(stdscr,row,col);
+  message = "Enter a Closet Name: ";
+//  initscr();
+/*  getmaxyx(stdscr,row,col);
   mvprintw(row/2,(col-strlen(mesg))/2,"%s",mesg);
   getstr(str);
   mvprintw(LINES -2, 0, "You Entered: %s", str);
   getch();
+*/
+  str = Window(message);
   endwin();
 
   closet_name_ = str;
@@ -491,3 +493,36 @@ string Closet::ToString() const {
 
   return s;
 }
+
+/*******************************************************************************
+ * Function 'Window'
+ * Returns: string representing user input
+ * Summary: This function rewrites the ncurses window
+ */
+
+string Closet::Window(string message) {
+  // Initialize variables
+  string s = "";
+  int row, col;
+  getmaxyx(stdscr,row,col);
+
+
+  string test = "TEST";
+  // Print Message
+  mvprintw(row/2,(col-message.length())/2,"%s",message.c_str());
+
+  // Get Input
+  int ch = getch();
+  while (ch != '\n') {
+    s.push_back(ch);
+    ch = getch();
+  }
+
+  // Confirm Input
+  mvprintw(LINES -2, 0, "You Entered: %s", s.c_str());
+  getch();
+
+  return s;
+}
+
+
