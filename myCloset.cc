@@ -35,28 +35,18 @@ string Closet::GetClosetName() { return this->closet_name_; }
  * creating the clothes and then inserting them to the appropriate map
  */
 void Closet::MakeCloset() {
+  // Initialize variables
   char ans = 'k'; //dummy character
   string str = "";
   string message = "";
 
   //Name Closet
-/*  cout << "Please enter a name for your closet (Stephen's, BigDaddy's, etc.):" << endl;
-  getline(cin, closet_name_);*/
   message = "Enter a Closet Name: ";
-//  initscr();
-/*  getmaxyx(stdscr,row,col);
-  mvprintw(row/2,(col-strlen(mesg))/2,"%s",mesg);
-  getstr(str);
-  mvprintw(LINES -2, 0, "You Entered: %s", str);
-  getch();
-*/
   str = Window(message);
-  endwin();
-
   closet_name_ = str;
  
-//  cin.ignore();
   //Add Shirt(s)
+  /*
   cout << "Would you like to add a shirt? [y/n]" << endl;
   cin >> ans;
   while ( ans == 'y' || ans == 'Y' ) {
@@ -65,7 +55,15 @@ void Closet::MakeCloset() {
     shirt_map_.insert(pair<int, Shirt>(shirt.GetID(), shirt));
     cout << "Would you like to add another shirt? [y/n]?" << endl;
     cin >> ans;
+  }*/
+  ans = WindowChar("Would you like to add a shirt? [y/n] ");
+  while ( ans == 'y' || ans == 'Y' ) {
+    Shirt shirt;
+    shirt = AddShirt();
+    shirt_map_.insert(pair<int, Shirt>(shirt.GetID(), shirt));
+    ans = WindowChar("Would you like to add another shirt? [y/n]");
   }
+  endwin();
 
   cin.ignore();
   //Add Pants
@@ -149,7 +147,7 @@ Shirt Closet::AddShirt() {
   cin.ignore();//fixes issue where it 'forgot' to ask for name of shirt.  Idk why this works...
 
   //Begin putting in actual values
-  cout << "Please enter the name of the shirt:" << endl;
+/*  cout << "Please enter the name of the shirt:" << endl;
   getline(cin, shirtName);
 
   cout << "Please enter the primary color for " << shirtName << "." << endl;
@@ -169,6 +167,9 @@ Shirt Closet::AddShirt() {
 
   cout << "Please enter the collar (crew, v, turtleneck, etc.) for " << shirtName << "." << endl;
   getline(cin, shirtCollar);
+*/
+  shirtName = Window("Please enter the name of the shirt: ");
+  shirtPrimColor = Window("Please enter the primary color for " + shirtName + ": ");
 
   do {
     shirtID = AssignID("shirt");
@@ -495,6 +496,23 @@ string Closet::ToString() const {
 }
 
 /*******************************************************************************
+ * Function 'WindowChar'
+ * Returns: char representing user input
+ * Summary: This function rewrites the ncurses window
+ */
+
+char Closet::WindowChar(string message) {
+  // Initialize variables
+  int row, col;
+  getmaxyx(stdscr,row,col);
+
+
+  // Print Message
+  mvprintw(row/2,(col-message.length())/2,"%s",message.c_str());
+
+  return getch();
+}
+/*******************************************************************************
  * Function 'Window'
  * Returns: string representing user input
  * Summary: This function rewrites the ncurses window
@@ -507,7 +525,6 @@ string Closet::Window(string message) {
   getmaxyx(stdscr,row,col);
 
 
-  string test = "TEST";
   // Print Message
   mvprintw(row/2,(col-message.length())/2,"%s",message.c_str());
 

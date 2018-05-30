@@ -64,6 +64,7 @@ class Closet {
     
     int AssignID(string type);
     static string Window(string message);
+    static char WindowChar(string message);
 
 };
 
