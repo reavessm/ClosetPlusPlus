@@ -18,15 +18,6 @@ using namespace std;
 #ifndef PANTS_H
 #define PANTS_H
 
-/*const int kDummyPantsID = -1;
-const string kDummyPantsName = "Fake Name";
-const string kDummyPantsPrimColor = "Fake Primary Color";
-const string kDummyPantsSecColor = "Fake Secondary Color";
-const string kDummyPantsTertColor = "Fake Tertiary Color";
-const string kDummyPantsMaterial = "Fake Material";
-const string kDummyPantsLength = "Fake Length";
-const string kDummyPantsCut = "Fake Cut"; */
-
 class Pants : public Clothes {
   public:
     //Constructors and Deconstructors
@@ -37,24 +28,6 @@ class Pants : public Clothes {
     virtual ~Pants();
 
     //General Functions
-/* Implemented by Interface    
-    int GetID();
-    string GetName();
-    string GetPrimColor();
-    string GetSecColor();
-    string GetTertColor();
-    string GetMaterial();
-    string GetLength();
-    string GetCut();
-
-    void SetName(string name);
-    void SetPrimColor(string color);
-    void SetSecColor(string color);
-    void SetTertColor(string color);
-    void SetMaterial(string material);
-    void SetLength(string length);
-    void SetCut(string cut);
-*/
 
     //bool IsDirty();
 
@@ -63,19 +36,8 @@ class Pants : public Clothes {
   
   private:
     //Variables
-/* Implemented by Interface
-    int id_ = kDummyPantsID;
-    string name_ = kDummyPantsName;
-    string primary_color_ = kDummyPantsPrimColor;
-    string secondary_color_ = kDummyPantsSecColor;
-    string tertiary_color_ = kDummyPantsTertColor;
-    string material_ = kDummyPantsMaterial;
-    string length_ = kDummyPantsLength;
-    string cut_ = kDummyPantsCut;
-*/
 
     //Private Functions
-
 
 };
 

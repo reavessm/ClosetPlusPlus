@@ -18,13 +18,6 @@ using namespace std;
 #ifndef BELT_H
 #define BELT_H
 
-/*const int kDummyBeltID = -1;
-const string kDummyBeltName = "Fake Name";
-const string kDummyBeltPrimColor = "Fake Primary Color";
-const string kDummyBeltSecColor = "Fake Secondary Color";
-const string kDummyBeltTertColor = "Fake Tertiary Color";
-const string kDummyBeltMaterial = "Fake Material"; */
-
 class Belt : public Clothes{
   public:
     //Constructors and Deconstructors
@@ -34,22 +27,6 @@ class Belt : public Clothes{
     virtual ~Belt();
 
     //General Functions
-/* Implemented by Interface    
-    int GetID();
-    string GetName();
-    string GetPrimColor();
-    string GetSecColor();
-    string GetTertColor();
-    string GetMaterial();
-    string GetPattern();
-
-    void SetName(string name);
-    void SetPrimColor(string color);
-    void SetSecColor(string color);
-    void SetTertColor(string color);
-    void SetMaterial(string material);
-    void SetPattern(string pattern);
-*/
 
     //bool IsDirty();
 
@@ -58,18 +35,8 @@ class Belt : public Clothes{
   
   private:
     //Variables
-/* Implemented by Interface
-    int id_ = kDummyBeltID;
-    string name_ = kDummyBeltName;
-    string primary_color_ = kDummyBeltPrimColor;
-    string secondary_color_ = kDummyBeltSecColor;
-    string tertiary_color_ = kDummyBeltTertColor;
-    string material_ = kDummyBeltMaterial;
-    string pattern_ = kDummyPattern;
-*/
 
     //Private Functions
-
 
 };
 

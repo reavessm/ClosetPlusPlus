@@ -18,14 +18,6 @@ using namespace std;
 #ifndef SHOES_H
 #define SHOES_H
 
-/* const int kDummyShoesID = -1;
-const string kDummyShoesName = "Fake Name";
-const string kDummyShoesPrimColor = "Fake Primary Color";
-const string kDummyShoesSecColor = "Fake Secondary Color";
-const string kDummyShoesTertColor = "Fake Tertiary Color";
-const string kDummyShoesMaterial = "Fake Material";
-const string kDummyShoesStyle = "Fake Style"; */
-
 class Shoes : public Clothes {
   public:
     //Constructors and Deconstructors
@@ -35,22 +27,6 @@ class Shoes : public Clothes {
     virtual ~Shoes();
 
     //General Functions
-/* Implemented by Interface
-    int GetID();
-    string GetName();
-    string GetPrimColor();
-    string GetSecColor();
-    string GetTertColor();
-    string GetMaterial();
-    string GetStyle();
-
-    void SetName(string name);
-    void SetPrimColor(string color);
-    void SetSecColor(string color);
-    void SetTertColor(string color);
-    void SetMaterial(string material);
-    void SetStyle(string style);
-*/    
 
     //bool IsDirty();
 
@@ -59,18 +35,8 @@ class Shoes : public Clothes {
   
   private:
     //Variables
-/* Implemented by Interface    
-    int id_ = kDummyShoesID;
-    string name_ = kDummyShoesName;
-    string primary_color_ = kDummyShoesPrimColor;
-    string secondary_color_ = kDummyShoesSecColor;
-    string tertiary_color_ = kDummyShoesTertColor;
-    string material_ = kDummyShoesMaterial;
-    string style_ = kDummyShoesStyle;
-*/
 
     //Private Functions
-
 
 };
 

@@ -33,22 +33,6 @@ Pants::~Pants() {}
 /******************************************************************************
  * Accessors and Mutators
  */
-/* Implemented by Interface
-int Pants::GetID() { return this->id_; }
-string Pants::GetName() { return this->name_; }
-string Pants::GetPrimColor() { return this->primary_color_; }
-string Pants::GetSecColor() { return this->secondary_color_; }
-string Pants::GetTertColor() { return this->tertiary_color_; }
-string Pants::GetMaterial() { return this->material_; }
-string Pants::GetCut() { return this->cut_; }
-
-void Pants::SetName(string name) { this->name_ = name; }
-void Pants::SetPrimColor(string color) { this->primary_color_ = color; }
-void Pants::SetSecColor(string color) { this->secondary_color_ = color; }
-void Pants::SetTertColor(string color) { this->tertiary_color_ = color; }
-void Pants::SetMaterial(string material) { this->material_ = material; }
-void Pants::SetCut(string cut) { this->cut_ = cut; }
-*/
 
 /******************************************************************************
  * General Functions

@@ -32,20 +32,6 @@ Socks::~Socks() {}
  * Accessors and Mutators
  */
 
-/* Implemented by Interface
-int Socks::GetID() { return this->id_; }
-string Socks::GetName() { return this->name_; }
-string Socks::GetPrimColor() { return this->primary_color_; }
-string Socks::GetSecColor() { return this->secondary_color_; }
-string Socks::GetTertColor() { return this->tertiary_color_; }
-string Socks::GetPattern() { return this->pattern_; }
-
-void Socks::SetName(string name) { this->name_ = name; }
-void Socks::SetPrimColor(string color) { this->primary_color_ = color; }
-void Socks::SetSecColor(string color) { this->secondary_color_ = color; }
-void Socks::SetTertColor(string color) { this->tertiary_color_ = color; }
-void Socks::SetPattern(string pattern) { this->pattern_ = pattern; }
-*/
 
 /******************************************************************************
  * General Functions

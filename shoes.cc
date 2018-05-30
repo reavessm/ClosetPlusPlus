@@ -33,22 +33,6 @@ Shoes::~Shoes() {}
  * Accessors and Mutators
  */
 
-/* Implemented by Interface
-int Shoes::GetID() { return this->id_; }
-string Shoes::GetName() { return this->name_; }
-string Shoes::GetPrimColor() { return this->primary_color_; }
-string Shoes::GetSecColor() { return this->secondary_color_; }
-string Shoes::GetTertColor() { return this->tertiary_color_; }
-string Shoes::GetMaterial() { return this->material_; }
-string Shoes::GetStyle() { return this->style_; }
-
-void Shoes::SetName(string name) { this->name_ = name; }
-void Shoes::SetPrimColor(string color) { this->primary_color_ = color; }
-void Shoes::SetSecColor(string color) { this->secondary_color_ = color; }
-void Shoes::SetTertColor(string color) { this->tertiary_color_ = color; }
-void Shoes::SetMaterial(string material) { this->material_ = material; }
-void Shoes::SetStyle(string style) { this->style_ = style; }
-*/
 
 /******************************************************************************
  * General Functions

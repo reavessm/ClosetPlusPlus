@@ -402,11 +402,6 @@ Belt Closet::AddBelt() {
  */
 int Closet::AssignID(string type) {
   int id = -1; //dummy id number
-  //for (map<int, string>::iterator iter = type_map_.begin(); iter !=
-  //type_map_.end(), ++iter) {
-  //  id = static_cast<int>(type_map_.at(type)) * 100
-  //  id += static_cast<int>(shirt||pants||shfldfsd_map_.size());
-  //}
   //switch (type){
   //  case "shirt":
   //  TODO Use Switch-case
