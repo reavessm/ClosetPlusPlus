@@ -103,9 +103,9 @@ void Closet::MakeCloset() {
     ans = WindowChar("Would you like to add more socks? [y/n] ");
   }
 
-  cin.ignore();
+//  cin.ignore();
   //Add Shoes
-  cout << "Would you like to add a pair of shoes? [y/n]" << endl;
+/*  cout << "Would you like to add a pair of shoes? [y/n]" << endl;
   cin >> ans;
   while ( ans == 'y' || ans == 'Y' ) {
     Shoes shoes;
@@ -113,7 +113,15 @@ void Closet::MakeCloset() {
     shoes_map_.insert(pair<int, Shoes>(shoes.GetID(), shoes));
     cout << "Would you like to add another pair of shoes? [y/n]" << endl;
     cin >> ans;
+   }*/
+  ans = WindowChar("Would you like to add some shoes? [y/n] ");
+  while (ans == 'y' || ans == 'Y') {
+    Shoes shoes;
+    shoes = AddShoes();
+    shoes_map_.insert(pair<int, Shoes>(shoes.GetID(), shoes));
+    ans = WindowChar("Would you like to add some more shoes? [y/n] ");
   }
+  endwin();
 }
 
 /******************************************************************************
@@ -235,7 +243,8 @@ Pants Closet::AddPants() {
   } while (pantsID == -1); //AssignID returns -1 if there is an error
 
   //Create Pants using filled in variables
-  Pants pants(pantsID, pantsName, pantsPrimColor, pantsSecColor, pantsTertColor, pantsMaterial, pantsLength, pantsCut);
+  Pants pants(pantsID, pantsName, pantsPrimColor, pantsSecColor, 
+              pantsTertColor, pantsMaterial, pantsLength, pantsCut);
 
   return pants;
 }
@@ -261,7 +270,7 @@ Socks Closet::AddSocks() {
   cin.ignore();
 
   //Begin putting in actual values
-  cout << "Please enter a name for this pair of socks:" << endl;
+/*  cout << "Please enter a name for this pair of socks:" << endl;
   getline(cin, socksName);
 
   cout << "Please enter the primary color for " << socksName << "." << endl;
@@ -275,13 +284,24 @@ Socks Closet::AddSocks() {
   
   cout << "Please enter the pattern for " << socksName << ", or n/a." << endl;
   getline(cin, socksPattern);
+*/
+  socksName = Window("Please enter a name for this pair of socks: ");
+  socksPrimColor = Window("Please enter the primary color for " 
+                          + socksName + ": ");
+  socksSecColor = Window("Please enter the secondary color for " 
+                          + socksName + ": ");
+  socksTertColor = Window("Please enter the tertiary color for " 
+                          + socksName + ": ");
+  socksPattern = Window("Please enter the pattern for " 
+                          + socksName + ": ");
 
   do {
     socksID = AssignID("socks");
   } while (socksID == -1); //AssignID returns -1 if there is an error
 
   //Create Socks using filled in variables
-  Socks socks(socksID, socksName, socksPrimColor, socksSecColor, socksTertColor, socksPattern);
+  Socks socks(socksID, socksName, socksPrimColor, socksSecColor, 
+              socksTertColor, socksPattern);
 
   return socks;
 }
@@ -308,7 +328,7 @@ Shoes Closet::AddShoes() {
   cin.ignore();
 
   //Begin putting in actual values
-  cout << "Please enter a name for this pair of shoes:" << endl;
+/*  cout << "Please enter a name for this pair of shoes:" << endl;
   getline(cin, shoesName);
 
   cout << "Please enter the primary color for " << shoesName << "." << endl;
@@ -325,13 +345,26 @@ Shoes Closet::AddShoes() {
 
   cout << "Please enter the style for " << shoesName << " (tennis, oxford, etc.)." << endl;
   getline(cin, shoesStyle);
+*/
+  shoesName = Window("Please enter a name for these pairs of shoes: ");
+  shoesPrimColor = Window("Please enter the primary color of " 
+                          + shoesName + ": ");
+  shoesSecColor = Window("Please enter the secondary color of " 
+                          + shoesName + ": ");
+  shoesTertColor = Window("Please enter the tertiary color of " 
+                          + shoesName + ": ");
+  shoesMaterial = Window("Please enter the material of " 
+                          + shoesName + ": ");
+  shoesStyle = Window("Please enter the style of " 
+                          + shoesName + ": ");
 
   do {
     shoesID = AssignID("shoes");
   } while (shoesID == -1); //AssignID returns -1 if there is an error
 
   //Create Shoes using filled in variables
-  Shoes shoes(shoesID, shoesName, shoesPrimColor, shoesSecColor, shoesTertColor, shoesMaterial, shoesStyle);
+  Shoes shoes(shoesID, shoesName, shoesPrimColor, shoesSecColor, 
+              shoesTertColor, shoesMaterial, shoesStyle);
 
   return shoes;
 }
@@ -358,7 +391,7 @@ Belt Closet::AddBelt() {
   cin.ignore();
 
   //Begin putting in actual values
-  cout << "Please enter a name for this belt:" << endl;
+/*  cout << "Please enter a name for this belt:" << endl;
   getline(cin, beltName);
 
   cout << "Please enter the primary color for " << beltName << "." << endl;
@@ -375,13 +408,26 @@ Belt Closet::AddBelt() {
 
   cout << "Please enter the pattern for " << beltName << " (solid, striped, etc.)." << endl;
   getline(cin, beltPattern);
+*/
+  beltName = Window("Please enter a name for this belt: ");
+  beltPrimColor = Window("Please enter the primary color for " 
+                          + beltName + ": ");
+  beltSecColor = Window("Please enter the secondary color for " 
+                          + beltName + ": ");
+  beltTertColor = Window("Please enter the tertiary color for " 
+                          + beltName + ": ");
+  beltMaterial = Window("Please enter the material for " 
+                          + beltName + ": ");
+  beltPattern = Window("Please enter the style for " 
+                          + beltName + ": ");
 
   do {
     beltID = AssignID("belt");
   } while (beltID == -1); //AssignID returns -1 if there is an error
 
   //Create Belt using filled in variables
-  Belt belt(beltID, beltName, beltPrimColor, beltSecColor, beltTertColor, beltMaterial, beltPattern);
+  Belt belt(beltID, beltName, beltPrimColor, beltSecColor,
+                    beltTertColor, beltMaterial, beltPattern);
 
   return belt;
 }
@@ -424,8 +470,9 @@ int Closet::AssignID(string type) {
   } else if ( type == "shoes" ) {
       id = 500 + static_cast<int>(shoes_map_.size());
   } else {
-      cout << "Error, please enter a correct type of clothing" << endl;
-      cin >> type;
+  //    cout << "Error, please enter a correct type of clothing" << endl;
+  //    cin >> type;
+      type = Window("ERROR: Please enter a correct type of clothing: ");
       id = AssignID(type);
   }
   return id;
