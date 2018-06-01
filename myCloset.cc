@@ -18,7 +18,7 @@ Closet::Closet() {}
  */
 Closet::~Closet() {}
 
-/******************************************************************************
+/**********************************************1********************************
  * Accessors and Mutators
  */
 
@@ -63,10 +63,11 @@ void Closet::MakeCloset() {
     shirt_map_.insert(pair<int, Shirt>(shirt.GetID(), shirt));
     ans = WindowChar("Would you like to add another shirt? [y/n]");
   }
-  endwin();
+  //endwin();
 
   cin.ignore();
   //Add Pants
+/*  
   cout << "Would you like to add a pair of pants? [y/n]" << endl;
   cin >> ans;
   while ( ans == 'y' || ans == 'Y' ) {
@@ -76,8 +77,17 @@ void Closet::MakeCloset() {
     cout << "Would you like to add another pair of pants? [y/n]" << endl;
     cin >> ans;
   }
-
   cin.ignore();
+*/ 
+  ans = WindowChar("Would you like to add a pants? [y/n] ");
+  while (ans == 'y' || ans == 'Y') {
+    Pants pants;
+    pants = AddPants();
+    pants_map_.insert(pair<int, Pants>(pants.GetID(), pants));
+    ans = WindowChar("Would you like to add another pair of pants? [y/n] ");
+  }
+  endwin();
+
   //Add Belt(s)
   cout << "Would you like to add a belt? [y/n]" << endl;
   cin >> ans;
@@ -147,36 +157,25 @@ Shirt Closet::AddShirt() {
   cin.ignore();//fixes issue where it 'forgot' to ask for name of shirt.  Idk why this works...
 
   //Begin putting in actual values
-/*  cout << "Please enter the name of the shirt:" << endl;
-  getline(cin, shirtName);
-
-  cout << "Please enter the primary color for " << shirtName << "." << endl;
-  getline(cin, shirtPrimColor);
-
-  cout << "Please enter the secondary color for " << shirtName << ", or n/a." << endl;
-  getline(cin, shirtSecColor);
-
-  cout << "Please enter the tertiary color for " << shirtName << ", or n/a." << endl;
-  getline(cin, shirtTertColor);
-
-  cout << "Please enter the pattern for " << shirtName << "." << endl;
-  getline(cin, shirtPattern);
-
-  cout << "Please enter the sleeve length (long, short, tank, etc.) for " << shirtName << "." << endl;
-  getline(cin, shirtSleeveLength);
-
-  cout << "Please enter the collar (crew, v, turtleneck, etc.) for " << shirtName << "." << endl;
-  getline(cin, shirtCollar);
-*/
   shirtName = Window("Please enter the name of the shirt: ");
-  shirtPrimColor = Window("Please enter the primary color for " + shirtName + ": ");
+  shirtPrimColor = Window("Please enter the primary color for " 
+                           + shirtName + ": ");
+  shirtSecColor = Window("Please enter the secondary color for " 
+                           + shirtName + ": ");
+  shirtTertColor = Window("Please enter the tertiary color for " 
+                           + shirtName + ": ");
+  shirtPattern = Window("Please enter the pattern for " 
+                           + shirtName + ": ");
+  shirtSleeveLength = Window("Please enter the sleeve length for " 
+                           + shirtName + " (short, long): ");
 
   do {
     shirtID = AssignID("shirt");
   } while (shirtID == -1); //AssignID returns -1 if there is an error
 
   //Create Shirt object using the filled in variables
-  Shirt shirt(shirtID, shirtName, shirtPrimColor, shirtSecColor, shirtTertColor, shirtPattern, shirtSleeveLength, shirtCollar);
+  Shirt shirt(shirtID, shirtName, shirtPrimColor, shirtSecColor, 
+              shirtTertColor, shirtPattern, shirtSleeveLength, shirtCollar);
   
   return shirt;
 }
@@ -204,7 +203,7 @@ Pants Closet::AddPants() {
   cin.ignore();
 
   //Begin putting in actual values
-  cout << "Please enter a name for this pair of pants:" << endl;
+/*  cout << "Please enter a name for this pair of pants:" << endl;
   getline(cin, pantsName);
 
   cout << "Please enter the primary color for " << pantsName << "." << endl;
@@ -224,6 +223,20 @@ Pants Closet::AddPants() {
 
   cout << "Please enter the cut for " << pantsName << " (boot, skinny, etc.)." << endl;
   getline(cin, pantsCut);
+*/
+  pantsName = Window("Please enter the name of the pants: ");
+  pantsPrimColor = Window("Please enter the primary color for " 
+                           + pantsName + ": ");
+  pantsSecColor = Window("Please enter the secondary color for " 
+                           + pantsName + ": ");
+  pantsTertColor = Window("Please enter the tertiary color for " 
+                           + pantsName + ": ");
+  pantsMaterial = Window("Please enter the material for " 
+                           + pantsName + ": ");
+  pantsLength = Window("Please enter the sleeve length for " 
+                           + pantsName + ": ");
+  pantsCut = Window("Please enter the cut for "
+                           + pantsName + ": ");
 
   do {
     pantsID = AssignID("pants");
@@ -502,6 +515,8 @@ string Closet::ToString() const {
  */
 
 char Closet::WindowChar(string message) {
+  clear();
+  
   // Initialize variables
   int row, col;
   getmaxyx(stdscr,row,col);
@@ -519,6 +534,8 @@ char Closet::WindowChar(string message) {
  */
 
 string Closet::Window(string message) {
+  clear();
+  
   // Initialize variables
   string s = "";
   int row, col;
