@@ -80,7 +80,7 @@ void Closet::MakeCloset() {
     Belt belt;
     belt = AddBelt();
     belt_map_.insert(pair<int, Belt>(belt.GetID(), belt));
-    ans = WindowChar("Would you like to add another pair of pants? [y/n] ");
+    ans = WindowChar("Would you like to add another belt? [y/n] ");
   }
 
 //  cin.ignore();
