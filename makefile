@@ -9,7 +9,7 @@ Sh = shoes.o
 So = socks.o
 
 Closet++: $A $C $S $P $B $(Sh) $(So)
-	$(GCC) -o Closet++ $A $C $S $P $B $(Sh) $(So)
+	$(GCC) -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
 
 main.o: main.h main.cc
 	$(GCC) -c main.cc

@@ -41,44 +41,20 @@ void Closet::MakeCloset() {
   string message = "";
 
   //Name Closet
-  message = "Enter a Closet Name: ";
-  str = Window(message);
-  closet_name_ = str;
+  closet_name_ = Window("Enter a Closet Name: ");
  
   //Add Shirt(s)
-  /*
-  cout << "Would you like to add a shirt? [y/n]" << endl;
-  cin >> ans;
-  while ( ans == 'y' || ans == 'Y' ) {
-    Shirt shirt;
-    shirt = AddShirt();
-    shirt_map_.insert(pair<int, Shirt>(shirt.GetID(), shirt));
-    cout << "Would you like to add another shirt? [y/n]?" << endl;
-    cin >> ans;
-  }*/
   ans = WindowChar("Would you like to add a shirt? [y/n] ");
   while ( ans == 'y' || ans == 'Y' ) {
     Shirt shirt;
     shirt = AddShirt();
     shirt_map_.insert(pair<int, Shirt>(shirt.GetID(), shirt));
-    ans = WindowChar("Would you like to add another shirt? [y/n]");
+    ans = WindowChar("Would you like to add another shirt? [y/n] ");
   }
   //endwin();
 
-  cin.ignore();
+//  cin.ignore();
   //Add Pants
-/*  
-  cout << "Would you like to add a pair of pants? [y/n]" << endl;
-  cin >> ans;
-  while ( ans == 'y' || ans == 'Y' ) {
-    Pants pants;
-    pants = AddPants();
-    pants_map_.insert(pair<int, Pants>(pants.GetID(), pants));
-    cout << "Would you like to add another pair of pants? [y/n]" << endl;
-    cin >> ans;
-  }
-  cin.ignore();
-*/ 
   ans = WindowChar("Would you like to add a pants? [y/n] ");
   while (ans == 'y' || ans == 'Y') {
     Pants pants;
@@ -86,10 +62,10 @@ void Closet::MakeCloset() {
     pants_map_.insert(pair<int, Pants>(pants.GetID(), pants));
     ans = WindowChar("Would you like to add another pair of pants? [y/n] ");
   }
-  endwin();
+//  endwin();
 
   //Add Belt(s)
-  cout << "Would you like to add a belt? [y/n]" << endl;
+/*  cout << "Would you like to add a belt? [y/n]" << endl;
   cin >> ans;
   while ( ans == 'y' || ans == 'Y' ) {
     Belt belt;
@@ -98,10 +74,18 @@ void Closet::MakeCloset() {
     cout << "Would you like to add another belt? [y/n]" << endl;
     cin >> ans;
   }
+*/
+  ans = WindowChar("Would you like to add a belt? [y/n] ");
+  while (ans == 'y' || ans == 'Y') {
+    Belt belt;
+    belt = AddBelt();
+    belt_map_.insert(pair<int, Belt>(belt.GetID(), belt));
+    ans = WindowChar("Would you like to add another pair of pants? [y/n] ");
+  }
 
-  cin.ignore();
+//  cin.ignore();
   //Add Socks
-  cout << "Would you like to add a pair of socks? [y/n]" << endl;
+/*  cout << "Would you like to add a pair of socks? [y/n]" << endl;
   cin >> ans;
   while ( ans == 'y' || ans == 'Y' ) {
     Socks socks;
@@ -109,6 +93,14 @@ void Closet::MakeCloset() {
     socks_map_.insert(pair<int, Socks>(socks.GetID(), socks));
     cout << "Would you like to add another pair of socks? [y/n]" << endl;
     cin >> ans;
+  }
+*/
+  ans = WindowChar("Would you like to add some socks? [y/n] ");
+  while (ans == 'y' || ans == 'Y') {
+    Socks socks;
+    socks = AddSocks();
+    socks_map_.insert(pair<int, Socks>(socks.GetID(), socks));
+    ans = WindowChar("Would you like to add more socks? [y/n] ");
   }
 
   cin.ignore();
