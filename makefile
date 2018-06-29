@@ -8,6 +8,8 @@ B = belt.o
 Sh = shoes.o
 So = socks.o
 
+.PHONY: clean todo
+
 Closet++: $A $C $S $P $B $(Sh) $(So)
 	$(GCC) -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
 
@@ -34,3 +36,6 @@ socks.o: socks.h socks.cc
 
 clean:
 	$(RM) Closet++ *.o *.gch *~ *Closet.txt *.clo *.log
+
+todo:
+	@vim TODO

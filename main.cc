@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
 //		closet.MakeCloset();
 //	  }
 //  } else {
-
+/*
     initscr();
     start_color();
 
@@ -46,10 +46,15 @@ int main(int argc, char** argv) {
    // attron(COLOR_PAIR(1));
     wbkgd(stdscr, COLOR_PAIR(1));
     refresh();
+*/
+  Window window;
+  window.Init();
 
-  	closet.MakeCloset();
+  	closet.MakeCloset(window);
 
-    endwin();
+  window.Die();
+
+   // endwin();
 //  }
 
   fileFrontName = closet.GetClosetName();

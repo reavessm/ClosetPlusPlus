@@ -34,7 +34,7 @@ string Closet::GetClosetName() { return this->closet_name_; }
  * Summary: This function is the wrapper function that is responsible for
  * creating the clothes and then inserting them to the appropriate map
  */
-void Closet::MakeCloset() {
+void Closet::MakeCloset(Window &window) {
   // Initialize variables
   char ans = 'k'; //dummy character
   string str = "";

@@ -38,7 +38,7 @@ class Closet {
     string ToXML() const;
     string ToString() const;
     string StoreCloset() const;
-    void MakeCloset();
+    void MakeCloset(Window &window);
     void MakeCloset(string filename);
 
 
@@ -63,8 +63,8 @@ class Closet {
     Belt AddBelt();
     
     int AssignID(string type);
-    static string Window(string message);
-    static char WindowChar(string message);
+    //static string Window(string message);
+    //static char WindowChar(string message);
 
 };
 

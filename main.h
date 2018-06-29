@@ -10,10 +10,11 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
-#include <ncurses.h>
 #include <string>
 
 #include "myCloset.h"
+#include "window.h"
+#include "window.h"
 
 using namespace std;
 

@@ -39,7 +39,7 @@ class Clothes {
 
     //General Functions
     int GetID() { return id_; }
-    string GetName() { return name_; }
+  /*  string GetName() { return name_; }
     string GetPrimColor() { return primary_color_; }
     string GetSecColor() { return secondary_color_; }
     string GetTertColor() { return tertiary_color_; }
@@ -62,6 +62,19 @@ class Clothes {
     void SetCut(string cut) { cut_ = cut; }
     void SetSleeveLength(string length) { sleeve_length_ = length; }
     void SetCollar(string collar) { collar_ = collar; }
+    */
+
+    string ParmName(string name = name_) { name_ = name; return name; }
+    string ParmPrimColor(string color = primary_color_) { primary_color_ = color; return color; }
+    string ParmSecColor(string color = secondary_color_) { secondary_color_ = color; return color; }
+    string ParmTertColor(string color = tertiary_color_) { tertiary_color_ = color; return color; }
+    string ParmPattern(string pattern = pattern_) { pattern_ = pattern; return pattern; }
+    string ParmMaterial(string material = material_) { material_ = material; return material; }
+    string ParmStyle(string style = style_) { style_ = style; return style; }
+    string ParmLength(string length = length_) { length_ = length; return length; }
+    string ParmCut(string cut = cut_) { cut_ = cut; return cut; }
+    string ParmSleeveLength(string length = length_) { length_ = length; return length; }
+    string ParmCollar(string collar = collar_) { collar_ = collar; return collar; }
 
  // These are what makes this a purely abstract class.  The implementation of 
  // these will be changed from one article of clothing to the next.
