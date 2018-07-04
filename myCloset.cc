@@ -34,33 +34,37 @@ string Closet::GetClosetName() { return this->closet_name_; }
  * Summary: This function is the wrapper function that is responsible for
  * creating the clothes and then inserting them to the appropriate map
  */
-void Closet::MakeCloset(Window &window) {
+#ifdef VULKAN
+void Closet::MakeCloset(Vulkan &window) {
+#else
+void Closet::MakeCloset(Ncurses &window) {
+#endif
   // Initialize variables
   char ans = 'k'; //dummy character
   string str = "";
   string message = "";
 
   //Name Closet
-  closet_name_ = Window("Enter a Closet Name: ");
+  closet_name_ = window.MakeWindow("Enter a Closet Name: ");
  
   //Add Shirt(s)
-  ans = WindowChar("Would you like to add a shirt? [y/n] ");
+  ans = window.MakeWindowChar("Would you like to add a shirt? [y/n] ");
   while ( ans == 'y' || ans == 'Y' ) {
     Shirt shirt;
     shirt = AddShirt();
     shirt_map_.insert(pair<int, Shirt>(shirt.GetID(), shirt));
-    ans = WindowChar("Would you like to add another shirt? [y/n] ");
+    ans = window.MakeWindowChar("Would you like to add another shirt? [y/n] ");
   }
   //endwin();
 
 //  cin.ignore();
   //Add Pants
-  ans = WindowChar("Would you like to add a pants? [y/n] ");
+  ans = window.MakeWindowChar("Would you like to add a pants? [y/n] ");
   while (ans == 'y' || ans == 'Y') {
     Pants pants;
     pants = AddPants();
     pants_map_.insert(pair<int, Pants>(pants.GetID(), pants));
-    ans = WindowChar("Would you like to add another pair of pants? [y/n] ");
+    ans = window.MakeWindowChar("Would you like to add another pair of pants? [y/n] ");
   }
 //  endwin();
 
@@ -75,12 +79,12 @@ void Closet::MakeCloset(Window &window) {
     cin >> ans;
   }
 */
-  ans = WindowChar("Would you like to add a belt? [y/n] ");
+  ans = window.MakeWindowChar("Would you like to add a belt? [y/n] ");
   while (ans == 'y' || ans == 'Y') {
     Belt belt;
     belt = AddBelt();
     belt_map_.insert(pair<int, Belt>(belt.GetID(), belt));
-    ans = WindowChar("Would you like to add another belt? [y/n] ");
+    ans = window.MakeWindowChar("Would you like to add another belt? [y/n] ");
   }
 
 //  cin.ignore();
@@ -95,12 +99,12 @@ void Closet::MakeCloset(Window &window) {
     cin >> ans;
   }
 */
-  ans = WindowChar("Would you like to add some socks? [y/n] ");
+  ans = window.MakeWindowChar("Would you like to add some socks? [y/n] ");
   while (ans == 'y' || ans == 'Y') {
     Socks socks;
     socks = AddSocks();
     socks_map_.insert(pair<int, Socks>(socks.GetID(), socks));
-    ans = WindowChar("Would you like to add more socks? [y/n] ");
+    ans = window.MakeWindowChar("Would you like to add more socks? [y/n] ");
   }
 
 //  cin.ignore();
@@ -114,12 +118,12 @@ void Closet::MakeCloset(Window &window) {
     cout << "Would you like to add another pair of shoes? [y/n]" << endl;
     cin >> ans;
    }*/
-  ans = WindowChar("Would you like to add some shoes? [y/n] ");
+  ans = window.MakeWindowChar("Would you like to add some shoes? [y/n] ");
   while (ans == 'y' || ans == 'Y') {
     Shoes shoes;
     shoes = AddShoes();
     shoes_map_.insert(pair<int, Shoes>(shoes.GetID(), shoes));
-    ans = WindowChar("Would you like to add some more shoes? [y/n] ");
+    ans = window.MakeWindowChar("Would you like to add some more shoes? [y/n] ");
   }
   endwin();
 }
@@ -157,16 +161,16 @@ Shirt Closet::AddShirt() {
   cin.ignore();//fixes issue where it 'forgot' to ask for name of shirt.  Idk why this works...
 
   //Begin putting in actual values
-  shirtName = Window("Please enter the name of the shirt: ");
-  shirtPrimColor = Window("Please enter the primary color for " 
+  shirtName = window.MakeWindow("Please enter the name of the shirt: ");
+  shirtPrimColor = window.MakeWindow("Please enter the primary color for " 
                            + shirtName + ": ");
-  shirtSecColor = Window("Please enter the secondary color for " 
+  shirtSecColor = window.MakeWindow("Please enter the secondary color for " 
                            + shirtName + ": ");
-  shirtTertColor = Window("Please enter the tertiary color for " 
+  shirtTertColor = window.MakeWindow("Please enter the tertiary color for " 
                            + shirtName + ": ");
-  shirtPattern = Window("Please enter the pattern for " 
+  shirtPattern = window.MakeWindow("Please enter the pattern for " 
                            + shirtName + ": ");
-  shirtSleeveLength = Window("Please enter the sleeve length for " 
+  shirtSleeveLength = window.MakeWindow("Please enter the sleeve length for " 
                            + shirtName + " (short, long): ");
 
   do {
@@ -224,18 +228,18 @@ Pants Closet::AddPants() {
   cout << "Please enter the cut for " << pantsName << " (boot, skinny, etc.)." << endl;
   getline(cin, pantsCut);
 */
-  pantsName = Window("Please enter the name of the pants: ");
-  pantsPrimColor = Window("Please enter the primary color for " 
+  pantsName = window.MakeWindow("Please enter the name of the pants: ");
+  pantsPrimColor = window.MakeWindow("Please enter the primary color for " 
                            + pantsName + ": ");
-  pantsSecColor = Window("Please enter the secondary color for " 
+  pantsSecColor = window.MakeWindow("Please enter the secondary color for " 
                            + pantsName + ": ");
-  pantsTertColor = Window("Please enter the tertiary color for " 
+  pantsTertColor = window.MakeWindow("Please enter the tertiary color for " 
                            + pantsName + ": ");
-  pantsMaterial = Window("Please enter the material for " 
+  pantsMaterial = window.MakeWindow("Please enter the material for " 
                            + pantsName + ": ");
-  pantsLength = Window("Please enter the sleeve length for " 
+  pantsLength = window.MakeWindow("Please enter the sleeve length for " 
                            + pantsName + ": ");
-  pantsCut = Window("Please enter the cut for "
+  pantsCut = window.MakeWindow("Please enter the cut for "
                            + pantsName + ": ");
 
   do {
@@ -285,14 +289,14 @@ Socks Closet::AddSocks() {
   cout << "Please enter the pattern for " << socksName << ", or n/a." << endl;
   getline(cin, socksPattern);
 */
-  socksName = Window("Please enter a name for this pair of socks: ");
-  socksPrimColor = Window("Please enter the primary color for " 
+  socksName = window.MakeWindow("Please enter a name for this pair of socks: ");
+  socksPrimColor = window.MakeWindow("Please enter the primary color for " 
                           + socksName + ": ");
-  socksSecColor = Window("Please enter the secondary color for " 
+  socksSecColor = window.MakeWindow("Please enter the secondary color for " 
                           + socksName + ": ");
-  socksTertColor = Window("Please enter the tertiary color for " 
+  socksTertColor = window.MakeWindow("Please enter the tertiary color for " 
                           + socksName + ": ");
-  socksPattern = Window("Please enter the pattern for " 
+  socksPattern = window.MakeWindow("Please enter the pattern for " 
                           + socksName + ": ");
 
   do {
@@ -346,16 +350,16 @@ Shoes Closet::AddShoes() {
   cout << "Please enter the style for " << shoesName << " (tennis, oxford, etc.)." << endl;
   getline(cin, shoesStyle);
 */
-  shoesName = Window("Please enter a name for these pairs of shoes: ");
-  shoesPrimColor = Window("Please enter the primary color of " 
+  shoesName = window.MakeWindow("Please enter a name for these pairs of shoes: ");
+  shoesPrimColor = window.MakeWindow("Please enter the primary color of " 
                           + shoesName + ": ");
-  shoesSecColor = Window("Please enter the secondary color of " 
+  shoesSecColor = window.MakeWindow("Please enter the secondary color of " 
                           + shoesName + ": ");
-  shoesTertColor = Window("Please enter the tertiary color of " 
+  shoesTertColor = window.MakeWindow("Please enter the tertiary color of " 
                           + shoesName + ": ");
-  shoesMaterial = Window("Please enter the material of " 
+  shoesMaterial = window.MakeWindow("Please enter the material of " 
                           + shoesName + ": ");
-  shoesStyle = Window("Please enter the style of " 
+  shoesStyle = window.MakeWindow("Please enter the style of " 
                           + shoesName + ": ");
 
   do {
@@ -409,16 +413,16 @@ Belt Closet::AddBelt() {
   cout << "Please enter the pattern for " << beltName << " (solid, striped, etc.)." << endl;
   getline(cin, beltPattern);
 */
-  beltName = Window("Please enter a name for this belt: ");
-  beltPrimColor = Window("Please enter the primary color for " 
+  beltName = window.MakeWindow("Please enter a name for this belt: ");
+  beltPrimColor = window.MakeWindow("Please enter the primary color for " 
                           + beltName + ": ");
-  beltSecColor = Window("Please enter the secondary color for " 
+  beltSecColor = window.MakeWindow("Please enter the secondary color for " 
                           + beltName + ": ");
-  beltTertColor = Window("Please enter the tertiary color for " 
+  beltTertColor = window.MakeWindow("Please enter the tertiary color for " 
                           + beltName + ": ");
-  beltMaterial = Window("Please enter the material for " 
+  beltMaterial = window.MakeWindow("Please enter the material for " 
                           + beltName + ": ");
-  beltPattern = Window("Please enter the style for " 
+  beltPattern = window.MakeWindow("Please enter the style for " 
                           + beltName + ": ");
 
   do {
@@ -472,7 +476,7 @@ int Closet::AssignID(string type) {
   } else {
   //    cout << "Error, please enter a correct type of clothing" << endl;
   //    cin >> type;
-      type = Window("ERROR: Please enter a correct type of clothing: ");
+      type = window.MakeWindow("ERROR: Please enter a correct type of clothing: ");
       id = AssignID(type);
   }
   return id;
@@ -546,13 +550,13 @@ string Closet::ToString() const {
 
   return s;
 }
-
 /*******************************************************************************
  * Function 'WindowChar'
  * Returns: char representing user input
  * Summary: This function rewrites the ncurses window
  */
 
+/* Handled by Ncurses or Vulkan
 char Closet::WindowChar(string message) {
   clear();
   
@@ -565,13 +569,16 @@ char Closet::WindowChar(string message) {
   mvprintw(row/2,(col-message.length())/2,"%s",message.c_str());
 
   return getch();
+  
 }
+*/
 /*******************************************************************************
  * Function 'Window'
  * Returns: string representing user input
  * Summary: This function rewrites the ncurses window
  */
 
+/* Handled by Ncurses or Vulkan
 string Closet::Window(string message) {
   clear();
   
@@ -597,5 +604,6 @@ string Closet::Window(string message) {
 
   return s;
 }
+*/
 
 

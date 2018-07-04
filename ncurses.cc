@@ -37,11 +37,11 @@ void Ncurses::Die() {
 
 
 /*******************************************************************************
- * Function 'WindowChar'
+ * Function 'MakeWindowChar'
  * Returns: char representing user input
  * Summary: This function rewrites the ncurses window
  */
-char Ncurses::WindowChar(string message) {
+char Ncurses::MakeWindowChar(string message) {
   clear();
 
   // Initialize Variables
@@ -62,7 +62,7 @@ char Ncurses::WindowChar(string message) {
  * Returns: string representing user input
  * Summary: This function rewrites the ncurses window
  */
-string Ncurses::Window(string message) {
+string Ncurses::MakeWindow(string message) {
   clear();
 
   // Initialize Variables

@@ -1,7 +1,11 @@
-- Implement SQL API for opening and closing closets
+# TODO
+
+- Implement SQLite API for opening and closing closets
+  * Option for SQLite or Redis
 - Create function to pick random article of clothing and suggested clothing
 - Create function for suggested clothing
 - Disallow duplicate names in closet
 - Finish Color support
-- Add option for ncurses or Qt frontend
+- Add option for ncurses or Vulkan frontend
   * #define statements?
+- Create function to import and export from JSON

@@ -1,0 +1,160 @@
+myCloset.cc: In member function ‘void Closet::MakeCloset(Ncurses&)’:
+myCloset.cc:48:59: error: no matching function for call to ‘Ncurses::MakeWindow(const char [22])’
+   closet_name_ = window.MakeWindow("Enter a Closet Name: ");
+                                                           ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:28:12: note: candidate: ‘std::__cxx11::string Window::MakeWindow()’
+     string MakeWindow();
+            ^~~~~~~~~~
+window.h:28:12: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:51:70: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [38])’
+   ans = window.MakeWindowChar("Would you like to add a shirt? [y/n] ");
+                                                                      ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:56:78: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [44])’
+     ans = window.MakeWindowChar("Would you like to add another shirt? [y/n] ");
+                                                                              ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:62:70: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [38])’
+   ans = window.MakeWindowChar("Would you like to add a pants? [y/n] ");
+                                                                      ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:67:86: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [52])’
+     ans = window.MakeWindowChar("Would you like to add another pair of pants? [y/n] ");
+                                                                                      ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:82:69: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [37])’
+   ans = window.MakeWindowChar("Would you like to add a belt? [y/n] ");
+                                                                     ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:87:77: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [43])’
+     ans = window.MakeWindowChar("Would you like to add another belt? [y/n] ");
+                                                                             ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:102:73: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [41])’
+   ans = window.MakeWindowChar("Would you like to add some socks? [y/n] ");
+                                                                         ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:107:75: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [41])’
+     ans = window.MakeWindowChar("Would you like to add more socks? [y/n] ");
+                                                                           ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:121:73: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [41])’
+   ans = window.MakeWindowChar("Would you like to add some shoes? [y/n] ");
+                                                                         ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc:126:80: error: no matching function for call to ‘Ncurses::MakeWindowChar(const char [46])’
+     ans = window.MakeWindowChar("Would you like to add some more shoes? [y/n] ");
+                                                                                ^
+In file included from ncurses.h:15,
+                 from myCloset.h:23,
+                 from myCloset.cc:1:
+window.h:27:10: note: candidate: ‘char Window::MakeWindowChar()’
+     char MakeWindowChar();
+          ^~~~~~~~~~~~~~
+window.h:27:10: note:   candidate expects 0 arguments, 1 provided
+myCloset.cc: In member function ‘Shirt Closet::AddShirt()’:
+myCloset.cc:164:15: error: ‘window’ was not declared in this scope
+   shirtName = window.MakeWindow("Please enter the name of the shirt: ");
+               ^~~~~~
+myCloset.cc:164:15: note: suggested alternative: ‘Window’
+   shirtName = window.MakeWindow("Please enter the name of the shirt: ");
+               ^~~~~~
+               Window
+myCloset.cc: In member function ‘Pants Closet::AddPants()’:
+myCloset.cc:231:15: error: ‘window’ was not declared in this scope
+   pantsName = window.MakeWindow("Please enter the name of the pants: ");
+               ^~~~~~
+myCloset.cc:231:15: note: suggested alternative: ‘Window’
+   pantsName = window.MakeWindow("Please enter the name of the pants: ");
+               ^~~~~~
+               Window
+myCloset.cc: In member function ‘Socks Closet::AddSocks()’:
+myCloset.cc:292:15: error: ‘window’ was not declared in this scope
+   socksName = window.MakeWindow("Please enter a name for this pair of socks: ");
+               ^~~~~~
+myCloset.cc:292:15: note: suggested alternative: ‘Window’
+   socksName = window.MakeWindow("Please enter a name for this pair of socks: ");
+               ^~~~~~
+               Window
+myCloset.cc: In member function ‘Shoes Closet::AddShoes()’:
+myCloset.cc:353:15: error: ‘window’ was not declared in this scope
+   shoesName = window.MakeWindow("Please enter a name for these pairs of shoes: ");
+               ^~~~~~
+myCloset.cc:353:15: note: suggested alternative: ‘Window’
+   shoesName = window.MakeWindow("Please enter a name for these pairs of shoes: ");
+               ^~~~~~
+               Window
+myCloset.cc: In member function ‘Belt Closet::AddBelt()’:
+myCloset.cc:416:14: error: ‘window’ was not declared in this scope
+   beltName = window.MakeWindow("Please enter a name for this belt: ");
+              ^~~~~~
+myCloset.cc:416:14: note: suggested alternative: ‘Window’
+   beltName = window.MakeWindow("Please enter a name for this belt: ");
+              ^~~~~~
+              Window
+myCloset.cc: In member function ‘int Closet::AssignID(std::__cxx11::string)’:
+myCloset.cc:479:14: error: ‘window’ was not declared in this scope
+       type = window.MakeWindow("ERROR: Please enter a correct type of clothing: ");
+              ^~~~~~
+myCloset.cc:479:14: note: suggested alternative: ‘Window’
+       type = window.MakeWindow("ERROR: Please enter a correct type of clothing: ");
+              ^~~~~~
+              Window
+make: *** [makefile:23: myCloset.o] Error 1

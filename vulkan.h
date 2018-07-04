@@ -1,5 +1,5 @@
 /******************************************************************************
- * File Name: ncurses.h
+ * File Name: vulkan.h
  * Created by: Stephen M. Reaves
  * Date Last Modified:
  *
@@ -12,18 +12,19 @@
 #include <string>
 #include <ncurses.h>
 
+
 #include "window.h"
 
 using namespace std;
 
-#ifndef CUST_NCURSES_H
-#define CUST_NCURSES_H
+#ifndef VULKAN_H
+#define VULKAN_H
 
-class Ncurses : public Window{
+class Vulkan : public Window {
   public:
-    Ncurses();
-    virtual ~Ncurses();
+    Vulkan();
+    virtual ~Vulkan();
 };
 
-#endif /* CUST_NCURSES_H */
+#endif /* VULKAN_H */
 

@@ -20,6 +20,8 @@
 #include "belt.h"
 #include "socks.h"
 #include "shoes.h"
+#include "ncurses.h"
+#include "vulkan.h"
 
 using namespace std;
 
@@ -38,8 +40,12 @@ class Closet {
     string ToXML() const;
     string ToString() const;
     string StoreCloset() const;
-    void MakeCloset(Window &window);
     void MakeCloset(string filename);
+#ifdef VULKAN
+    void MakeCloset(Vulkan &window);
+#else
+    void MakeCloset(Ncurses &window);
+#endif
 
 
     string GetClosetName();

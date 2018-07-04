@@ -1,5 +1,5 @@
 /******************************************************************************
- * File Name: window.h
+ * File Name: ncurses.h
  * Created by: Stephen M. Reaves
  * Date Last Modified:
  *
@@ -7,56 +7,29 @@
  *
  */
 
-
-#ifndef window_H
-#define window_H
-
 #include <cstdlib>
 #include <iostream>
 #include <string>
-
-#include "ncurses.h"
-#include "vulkan.h"
+#include <ncurses.h>
 
 using namespace std;
 
+#ifndef WINDOW_H
+#define WINDOW_H
+
 class Window {
   public:
-    //Constructors and Deconstructors
-    Window(){};
-    virtual ~Window(){}
-
-    bool IsInit();
-
-    boot Init(string type = "ncurses") {
-      bool ret = false
-      switch (type) {
-        case "ncurses" :
-          Ncurses ncurses;
-          ret = ncurses.Init();
-          break;
-        case "vulkan" :
-          Vulkan vulkan;
-          ret = vulkan.Init();
-          break;
-        default :
-          cerr << "Error, no window type specified" << endl;
-          ret = false;
-      }
+    Window();
+    virtual ~Window();
 
     bool Init();
     void Die();
-    string Window();
-    char WindowChar();
+    char MakeWindowChar();
+    string MakeWindow();
 
-  protected:
-    // Set Globals
+  private:
     bool isInit_ = false;
-    enum type {
-      ncurses,
-      vulkan
-    };
 };
 
+#endif /* WINDOW_H */
 
-#endif /* window_H */ 

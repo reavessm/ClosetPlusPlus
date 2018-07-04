@@ -64,6 +64,7 @@ class Clothes {
     void SetCollar(string collar) { collar_ = collar; }
     */
 
+    /*
     string ParmName(string name = name_) { name_ = name; return name; }
     string ParmPrimColor(string color = primary_color_) { primary_color_ = color; return color; }
     string ParmSecColor(string color = secondary_color_) { secondary_color_ = color; return color; }
@@ -75,6 +76,7 @@ class Clothes {
     string ParmCut(string cut = cut_) { cut_ = cut; return cut; }
     string ParmSleeveLength(string length = length_) { length_ = length; return length; }
     string ParmCollar(string collar = collar_) { collar_ = collar; return collar; }
+    */
 
  // These are what makes this a purely abstract class.  The implementation of 
  // these will be changed from one article of clothing to the next.

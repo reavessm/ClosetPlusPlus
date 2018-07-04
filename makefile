@@ -1,4 +1,4 @@
-GCC = g++ -O3 -Wall -std=c++11 -lncurses
+GCC = g++ -O3 -Wall -std=c++11
 
 A = main.o
 C = myCloset.o
@@ -11,7 +11,10 @@ So = socks.o
 .PHONY: clean todo
 
 Closet++: $A $C $S $P $B $(Sh) $(So)
-	$(GCC) -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
+	$(GCC) -lncurses -s -o Closet++ $A $C $S $P $B $(Sh) $(So) > error.log
+
+gui: $A $C $S $P $B $(Sh) $(So)
+	$(GCC) -D VULKAN -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
 
 main.o: main.h main.cc
 	$(GCC) -c main.cc
@@ -39,3 +42,4 @@ clean:
 
 todo:
 	@vim TODO
+
