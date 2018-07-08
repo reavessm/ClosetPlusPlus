@@ -22,12 +22,13 @@ class Window {
     Window();
     virtual ~Window();
 
-    bool Init();
-    void Die();
-    char MakeWindowChar();
-    string MakeWindow();
+    // These abstract functions will be different for each type of window
+    virtual bool Init() = 0;
+    virtual void Die() = 0;
+    virtual char MakeWindowChar(string message) = 0;
+    virtual string MakeWindow(string message) = 0;
 
-  private:
+  protected:
     bool isInit_ = false;
 };
 

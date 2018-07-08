@@ -22,6 +22,7 @@
 #include "shoes.h"
 #include "ncurses.h"
 #include "vulkan.h"
+#include "window.h"
 
 using namespace std;
 
@@ -40,12 +41,8 @@ class Closet {
     string ToXML() const;
     string ToString() const;
     string StoreCloset() const;
-    void MakeCloset(string filename);
-#ifdef VULKAN
-    void MakeCloset(Vulkan &window);
-#else
-    void MakeCloset(Ncurses &window);
-#endif
+    void ImportCloset(string filename);
+    void MakeCloset();
 
 
     string GetClosetName();
@@ -60,6 +57,11 @@ class Closet {
     map<int, Socks> socks_map_;
     map<int, Shoes> shoes_map_;
     map<int, Belt> belt_map_;
+#ifdef VULKAN
+    Vulkan window;
+#else
+    Ncurses window;
+#endif
 
     //Private Functions
     Shirt AddShirt();

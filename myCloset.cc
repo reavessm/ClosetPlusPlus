@@ -11,12 +11,15 @@
 /******************************************************************************
  * Constructor
  */
-Closet::Closet() {}
+Closet::Closet() {
+}
 
 /******************************************************************************
  * Deconstructor
  */
-Closet::~Closet() {}
+Closet::~Closet() {
+  window.Die();
+}
 
 /**********************************************1********************************
  * Accessors and Mutators
@@ -34,37 +37,39 @@ string Closet::GetClosetName() { return this->closet_name_; }
  * Summary: This function is the wrapper function that is responsible for
  * creating the clothes and then inserting them to the appropriate map
  */
-#ifdef VULKAN
-void Closet::MakeCloset(Vulkan &window) {
-#else
-void Closet::MakeCloset(Ncurses &window) {
-#endif
+void Closet::MakeCloset() {
   // Initialize variables
   char ans = 'k'; //dummy character
   string str = "";
   string message = "";
+  window.Init();
 
   //Name Closet
-  closet_name_ = window.MakeWindow("Enter a Closet Name: ");
+  message = "Enter a Closet Name: ";
+  closet_name_ = window.MakeWindow(message);
  
   //Add Shirt(s)
-  ans = window.MakeWindowChar("Would you like to add a shirt? [y/n] ");
+  message = "Would you like to add a shirt? [y/n] ";
+  ans = window.MakeWindowChar(message);
   while ( ans == 'y' || ans == 'Y' ) {
     Shirt shirt;
     shirt = AddShirt();
     shirt_map_.insert(pair<int, Shirt>(shirt.GetID(), shirt));
-    ans = window.MakeWindowChar("Would you like to add another shirt? [y/n] ");
+    message = "Would you like to add another shirt? [y/n] ";
+    ans = window.MakeWindowChar(message);
   }
   //endwin();
 
 //  cin.ignore();
   //Add Pants
-  ans = window.MakeWindowChar("Would you like to add a pants? [y/n] ");
+  message = "Would you like to add a pants? [y/n] ";
+  ans = window.MakeWindowChar(message);
   while (ans == 'y' || ans == 'Y') {
     Pants pants;
     pants = AddPants();
     pants_map_.insert(pair<int, Pants>(pants.GetID(), pants));
-    ans = window.MakeWindowChar("Would you like to add another pair of pants? [y/n] ");
+message = "Would you like to add another pair of pants? [y/n] ";
+    ans = window.MakeWindowChar(message);
   }
 //  endwin();
 
@@ -78,13 +83,14 @@ void Closet::MakeCloset(Ncurses &window) {
     cout << "Would you like to add another belt? [y/n]" << endl;
     cin >> ans;
   }
-*/
-  ans = window.MakeWindowChar("Would you like to add a belt? [y/n] ");
+*/message = "Would you like to add a belt? [y/n] ";
+  ans = window.MakeWindowChar(message);
   while (ans == 'y' || ans == 'Y') {
     Belt belt;
     belt = AddBelt();
     belt_map_.insert(pair<int, Belt>(belt.GetID(), belt));
-    ans = window.MakeWindowChar("Would you like to add another belt? [y/n] ");
+message = "Would you like to add another belt? [y/n] ";
+    ans = window.MakeWindowChar(message);
   }
 
 //  cin.ignore();
@@ -98,13 +104,14 @@ void Closet::MakeCloset(Ncurses &window) {
     cout << "Would you like to add another pair of socks? [y/n]" << endl;
     cin >> ans;
   }
-*/
-  ans = window.MakeWindowChar("Would you like to add some socks? [y/n] ");
+*/message = "Would you like to add some socks? [y/n] ";
+  ans = window.MakeWindowChar(message);
   while (ans == 'y' || ans == 'Y') {
     Socks socks;
     socks = AddSocks();
     socks_map_.insert(pair<int, Socks>(socks.GetID(), socks));
-    ans = window.MakeWindowChar("Would you like to add more socks? [y/n] ");
+message = "Would you like to add more socks? [y/n] ";
+    ans = window.MakeWindowChar(message);
   }
 
 //  cin.ignore();
@@ -117,24 +124,43 @@ void Closet::MakeCloset(Ncurses &window) {
     shoes_map_.insert(pair<int, Shoes>(shoes.GetID(), shoes));
     cout << "Would you like to add another pair of shoes? [y/n]" << endl;
     cin >> ans;
-   }*/
-  ans = window.MakeWindowChar("Would you like to add some shoes? [y/n] ");
+   }*/message = "Would you like to add some shoes? [y/n] ";
+  ans = window.MakeWindowChar(message);
   while (ans == 'y' || ans == 'Y') {
     Shoes shoes;
     shoes = AddShoes();
     shoes_map_.insert(pair<int, Shoes>(shoes.GetID(), shoes));
-    ans = window.MakeWindowChar("Would you like to add some more shoes? [y/n] ");
+message = "Would you like to add some more shoes? [y/n] ";
+    ans = window.MakeWindowChar(message);
   }
-  endwin();
 }
 
 /******************************************************************************
- *  Function 'MakeCloset'
+ *  Function 'ImportCloset'
  *  Summary: This function builds a Closet from an XML file, then calls the
  *  default 'MakeCloset' function.
  */
-void Closet::MakeCloset(string filename) {
+void Closet::ImportCloset(string filename) {
   // Use TinyXML-2
+  //
+  //string JSON = "json";
+  //string CLO  = "clo";
+  //size_t pos = filename.find('.');
+  //if (pos == string::npos) {
+  //  cerr << "Please enter a filename with the correct file extension" << endl
+  //  exit 1
+  //}
+  //string filetype = filename.substr(pos);
+  //
+  //switch (filetype){
+  //  case (JSON) :
+  //    DO_JSON_STUFF
+  //    break;;
+  //  default :
+  //   cerr << "Please enter an acceptable file type" << endl;
+  //   exit 1
+  //}
+  //
   //}
 }
 
@@ -161,17 +187,13 @@ Shirt Closet::AddShirt() {
   cin.ignore();//fixes issue where it 'forgot' to ask for name of shirt.  Idk why this works...
 
   //Begin putting in actual values
+  //message = "Please enter the name of the shirt: ";
   shirtName = window.MakeWindow("Please enter the name of the shirt: ");
-  shirtPrimColor = window.MakeWindow("Please enter the primary color for " 
-                           + shirtName + ": ");
-  shirtSecColor = window.MakeWindow("Please enter the secondary color for " 
-                           + shirtName + ": ");
-  shirtTertColor = window.MakeWindow("Please enter the tertiary color for " 
-                           + shirtName + ": ");
-  shirtPattern = window.MakeWindow("Please enter the pattern for " 
-                           + shirtName + ": ");
-  shirtSleeveLength = window.MakeWindow("Please enter the sleeve length for " 
-                           + shirtName + " (short, long): ");
+  shirtPrimColor = window.MakeWindow("Please enter the primary color for " + shirtName + ": ");
+  shirtSecColor = window.MakeWindow("Please enter the secondary color for " + shirtName + ": ");
+  shirtTertColor = window.MakeWindow("Please enter the tertiary color for " + shirtName + ": ");
+  shirtPattern = window.MakeWindow("Please enter the pattern for " + shirtName + ": ");
+  shirtSleeveLength = window.MakeWindow("Please enter the sleeve length for " + shirtName + " (short, long): ");
 
   do {
     shirtID = AssignID("shirt");
@@ -551,13 +573,12 @@ string Closet::ToString() const {
   return s;
 }
 /*******************************************************************************
- * Function 'WindowChar'
+ * Function 'window.har'
  * Returns: char representing user input
- * Summary: This function rewrites the ncurses window
- */
+ * Summary: This function rewrites the ncurses window. */
 
 /* Handled by Ncurses or Vulkan
-char Closet::WindowChar(string message) {
+char Closet::window.har(string message) {
   clear();
   
   // Initialize variables
@@ -573,13 +594,12 @@ char Closet::WindowChar(string message) {
 }
 */
 /*******************************************************************************
- * Function 'Window'
+ * Function 'window.
  * Returns: string representing user input
- * Summary: This function rewrites the ncurses window
- */
+ * Summary: This function rewrites the ncurses window. */
 
 /* Handled by Ncurses or Vulkan
-string Closet::Window(string message) {
+string Closet::window.string message) {
   clear();
   
   // Initialize variables

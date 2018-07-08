@@ -15,24 +15,17 @@
 
 using namespace std;
 
+Vulkan::Vulkan(){}
+Vulkan::~Vulkan(){}
+
 bool Vulkan::Init() {
-  bool ret = false
-  
-  initscr();
-  start_color();
+  isInit_ = false;
 
-  init_pair(1, COLOR_BLUE, COLOR_RED);
-
-  wbkgd(stdscr, COLOR_PAIR(1));
-  refresh();
-
-  ret = true;
-
-  return ret;
+  return isInit_;
 }
 
 void Vulkan::Die() {
-  endwin();
+  
 }
 
 
@@ -41,7 +34,7 @@ void Vulkan::Die() {
  * Returns: char representing user input
  * Summary: This function rewrites the vulkan window
  */
-char Vulkan::WindowChar(string message) {
+char Vulkan::MakeWindowChar(string message) {
   return 'a';
 }
 

@@ -7,16 +7,27 @@
  *
  */
 
-#include <cstdlib>
-#include <iostream>
-#include <string>
-
 #include "ncurses.h"
 
 using namespace std;
 
+/*******************************************************************************
+ * Constructor
+ */
+Ncurses::Ncurses() {}
+
+/*******************************************************************************
+ * Deconstructor
+ */
+Ncurses::~Ncurses() {}
+
+/*******************************************************************************
+ * Function 'Init'
+ * Returns: boolean representing success (or failure) of initialization
+ * Summary:
+ */
 bool Ncurses::Init() {
-  bool ret = false
+  isInit_ = false;
   
   initscr();
   start_color();
@@ -26,9 +37,9 @@ bool Ncurses::Init() {
   wbkgd(stdscr, COLOR_PAIR(1));
   refresh();
 
-  ret = true;
+  isInit_ = true;
 
-  return ret;
+  return isInit_;
 }
 
 void Ncurses::Die() {
@@ -49,7 +60,7 @@ char Ncurses::MakeWindowChar(string message) {
   getmaxyx(stdscr, row, col);
 
   // Print Message
-  mvpritntw(row/2,(col-message.length())/2, "%s", message.c_str());
+  mvprintw(row/2,(col-message.length())/2, "%s", message.c_str());
 
   return getch();
 }

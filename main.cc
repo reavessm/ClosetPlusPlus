@@ -47,17 +47,8 @@ int main(int argc, char** argv) {
     wbkgd(stdscr, COLOR_PAIR(1));
     refresh();
 */
-#ifdef VULKAN
-  Vulkan window;
-#else
-  Ncurses window;
-#endif
 
-  window.Init();
-
-  	closet.MakeCloset(window);
-
-  window.Die();
+  	closet.MakeCloset();
 
    // endwin();
 //  }
