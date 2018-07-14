@@ -6,7 +6,4 @@
 - Create function for suggested clothing
 - Disallow duplicate names in closet
 - Finish Color support
-- Add option for ncurses or Vulkan frontend
-  * #define statements?
 - Create function to import and export from JSON
-

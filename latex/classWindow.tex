@@ -1,22 +1,25 @@
 \hypertarget{classWindow}{}\section{Window Class Reference}
 \label{classWindow}\index{Window@{Window}}
-Inheritance diagram for Window\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{classWindow}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classWindow_a81a8bcd04b0b760f5616893c318bb705}\label{classWindow_a81a8bcd04b0b760f5616893c318bb705}} 
-bool {\bfseries Init} ()
+\mbox{\Hypertarget{classWindow_a91ad1340d4f60465f0e6eef38f0e5fb1}\label{classWindow_a91ad1340d4f60465f0e6eef38f0e5fb1}} 
+virtual bool {\bfseries Init} ()=0
 \item 
-\mbox{\Hypertarget{classWindow_a1da23fba0fda380329f20484244814e1}\label{classWindow_a1da23fba0fda380329f20484244814e1}} 
-void {\bfseries Die} ()
+\mbox{\Hypertarget{classWindow_a5332552d06a88b58486c0ab803356d01}\label{classWindow_a5332552d06a88b58486c0ab803356d01}} 
+virtual void {\bfseries Die} ()=0
 \item 
-\mbox{\Hypertarget{classWindow_a839fb7e78dd72784f6ed8097131d9e9e}\label{classWindow_a839fb7e78dd72784f6ed8097131d9e9e}} 
-char {\bfseries Window\+Char} ()
+\mbox{\Hypertarget{classWindow_ae770439748fb6b7dcdb3071860e687b3}\label{classWindow_ae770439748fb6b7dcdb3071860e687b3}} 
+virtual char {\bfseries Make\+Window\+Char} (string message)=0
+\item 
+\mbox{\Hypertarget{classWindow_a3a24c6368cb054a5ca3b32db2558319f}\label{classWindow_a3a24c6368cb054a5ca3b32db2558319f}} 
+virtual string {\bfseries Make\+Window} (string message)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWindow_a06739ea2d178febdb7f0da5f775e5ba8}\label{classWindow_a06739ea2d178febdb7f0da5f775e5ba8}} 
+bool {\bfseries is\+Init\+\_\+} = false
 \end{DoxyCompactItemize}
 
 

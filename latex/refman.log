@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.5)  3 JUL 2018 00:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.5)  14 JUL 2018 11:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -128,33 +128,20 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: sty)
 
-Enter file name: Test
+Enter file name: file
 
-! LaTeX Error: File `Test.sty' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: test
-
-! LaTeX Error: File `test.sty' not found.
+! LaTeX Error: File `file.sty' not found.
 
 Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: sty)
 
-Enter file name: ^^X
-! Text line contains an invalid character.
-<read *> ^^X
-            
+Enter file name: 
+! Interruption.
+<to be read again> 
+                   }
 l.14 \RequirePackage
                     {tabularx}^^M
-? yes
-Type <return> to proceed, S to scroll future error messages,
-R to run without stopping, Q to run quietly,
-I to insert something, E to edit your file,
-H for help, X to quit.
-? R
-OK, entering \nonstopmode...
+? 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
 \TX@col@width=\dimen108
@@ -172,19 +159,36 @@ Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: sty)
 
 Enter file name: 
+! Interruption.
+<to be read again> 
+                   }
+l.16 ^^M
+        
+? q
+OK, entering \batchmode...
+\xrefbox=\box32
+\xreflength=\skip53
+)
+
+! LaTeX Error: File `adjustbox.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+ Enter file name: 
 ! Emergency stop.
 <read *> 
          
-l.16 ^^M
-        
+l.8 \usepackage
+               {graphicx}^^M
 *** (cannot \read from terminal in nonstop modes)
 
  
 Here is how much of TeX's memory you used:
- 1308 strings out of 494917
- 15672 string characters out of 6180700
- 70984 words of memory out of 5000000
- 4668 multiletter control sequences out of 15000+600000
+ 1425 strings out of 494917
+ 17183 string characters out of 6180700
+ 73287 words of memory out of 5000000
+ 4786 multiletter control sequences out of 15000+600000
  3640 words of font info for 14 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  48i,0n,37p,224b,36s stack positions out of 5000i,500n,10000p,200000b,80000s

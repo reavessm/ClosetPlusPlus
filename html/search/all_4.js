@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['vulkan',['Vulkan',['../classVulkan.html',1,'']]]
+  ['shirt',['Shirt',['../classShirt.html',1,'']]],
+  ['shoes',['Shoes',['../classShoes.html',1,'']]],
+  ['socks',['Socks',['../classSocks.html',1,'']]]
 ];
