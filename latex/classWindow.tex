@@ -1,28 +1,91 @@
 \hypertarget{classWindow}{}\section{Window Class Reference}
 \label{classWindow}\index{Window@{Window}}
+
+
+{\ttfamily \#include $<$window.\+h$>$}
+
+
+
+Collaboration diagram for Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classWindow__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classWindow_a91ad1340d4f60465f0e6eef38f0e5fb1}\label{classWindow_a91ad1340d4f60465f0e6eef38f0e5fb1}} 
-virtual bool {\bfseries Init} ()=0
+\mbox{\hyperlink{classWindow_a74e6087da23d3c24e9fac0245e5ec92c}{Window}} ()
 \item 
-\mbox{\Hypertarget{classWindow_a5332552d06a88b58486c0ab803356d01}\label{classWindow_a5332552d06a88b58486c0ab803356d01}} 
-virtual void {\bfseries Die} ()=0
+virtual \mbox{\hyperlink{classWindow_a62b4a97b3c2e492f1d9a46092011e2d9}{$\sim$\+Window}} ()
 \item 
-\mbox{\Hypertarget{classWindow_ae770439748fb6b7dcdb3071860e687b3}\label{classWindow_ae770439748fb6b7dcdb3071860e687b3}} 
-virtual char {\bfseries Make\+Window\+Char} (string message)=0
+virtual bool \mbox{\hyperlink{classWindow_a91ad1340d4f60465f0e6eef38f0e5fb1}{Init}} ()=0
 \item 
-\mbox{\Hypertarget{classWindow_a3a24c6368cb054a5ca3b32db2558319f}\label{classWindow_a3a24c6368cb054a5ca3b32db2558319f}} 
-virtual string {\bfseries Make\+Window} (string message)=0
+virtual void \mbox{\hyperlink{classWindow_a5332552d06a88b58486c0ab803356d01}{Die}} ()=0
+\item 
+virtual char \mbox{\hyperlink{classWindow_ae770439748fb6b7dcdb3071860e687b3}{Make\+Window\+Char}} (string message)=0
+\item 
+virtual string \mbox{\hyperlink{classWindow_a3a24c6368cb054a5ca3b32db2558319f}{Make\+Window}} (string message)=0
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classWindow_a06739ea2d178febdb7f0da5f775e5ba8}\label{classWindow_a06739ea2d178febdb7f0da5f775e5ba8}} 
-bool {\bfseries is\+Init\+\_\+} = false
+bool \mbox{\hyperlink{classWindow_a06739ea2d178febdb7f0da5f775e5ba8}{is\+Init\+\_\+}} = false
 \end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWindow_a74e6087da23d3c24e9fac0245e5ec92c}\label{classWindow_a74e6087da23d3c24e9fac0245e5ec92c}} 
+\index{Window@{Window}!Window@{Window}}
+\index{Window@{Window}!Window@{Window}}
+\subsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily Window\+::\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWindow_a62b4a97b3c2e492f1d9a46092011e2d9}\label{classWindow_a62b4a97b3c2e492f1d9a46092011e2d9}} 
+\index{Window@{Window}!````~Window@{$\sim$\+Window}}
+\index{````~Window@{$\sim$\+Window}!Window@{Window}}
+\subsubsection{\texorpdfstring{$\sim$\+Window()}{~Window()}}
+{\footnotesize\ttfamily virtual Window\+::$\sim$\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classWindow_a5332552d06a88b58486c0ab803356d01}\label{classWindow_a5332552d06a88b58486c0ab803356d01}} 
+\index{Window@{Window}!Die@{Die}}
+\index{Die@{Die}!Window@{Window}}
+\subsubsection{\texorpdfstring{Die()}{Die()}}
+{\footnotesize\ttfamily virtual void Window\+::\+Die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classWindow_a91ad1340d4f60465f0e6eef38f0e5fb1}\label{classWindow_a91ad1340d4f60465f0e6eef38f0e5fb1}} 
+\index{Window@{Window}!Init@{Init}}
+\index{Init@{Init}!Window@{Window}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily virtual bool Window\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classWindow_a3a24c6368cb054a5ca3b32db2558319f}\label{classWindow_a3a24c6368cb054a5ca3b32db2558319f}} 
+\index{Window@{Window}!Make\+Window@{Make\+Window}}
+\index{Make\+Window@{Make\+Window}!Window@{Window}}
+\subsubsection{\texorpdfstring{Make\+Window()}{MakeWindow()}}
+{\footnotesize\ttfamily virtual string Window\+::\+Make\+Window (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classWindow_ae770439748fb6b7dcdb3071860e687b3}\label{classWindow_ae770439748fb6b7dcdb3071860e687b3}} 
+\index{Window@{Window}!Make\+Window\+Char@{Make\+Window\+Char}}
+\index{Make\+Window\+Char@{Make\+Window\+Char}!Window@{Window}}
+\subsubsection{\texorpdfstring{Make\+Window\+Char()}{MakeWindowChar()}}
+{\footnotesize\ttfamily virtual char Window\+::\+Make\+Window\+Char (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classWindow_a06739ea2d178febdb7f0da5f775e5ba8}\label{classWindow_a06739ea2d178febdb7f0da5f775e5ba8}} 
+\index{Window@{Window}!is\+Init\+\_\+@{is\+Init\+\_\+}}
+\index{is\+Init\+\_\+@{is\+Init\+\_\+}!Window@{Window}}
+\subsubsection{\texorpdfstring{is\+Init\+\_\+}{isInit\_}}
+{\footnotesize\ttfamily bool Window\+::is\+Init\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-window.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{window_8h}{window.\+h}}\end{DoxyCompactItemize}

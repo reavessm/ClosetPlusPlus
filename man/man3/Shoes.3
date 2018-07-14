@@ -1,0 +1,164 @@
+.TH "Shoes" 3 "Sat Jul 14 2018" "ClosetPlusPlus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Shoes
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <shoes\&.h>\fP
+.PP
+Inherits \fBClothes\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBShoes\fP ()"
+.br
+.ti -1c
+.RI "\fBShoes\fP (int id, string name, string prim_color, string sec_color, string tert_color, string material, string style)"
+.br
+.ti -1c
+.RI "virtual \fB~Shoes\fP ()"
+.br
+.ti -1c
+.RI "string \fBToXML\fP () const"
+.br
+.ti -1c
+.RI "string \fBToString\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetID\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBid_\fP = \fBkDummyID\fP"
+.br
+.RI "Global unique identifier\&. "
+.ti -1c
+.RI "string \fBname_\fP = \fBkDummyName\fP"
+.br
+.RI "User readable name\&. "
+.ti -1c
+.RI "string \fBprimary_color_\fP = \fBkDummyPrimColor\fP"
+.br
+.RI "Primary color\&. "
+.ti -1c
+.RI "string \fBsecondary_color_\fP = \fBkDummySecColor\fP"
+.br
+.RI "Secondary color\&. "
+.ti -1c
+.RI "string \fBtertiary_color_\fP = \fBkDummyTertColor\fP"
+.br
+.RI "Tertiary color\&. "
+.ti -1c
+.RI "string \fBpattern_\fP = \fBkDummyPattern\fP"
+.br
+.RI "Design pattern\&. "
+.ti -1c
+.RI "string \fBmaterial_\fP = \fBkDummyMaterial\fP"
+.br
+.RI "Material\&. "
+.ti -1c
+.RI "string \fBstyle_\fP = \fBkDummyStyle\fP"
+.br
+.RI "Design style\&. "
+.ti -1c
+.RI "string \fBlength_\fP = \fBkDummyLength\fP"
+.br
+.RI "Length of the clothing\&. "
+.ti -1c
+.RI "string \fBcut_\fP = \fBkDummyCut\fP"
+.br
+.RI "Cut of the clothing\&. "
+.ti -1c
+.RI "string \fBsleeve_length_\fP = \fBkDummySleeveLength\fP"
+.br
+.RI "Length of the sleeve\&. "
+.ti -1c
+.RI "string \fBcollar_\fP = \fBkDummyCollar\fP"
+.br
+.RI "Type of collar\&. "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Shoes::Shoes ()"
+
+.SS "Shoes::Shoes (int id, string name, string prim_color, string sec_color, string tert_color, string material, string style)"
+
+.PP
+References Clothes::id_, Clothes::material_, Clothes::name_, Clothes::primary_color_, Clothes::secondary_color_, Clothes::style_, and Clothes::tertiary_color_\&.
+.SS "Shoes::~Shoes ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int Clothes::GetID ()\fC [inline]\fP, \fC [inherited]\fP"
+
+.SS "string Shoes::ToString () const\fC [virtual]\fP"
+This is what makes this a purely abstract class\&. The implementation of these will be changed from one article of clothing to the next\&. 
+.PP
+Implements \fBClothes\fP\&.
+.PP
+References Clothes::id_, Clothes::material_, Clothes::name_, Clothes::primary_color_, Clothes::secondary_color_, Clothes::style_, and Clothes::tertiary_color_\&.
+.SS "string Shoes::ToXML () const"
+
+.PP
+References Clothes::id_, Clothes::material_, Clothes::name_, Clothes::primary_color_, Clothes::secondary_color_, Clothes::style_, and Clothes::tertiary_color_\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string Clothes::collar_ = \fBkDummyCollar\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Type of collar\&. 
+.SS "string Clothes::cut_ = \fBkDummyCut\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Cut of the clothing\&. 
+.SS "int Clothes::id_ = \fBkDummyID\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Global unique identifier\&. 
+.SS "string Clothes::length_ = \fBkDummyLength\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Length of the clothing\&. 
+.SS "string Clothes::material_ = \fBkDummyMaterial\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Material\&. 
+.SS "string Clothes::name_ = \fBkDummyName\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+User readable name\&. 
+.SS "string Clothes::pattern_ = \fBkDummyPattern\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Design pattern\&. 
+.SS "string Clothes::primary_color_ = \fBkDummyPrimColor\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Primary color\&. 
+.SS "string Clothes::secondary_color_ = \fBkDummySecColor\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Secondary color\&. 
+.SS "string Clothes::sleeve_length_ = \fBkDummySleeveLength\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Length of the sleeve\&. 
+.SS "string Clothes::style_ = \fBkDummyStyle\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Design style\&. 
+.SS "string Clothes::tertiary_color_ = \fBkDummyTertColor\fP\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Tertiary color\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ClosetPlusPlus from the source code\&.

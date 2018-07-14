@@ -44,10 +44,7 @@ class Closet {
     void ImportCloset(string filename);
     void MakeCloset();
 
-
     string GetClosetName();
-
-    
 
   private:
     //Variables

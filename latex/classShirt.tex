@@ -1,27 +1,248 @@
 \hypertarget{classShirt}{}\section{Shirt Class Reference}
 \label{classShirt}\index{Shirt@{Shirt}}
-Inheritance diagram for Shirt\+:\begin{figure}[H]
+
+
+{\ttfamily \#include $<$shirt.\+h$>$}
+
+
+
+Inheritance diagram for Shirt\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classShirt}
+\includegraphics[width=193pt]{classShirt__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Shirt\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classShirt__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classShirt_a5df3975569b7f5874a905d31e4056b7b}\label{classShirt_a5df3975569b7f5874a905d31e4056b7b}} 
-{\bfseries Shirt} (int id, string name, string prim\+\_\+color, string sec\+\_\+color, string tert\+\_\+color, string pattern, string sleeve\+\_\+length, string collar)
+\mbox{\hyperlink{classShirt_a38664a136cdc92583d8c13a8281905d5}{Shirt}} ()
 \item 
-\mbox{\Hypertarget{classShirt_ae636e58135bd1ca4ac590e55e8d47cac}\label{classShirt_ae636e58135bd1ca4ac590e55e8d47cac}} 
-string {\bfseries To\+X\+ML} () const
+\mbox{\hyperlink{classShirt_a5df3975569b7f5874a905d31e4056b7b}{Shirt}} (int id, string name, string prim\+\_\+color, string sec\+\_\+color, string tert\+\_\+color, string pattern, string sleeve\+\_\+length, string collar)
 \item 
-\mbox{\Hypertarget{classShirt_ab85aaa20a603d63f4144d1b42d9b616d}\label{classShirt_ab85aaa20a603d63f4144d1b42d9b616d}} 
-string {\bfseries To\+String} () const
+virtual \mbox{\hyperlink{classShirt_a2cff1b945a014210e8bf009eb4269695}{$\sim$\+Shirt}} ()
+\item 
+string \mbox{\hyperlink{classShirt_ae636e58135bd1ca4ac590e55e8d47cac}{To\+X\+ML}} () const
+\item 
+string \mbox{\hyperlink{classShirt_ab85aaa20a603d63f4144d1b42d9b616d}{To\+String}} () const
+\item 
+int \mbox{\hyperlink{classClothes_a3f6dac172f333126d19010f85ec44e4c}{Get\+ID}} ()
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classClothes_a8978d931db5ca47c3ccea30def4ae83e}{id\+\_\+}} = \mbox{\hyperlink{clothes_8h_a77186917343a417a2369cdff0bc86d31}{k\+Dummy\+ID}}
+\begin{DoxyCompactList}\small\item\em Global unique identifier. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_a7f2275aaae24224d60c48af922c31b65}{name\+\_\+}} = \mbox{\hyperlink{clothes_8h_adba739b5125fd5a4066ec0ef063c0657}{k\+Dummy\+Name}}
+\begin{DoxyCompactList}\small\item\em User readable name. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_a7cb005bf6cbb7f4eaa40f1b31817559c}{primary\+\_\+color\+\_\+}} = \mbox{\hyperlink{clothes_8h_a1b9c685d3bf2811d95b65e0d396c1344}{k\+Dummy\+Prim\+Color}}
+\begin{DoxyCompactList}\small\item\em Primary color. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_ab8f55f67b956b25d71260cffcf273673}{secondary\+\_\+color\+\_\+}} = \mbox{\hyperlink{clothes_8h_a71c39811135425d881af7760da63a73a}{k\+Dummy\+Sec\+Color}}
+\begin{DoxyCompactList}\small\item\em Secondary color. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_a3c5f1e7ab531e3ba7a38b930da8078a0}{tertiary\+\_\+color\+\_\+}} = \mbox{\hyperlink{clothes_8h_a094dde85547895fd70dafb3ab10c6783}{k\+Dummy\+Tert\+Color}}
+\begin{DoxyCompactList}\small\item\em Tertiary color. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_a1d40145a4eb6d28441f112f030ab5d35}{pattern\+\_\+}} = \mbox{\hyperlink{clothes_8h_a2e72ae4d77adb7bc9cbecf4dea1e9e22}{k\+Dummy\+Pattern}}
+\begin{DoxyCompactList}\small\item\em Design pattern. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_adbb9ed311f14ccbb1e4fe0e8378a95d4}{material\+\_\+}} = \mbox{\hyperlink{clothes_8h_a9df1268c6668ae4e2a728ccf032cc33d}{k\+Dummy\+Material}}
+\begin{DoxyCompactList}\small\item\em Material. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_aa85ed2b95110d8c477a1aca9cb403f98}{style\+\_\+}} = \mbox{\hyperlink{clothes_8h_a9deec6ed1f40928bfa0040eeab95ed6b}{k\+Dummy\+Style}}
+\begin{DoxyCompactList}\small\item\em Design style. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_ae02603eda727e33caf46ec30e761e3c3}{length\+\_\+}} = \mbox{\hyperlink{clothes_8h_a1624256dcecfb0995a74c36142593770}{k\+Dummy\+Length}}
+\begin{DoxyCompactList}\small\item\em Length of the clothing. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_ac1c2286c8928a5eee91d818a098a44ac}{cut\+\_\+}} = \mbox{\hyperlink{clothes_8h_a8a6eb066049b009439505355aeaae375}{k\+Dummy\+Cut}}
+\begin{DoxyCompactList}\small\item\em Cut of the clothing. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_a012aeb71e62ebaf9b5b5dd700cc8d5db}{sleeve\+\_\+length\+\_\+}} = \mbox{\hyperlink{clothes_8h_a0f53dde6a2c4c344bb7da50655497350}{k\+Dummy\+Sleeve\+Length}}
+\begin{DoxyCompactList}\small\item\em Length of the sleeve. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classClothes_ae2e5026257b3a2f2ddbf61757fd3b57b}{collar\+\_\+}} = \mbox{\hyperlink{clothes_8h_ac06c9f556f68bcd2829e36c55b70a86e}{k\+Dummy\+Collar}}
+\begin{DoxyCompactList}\small\item\em Type of collar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classShirt_a38664a136cdc92583d8c13a8281905d5}\label{classShirt_a38664a136cdc92583d8c13a8281905d5}} 
+\index{Shirt@{Shirt}!Shirt@{Shirt}}
+\index{Shirt@{Shirt}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{Shirt()}{Shirt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Shirt\+::\+Shirt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classShirt_a5df3975569b7f5874a905d31e4056b7b}\label{classShirt_a5df3975569b7f5874a905d31e4056b7b}} 
+\index{Shirt@{Shirt}!Shirt@{Shirt}}
+\index{Shirt@{Shirt}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{Shirt()}{Shirt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Shirt\+::\+Shirt (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{name,  }\item[{string}]{prim\+\_\+color,  }\item[{string}]{sec\+\_\+color,  }\item[{string}]{tert\+\_\+color,  }\item[{string}]{pattern,  }\item[{string}]{sleeve\+\_\+length,  }\item[{string}]{collar }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classShirt_a2cff1b945a014210e8bf009eb4269695}\label{classShirt_a2cff1b945a014210e8bf009eb4269695}} 
+\index{Shirt@{Shirt}!````~Shirt@{$\sim$\+Shirt}}
+\index{````~Shirt@{$\sim$\+Shirt}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{$\sim$\+Shirt()}{~Shirt()}}
+{\footnotesize\ttfamily Shirt\+::$\sim$\+Shirt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classClothes_a3f6dac172f333126d19010f85ec44e4c}\label{classClothes_a3f6dac172f333126d19010f85ec44e4c}} 
+\index{Shirt@{Shirt}!Get\+ID@{Get\+ID}}
+\index{Get\+ID@{Get\+ID}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{Get\+I\+D()}{GetID()}}
+{\footnotesize\ttfamily int Clothes\+::\+Get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClothes_a3f6dac172f333126d19010f85ec44e4c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classShirt_ab85aaa20a603d63f4144d1b42d9b616d}\label{classShirt_ab85aaa20a603d63f4144d1b42d9b616d}} 
+\index{Shirt@{Shirt}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}}
+{\footnotesize\ttfamily string Shirt\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is what makes this a purely abstract class. The implementation of these will be changed from one article of clothing to the next. 
+
+Implements \mbox{\hyperlink{classClothes_a953d143394e9a2c007ab0c3a638973cf}{Clothes}}.
+
+\mbox{\Hypertarget{classShirt_ae636e58135bd1ca4ac590e55e8d47cac}\label{classShirt_ae636e58135bd1ca4ac590e55e8d47cac}} 
+\index{Shirt@{Shirt}!To\+X\+ML@{To\+X\+ML}}
+\index{To\+X\+ML@{To\+X\+ML}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{To\+X\+M\+L()}{ToXML()}}
+{\footnotesize\ttfamily string Shirt\+::\+To\+X\+ML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classClothes_ae2e5026257b3a2f2ddbf61757fd3b57b}\label{classClothes_ae2e5026257b3a2f2ddbf61757fd3b57b}} 
+\index{Shirt@{Shirt}!collar\+\_\+@{collar\+\_\+}}
+\index{collar\+\_\+@{collar\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{collar\+\_\+}{collar\_}}
+{\footnotesize\ttfamily string Clothes\+::collar\+\_\+ = \mbox{\hyperlink{clothes_8h_ac06c9f556f68bcd2829e36c55b70a86e}{k\+Dummy\+Collar}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Type of collar. 
+
+\mbox{\Hypertarget{classClothes_ac1c2286c8928a5eee91d818a098a44ac}\label{classClothes_ac1c2286c8928a5eee91d818a098a44ac}} 
+\index{Shirt@{Shirt}!cut\+\_\+@{cut\+\_\+}}
+\index{cut\+\_\+@{cut\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{cut\+\_\+}{cut\_}}
+{\footnotesize\ttfamily string Clothes\+::cut\+\_\+ = \mbox{\hyperlink{clothes_8h_a8a6eb066049b009439505355aeaae375}{k\+Dummy\+Cut}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Cut of the clothing. 
+
+\mbox{\Hypertarget{classClothes_a8978d931db5ca47c3ccea30def4ae83e}\label{classClothes_a8978d931db5ca47c3ccea30def4ae83e}} 
+\index{Shirt@{Shirt}!id\+\_\+@{id\+\_\+}}
+\index{id\+\_\+@{id\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{id\+\_\+}{id\_}}
+{\footnotesize\ttfamily int Clothes\+::id\+\_\+ = \mbox{\hyperlink{clothes_8h_a77186917343a417a2369cdff0bc86d31}{k\+Dummy\+ID}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Global unique identifier. 
+
+\mbox{\Hypertarget{classClothes_ae02603eda727e33caf46ec30e761e3c3}\label{classClothes_ae02603eda727e33caf46ec30e761e3c3}} 
+\index{Shirt@{Shirt}!length\+\_\+@{length\+\_\+}}
+\index{length\+\_\+@{length\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{length\+\_\+}{length\_}}
+{\footnotesize\ttfamily string Clothes\+::length\+\_\+ = \mbox{\hyperlink{clothes_8h_a1624256dcecfb0995a74c36142593770}{k\+Dummy\+Length}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Length of the clothing. 
+
+\mbox{\Hypertarget{classClothes_adbb9ed311f14ccbb1e4fe0e8378a95d4}\label{classClothes_adbb9ed311f14ccbb1e4fe0e8378a95d4}} 
+\index{Shirt@{Shirt}!material\+\_\+@{material\+\_\+}}
+\index{material\+\_\+@{material\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{material\+\_\+}{material\_}}
+{\footnotesize\ttfamily string Clothes\+::material\+\_\+ = \mbox{\hyperlink{clothes_8h_a9df1268c6668ae4e2a728ccf032cc33d}{k\+Dummy\+Material}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Material. 
+
+\mbox{\Hypertarget{classClothes_a7f2275aaae24224d60c48af922c31b65}\label{classClothes_a7f2275aaae24224d60c48af922c31b65}} 
+\index{Shirt@{Shirt}!name\+\_\+@{name\+\_\+}}
+\index{name\+\_\+@{name\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{name\+\_\+}{name\_}}
+{\footnotesize\ttfamily string Clothes\+::name\+\_\+ = \mbox{\hyperlink{clothes_8h_adba739b5125fd5a4066ec0ef063c0657}{k\+Dummy\+Name}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+User readable name. 
+
+\mbox{\Hypertarget{classClothes_a1d40145a4eb6d28441f112f030ab5d35}\label{classClothes_a1d40145a4eb6d28441f112f030ab5d35}} 
+\index{Shirt@{Shirt}!pattern\+\_\+@{pattern\+\_\+}}
+\index{pattern\+\_\+@{pattern\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{pattern\+\_\+}{pattern\_}}
+{\footnotesize\ttfamily string Clothes\+::pattern\+\_\+ = \mbox{\hyperlink{clothes_8h_a2e72ae4d77adb7bc9cbecf4dea1e9e22}{k\+Dummy\+Pattern}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Design pattern. 
+
+\mbox{\Hypertarget{classClothes_a7cb005bf6cbb7f4eaa40f1b31817559c}\label{classClothes_a7cb005bf6cbb7f4eaa40f1b31817559c}} 
+\index{Shirt@{Shirt}!primary\+\_\+color\+\_\+@{primary\+\_\+color\+\_\+}}
+\index{primary\+\_\+color\+\_\+@{primary\+\_\+color\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{primary\+\_\+color\+\_\+}{primary\_color\_}}
+{\footnotesize\ttfamily string Clothes\+::primary\+\_\+color\+\_\+ = \mbox{\hyperlink{clothes_8h_a1b9c685d3bf2811d95b65e0d396c1344}{k\+Dummy\+Prim\+Color}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Primary color. 
+
+\mbox{\Hypertarget{classClothes_ab8f55f67b956b25d71260cffcf273673}\label{classClothes_ab8f55f67b956b25d71260cffcf273673}} 
+\index{Shirt@{Shirt}!secondary\+\_\+color\+\_\+@{secondary\+\_\+color\+\_\+}}
+\index{secondary\+\_\+color\+\_\+@{secondary\+\_\+color\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{secondary\+\_\+color\+\_\+}{secondary\_color\_}}
+{\footnotesize\ttfamily string Clothes\+::secondary\+\_\+color\+\_\+ = \mbox{\hyperlink{clothes_8h_a71c39811135425d881af7760da63a73a}{k\+Dummy\+Sec\+Color}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Secondary color. 
+
+\mbox{\Hypertarget{classClothes_a012aeb71e62ebaf9b5b5dd700cc8d5db}\label{classClothes_a012aeb71e62ebaf9b5b5dd700cc8d5db}} 
+\index{Shirt@{Shirt}!sleeve\+\_\+length\+\_\+@{sleeve\+\_\+length\+\_\+}}
+\index{sleeve\+\_\+length\+\_\+@{sleeve\+\_\+length\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{sleeve\+\_\+length\+\_\+}{sleeve\_length\_}}
+{\footnotesize\ttfamily string Clothes\+::sleeve\+\_\+length\+\_\+ = \mbox{\hyperlink{clothes_8h_a0f53dde6a2c4c344bb7da50655497350}{k\+Dummy\+Sleeve\+Length}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Length of the sleeve. 
+
+\mbox{\Hypertarget{classClothes_aa85ed2b95110d8c477a1aca9cb403f98}\label{classClothes_aa85ed2b95110d8c477a1aca9cb403f98}} 
+\index{Shirt@{Shirt}!style\+\_\+@{style\+\_\+}}
+\index{style\+\_\+@{style\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{style\+\_\+}{style\_}}
+{\footnotesize\ttfamily string Clothes\+::style\+\_\+ = \mbox{\hyperlink{clothes_8h_a9deec6ed1f40928bfa0040eeab95ed6b}{k\+Dummy\+Style}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Design style. 
+
+\mbox{\Hypertarget{classClothes_a3c5f1e7ab531e3ba7a38b930da8078a0}\label{classClothes_a3c5f1e7ab531e3ba7a38b930da8078a0}} 
+\index{Shirt@{Shirt}!tertiary\+\_\+color\+\_\+@{tertiary\+\_\+color\+\_\+}}
+\index{tertiary\+\_\+color\+\_\+@{tertiary\+\_\+color\+\_\+}!Shirt@{Shirt}}
+\subsubsection{\texorpdfstring{tertiary\+\_\+color\+\_\+}{tertiary\_color\_}}
+{\footnotesize\ttfamily string Clothes\+::tertiary\+\_\+color\+\_\+ = \mbox{\hyperlink{clothes_8h_a094dde85547895fd70dafb3ab10c6783}{k\+Dummy\+Tert\+Color}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Tertiary color. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-shirt.\+h\item 
-shirt.\+cc\end{DoxyCompactItemize}
+\mbox{\hyperlink{shirt_8h}{shirt.\+h}}\item 
+\mbox{\hyperlink{shirt_8cc}{shirt.\+cc}}\end{DoxyCompactItemize}

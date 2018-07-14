@@ -1,12 +1,3 @@
-/******************************************************************************
- * File Name: belt.h
- * Created by: Stephen M. Reaves
- * Date Last Modified:
- *
- * Summary: Header File for 'Belt' class in the Closet++ program
- *
- */
-
 #include <cstdlib>
 #include <iostream>
 #include <string>

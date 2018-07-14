@@ -1,11 +1,14 @@
-/******************************************************************************
- * File Name: clothes.h
- * Created by: Stephen M. Reaves
- * Date Last Modified:
+/**************************************************************************//**
+ * @class Clothes
+ * @author Stephen M. Reaves
+ * @date July 14th, 2018
  *
- * Summary: Clothes abstract class to be used by members of closet.
- *          Handles the light work.
+ * @brief Clothes abstract class to be used by members of closet.
+ *        Handles the light work.
  *
+ * @detail These global variables are set for all clothes, but not all
+ *         clothes use them.  For instance, pants will never need a 'collar'
+ *         variable, but they do to make inheritence easier
  */
 
 
@@ -77,26 +80,25 @@ class Clothes {
     string ParmSleeveLength(string length = length_) { length_ = length; return length; }
     string ParmCollar(string collar = collar_) { collar_ = collar; return collar; }
     */
-
- // These are what makes this a purely abstract class.  The implementation of 
- // these will be changed from one article of clothing to the next.
-    // virtual bool IsDirty() = 0;
-    virtual string ToString() const = 0;
+ 
+    virtual string ToString() const = 0; ///< This is what makes this a purely
+                                         ///< abstract class. The implementation
+                                         ///< of these will be changed from one 
+                                         ///< article of clothing to the next. 
 
   protected:
-    // Set Globals
-    int id_ = kDummyID;
-    string name_ = kDummyName;
-    string primary_color_ = kDummyPrimColor;
-    string secondary_color_ = kDummySecColor;
-    string tertiary_color_ = kDummyTertColor;
-    string pattern_ = kDummyPattern;
-    string material_ = kDummyMaterial;
-    string style_ = kDummyStyle;
-    string length_ = kDummyLength;
-    string cut_ = kDummyCut;
-    string sleeve_length_ = kDummySleeveLength;
-    string collar_ = kDummyCollar;
+    int    id_              = kDummyID; ///< Global unique identifier
+    string name_            = kDummyName; ///< User readable name
+    string primary_color_   = kDummyPrimColor; ///< Primary color
+    string secondary_color_ = kDummySecColor; ///< Secondary color
+    string tertiary_color_  = kDummyTertColor; ///< Tertiary color
+    string pattern_         = kDummyPattern; ///< Design pattern
+    string material_        = kDummyMaterial; ///< Material
+    string style_           = kDummyStyle; ///< Design style
+    string length_          = kDummyLength; ///< Length of the clothing
+    string cut_             = kDummyCut; ///< Cut of the clothing
+    string sleeve_length_   = kDummySleeveLength; ///< Length of the sleeve
+    string collar_          = kDummyCollar; ///< Type of collar
 
 };
 

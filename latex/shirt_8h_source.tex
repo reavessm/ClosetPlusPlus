@@ -1,0 +1,50 @@
+\hypertarget{shirt_8h_source}{}\section{shirt.\+h}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/******************************************************************************}
+00002 \textcolor{comment}{ * File Name: shirt.h}
+00003 \textcolor{comment}{ * Created by: Stephen M. Reaves}
+00004 \textcolor{comment}{ * Date Last Modified:}
+00005 \textcolor{comment}{ *}
+00006 \textcolor{comment}{ * Summary: Header File for 'Shirt' class in the Closet++ program}
+00007 \textcolor{comment}{ *}
+00008 \textcolor{comment}{ */}
+00009 
+00010 
+00011 \textcolor{preprocessor}{#ifndef SHIRT\_H}
+00012 \textcolor{preprocessor}{#define SHIRT\_H}
+00013 
+00014 \textcolor{preprocessor}{#include <cstdlib>}
+00015 \textcolor{preprocessor}{#include <iostream>}
+00016 \textcolor{preprocessor}{#include <string>}
+00017 
+00018 \textcolor{preprocessor}{#include "\mbox{\hyperlink{clothes_8h}{clothes.h}}"}
+00019 
+00020 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestd}{std}};
+00021 
+\Hypertarget{shirt_8h_source_l00022}\mbox{\hyperlink{classShirt}{00022}} \textcolor{keyword}{class }\mbox{\hyperlink{classShirt}{Shirt}} : \textcolor{keyword}{public} \mbox{\hyperlink{classClothes}{Clothes}} \{
+00023   \textcolor{keyword}{public}:
+00024     \textcolor{comment}{//Constructors and Deconstructors}
+00025     \mbox{\hyperlink{classShirt}{Shirt}}();
+00026     \mbox{\hyperlink{classShirt}{Shirt}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{string} name, \textcolor{keywordtype}{string} prim\_color, \textcolor{keywordtype}{string} sec\_color, 
+00027           \textcolor{keywordtype}{string} tert\_color, \textcolor{keywordtype}{string} pattern, \textcolor{keywordtype}{string} sleeve\_length, 
+00028           \textcolor{keywordtype}{string} collar);
+00029     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classShirt}{Shirt}}();
+00030 
+00031     \textcolor{comment}{//General Functions}
+00032 
+00033     \textcolor{comment}{//bool IsDirty();}
+00034 
+00035     \textcolor{keywordtype}{string} ToXML() \textcolor{keyword}{const};
+00036     \textcolor{keywordtype}{string} ToString() \textcolor{keyword}{const};
+00037   
+00038   \textcolor{keyword}{private}:
+00039     \textcolor{comment}{//Variables}
+00040 
+00041     \textcolor{comment}{//Private Functions}
+00042 
+00043 \};
+00044 
+00045 
+00046 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* SHIRT\_H */}\textcolor{preprocessor}{ }
+\end{DoxyCode}

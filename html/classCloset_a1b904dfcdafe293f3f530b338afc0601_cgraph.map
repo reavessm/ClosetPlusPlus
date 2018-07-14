@@ -1,0 +1,12 @@
+<map id="Closet::MakeCloset" name="Closet::MakeCloset">
+<area shape="rect" id="node2" href="$classCloset.html#ad81782f2bb110f3a0a635a5ac1f929eb" title="Closet::AddBelt" alt="" coords="238,46,361,73"/>
+<area shape="rect" id="node4" href="$classNcurses.html#a1d8def11419a444c5696b5043da680d4" title="Ncurses::MakeWindow" alt="" coords="623,147,792,174"/>
+<area shape="rect" id="node5" href="$classCloset.html#a86001d9aab63ec5cca05bb2daa67e755" title="Creates a &#39;Pants&#39; object &#160;This function will take user input to record the necessary details for maki..." alt="" coords="234,97,365,123"/>
+<area shape="rect" id="node6" href="$classCloset.html#aba3296cf8964b43f64911cc69c56cbfd" title="Creates a &#39;Shirt&#39; object. " alt="" coords="236,147,363,174"/>
+<area shape="rect" id="node7" href="$classCloset.html#a489badac5a919460e8cc8e216f8b3eac" title="Closet::AddShoes" alt="" coords="232,198,367,225"/>
+<area shape="rect" id="node8" href="$classCloset.html#aac44ecf78525b3e0ac4ed80af2133186" title="Creates a &#39;Socks&#39; object This function will take user input to record the necessary details for makin..." alt="" coords="232,249,367,275"/>
+<area shape="rect" id="node9" href="$classClothes.html#a3f6dac172f333126d19010f85ec44e4c" title="Clothes::GetID" alt="" coords="241,299,357,326"/>
+<area shape="rect" id="node10" href="$classNcurses.html#a9966b2b23b522e415232976acfa1d18f" title="Ncurses::Init" alt="" coords="248,350,351,377"/>
+<area shape="rect" id="node11" href="$classNcurses.html#a2b4916627ad802a840b95cf65766773f" title="Ncurses::MakeWindowChar" alt="" coords="200,401,399,427"/>
+<area shape="rect" id="node3" href="$classCloset.html#afabc27d621abdf0089a6b3027ea8f470" title="Closet::AssignID" alt="" coords="447,198,575,225"/>
+</map>

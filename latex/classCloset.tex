@@ -1,29 +1,437 @@
 \hypertarget{classCloset}{}\section{Closet Class Reference}
 \label{classCloset}\index{Closet@{Closet}}
+
+
+Creates and stores clothes.  
+
+
+
+
+{\ttfamily \#include $<$my\+Closet.\+h$>$}
+
+
+
+Collaboration diagram for Closet\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classCloset_a7642f749dfd4ad11a83c2cab5a3bdae2}\label{classCloset_a7642f749dfd4ad11a83c2cab5a3bdae2}} 
-string {\bfseries To\+X\+ML} () const
+\mbox{\hyperlink{classCloset_a42a132f9c1f9fe46976dea604f23055c}{Closet}} ()
 \item 
-\mbox{\Hypertarget{classCloset_a3bad65dd75ada9a484eb7f78ebfa3b2a}\label{classCloset_a3bad65dd75ada9a484eb7f78ebfa3b2a}} 
-string {\bfseries To\+String} () const
+virtual \mbox{\hyperlink{classCloset_a5afebda9b625af231a1d980ff851b2a3}{$\sim$\+Closet}} ()
+\begin{DoxyCompactList}\small\item\em Closes the window, then kills the \mbox{\hyperlink{classCloset}{Closet}}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCloset_a7642f749dfd4ad11a83c2cab5a3bdae2}{To\+X\+ML}} () const
 \item 
-\mbox{\Hypertarget{classCloset_a1f2ec8e3e912756e35fdc55c9401ea3e}\label{classCloset_a1f2ec8e3e912756e35fdc55c9401ea3e}} 
-string {\bfseries Store\+Closet} () const
+string \mbox{\hyperlink{classCloset_a3bad65dd75ada9a484eb7f78ebfa3b2a}{To\+String}} () const
 \item 
-\mbox{\Hypertarget{classCloset_ac1057604430a855ca081cbfe16af10a5}\label{classCloset_ac1057604430a855ca081cbfe16af10a5}} 
-void {\bfseries Import\+Closet} (string filename)
+string \mbox{\hyperlink{classCloset_a1f2ec8e3e912756e35fdc55c9401ea3e}{Store\+Closet}} () const
 \item 
-\mbox{\Hypertarget{classCloset_a1b904dfcdafe293f3f530b338afc0601}\label{classCloset_a1b904dfcdafe293f3f530b338afc0601}} 
-void {\bfseries Make\+Closet} ()
-\item 
-\mbox{\Hypertarget{classCloset_a108ab29dacfccd5d1c958d5ec88ad64f}\label{classCloset_a108ab29dacfccd5d1c958d5ec88ad64f}} 
-string {\bfseries Get\+Closet\+Name} ()
+void \mbox{\hyperlink{classCloset_ac1057604430a855ca081cbfe16af10a5}{Import\+Closet}} (string filename)
+\begin{DoxyCompactList}\small\item\em This function builds a \mbox{\hyperlink{classCloset}{Closet}} from a file, then calls the default \textquotesingle{}Make\+Closet\textquotesingle{} function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCloset_a1b904dfcdafe293f3f530b338afc0601}{Make\+Closet}} ()
+\begin{DoxyCompactList}\small\item\em This function is the wrapper function that is responsible for creating the clothes and then inserting them to the appropriate map. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCloset_a108ab29dacfccd5d1c958d5ec88ad64f}{Get\+Closet\+Name}} ()
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classShirt}{Shirt}} \mbox{\hyperlink{classCloset_aba3296cf8964b43f64911cc69c56cbfd}{Add\+Shirt}} ()
+\begin{DoxyCompactList}\small\item\em Creates a \textquotesingle{}\mbox{\hyperlink{classShirt}{Shirt}}\textquotesingle{} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPants}{Pants}} \mbox{\hyperlink{classCloset_a86001d9aab63ec5cca05bb2daa67e755}{Add\+Pants}} ()
+\begin{DoxyCompactList}\small\item\em Creates a \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} using those details. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSocks}{Socks}} \mbox{\hyperlink{classCloset_aac44ecf78525b3e0ac4ed80af2133186}{Add\+Socks}} ()
+\begin{DoxyCompactList}\small\item\em Creates a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} object This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} using those details. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classShoes}{Shoes}} \mbox{\hyperlink{classCloset_a489badac5a919460e8cc8e216f8b3eac}{Add\+Shoes}} ()
+\item 
+\mbox{\hyperlink{classBelt}{Belt}} \mbox{\hyperlink{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb}{Add\+Belt}} ()
+\item 
+int \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+ID}} (string type)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classCloset_a3c06676b90e6ebe31d6dd276f2f0bcef}{closet\+\_\+name\+\_\+}} = \mbox{\hyperlink{myCloset_8h_abe246d8af0c0b6020aa175c2874b59be}{k\+Dummy\+Closet\+Name}}
+\item 
+map$<$ int, \mbox{\hyperlink{classShirt}{Shirt}} $>$ \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}
+\item 
+map$<$ int, \mbox{\hyperlink{classPants}{Pants}} $>$ \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}
+\item 
+map$<$ int, \mbox{\hyperlink{classSocks}{Socks}} $>$ \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}
+\item 
+map$<$ int, \mbox{\hyperlink{classShoes}{Shoes}} $>$ \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}
+\item 
+map$<$ int, \mbox{\hyperlink{classBelt}{Belt}} $>$ \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}
+\item 
+\mbox{\hyperlink{classNcurses}{Ncurses}} \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Creates and stores clothes. 
+
+\begin{DoxyAuthor}{Author}
+Stephen M. Reaves 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+July 14th, 2018 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCloset_a42a132f9c1f9fe46976dea604f23055c}\label{classCloset_a42a132f9c1f9fe46976dea604f23055c}} 
+\index{Closet@{Closet}!Closet@{Closet}}
+\index{Closet@{Closet}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Closet()}{Closet()}}
+{\footnotesize\ttfamily Closet\+::\+Closet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default Constructor \mbox{\Hypertarget{classCloset_a5afebda9b625af231a1d980ff851b2a3}\label{classCloset_a5afebda9b625af231a1d980ff851b2a3}} 
+\index{Closet@{Closet}!````~Closet@{$\sim$\+Closet}}
+\index{````~Closet@{$\sim$\+Closet}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{$\sim$\+Closet()}{~Closet()}}
+{\footnotesize\ttfamily Closet\+::$\sim$\+Closet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Closes the window, then kills the \mbox{\hyperlink{classCloset}{Closet}}. 
+
+Deconstructor 
+
+References \mbox{\hyperlink{classNcurses_af9467a004e66043d4dbe540e24524f1f}{Ncurses\+::\+Die()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classCloset_a5afebda9b625af231a1d980ff851b2a3_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb}\label{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb}} 
+\index{Closet@{Closet}!Add\+Belt@{Add\+Belt}}
+\index{Add\+Belt@{Add\+Belt}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Add\+Belt()}{AddBelt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBelt}{Belt}} Closet\+::\+Add\+Belt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_a86001d9aab63ec5cca05bb2daa67e755}\label{classCloset_a86001d9aab63ec5cca05bb2daa67e755}} 
+\index{Closet@{Closet}!Add\+Pants@{Add\+Pants}}
+\index{Add\+Pants@{Add\+Pants}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Add\+Pants()}{AddPants()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPants}{Pants}} Closet\+::\+Add\+Pants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates a \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} using those details. 
+
+\begin{DoxyReturn}{Returns}
+An instance of the \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} class. 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_a86001d9aab63ec5cca05bb2daa67e755_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_a86001d9aab63ec5cca05bb2daa67e755_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_aba3296cf8964b43f64911cc69c56cbfd}\label{classCloset_aba3296cf8964b43f64911cc69c56cbfd}} 
+\index{Closet@{Closet}!Add\+Shirt@{Add\+Shirt}}
+\index{Add\+Shirt@{Add\+Shirt}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Add\+Shirt()}{AddShirt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classShirt}{Shirt}} Closet\+::\+Add\+Shirt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates a \textquotesingle{}\mbox{\hyperlink{classShirt}{Shirt}}\textquotesingle{} object. 
+
+\begin{DoxyReturn}{Returns}
+an instance of the \textquotesingle{}\mbox{\hyperlink{classShirt}{Shirt}}\textquotesingle{} Class.  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classShirt}{Shirt}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classShirt}{Shirt}}\textquotesingle{} using those details. 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_aba3296cf8964b43f64911cc69c56cbfd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_aba3296cf8964b43f64911cc69c56cbfd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_a489badac5a919460e8cc8e216f8b3eac}\label{classCloset_a489badac5a919460e8cc8e216f8b3eac}} 
+\index{Closet@{Closet}!Add\+Shoes@{Add\+Shoes}}
+\index{Add\+Shoes@{Add\+Shoes}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Add\+Shoes()}{AddShoes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classShoes}{Shoes}} Closet\+::\+Add\+Shoes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_a489badac5a919460e8cc8e216f8b3eac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_a489badac5a919460e8cc8e216f8b3eac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_aac44ecf78525b3e0ac4ed80af2133186}\label{classCloset_aac44ecf78525b3e0ac4ed80af2133186}} 
+\index{Closet@{Closet}!Add\+Socks@{Add\+Socks}}
+\index{Add\+Socks@{Add\+Socks}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Add\+Socks()}{AddSocks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSocks}{Socks}} Closet\+::\+Add\+Socks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} object This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} using those details. 
+
+\begin{DoxyReturn}{Returns}
+An instance of the \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} class. 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_aac44ecf78525b3e0ac4ed80af2133186_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_aac44ecf78525b3e0ac4ed80af2133186_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_afabc27d621abdf0089a6b3027ea8f470}\label{classCloset_afabc27d621abdf0089a6b3027ea8f470}} 
+\index{Closet@{Closet}!Assign\+ID@{Assign\+ID}}
+\index{Assign\+ID@{Assign\+ID}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Assign\+I\+D()}{AssignID()}}
+{\footnotesize\ttfamily int Closet\+::\+Assign\+ID (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classCloset_afabc27d621abdf0089a6b3027ea8f470_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_afabc27d621abdf0089a6b3027ea8f470_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_a108ab29dacfccd5d1c958d5ec88ad64f}\label{classCloset_a108ab29dacfccd5d1c958d5ec88ad64f}} 
+\index{Closet@{Closet}!Get\+Closet\+Name@{Get\+Closet\+Name}}
+\index{Get\+Closet\+Name@{Get\+Closet\+Name}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Get\+Closet\+Name()}{GetClosetName()}}
+{\footnotesize\ttfamily string Closet\+::\+Get\+Closet\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get\+Closet\+Name
+
+\begin{DoxyReturn}{Returns}
+Name of the closet 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{classCloset_a3c06676b90e6ebe31d6dd276f2f0bcef}{closet\+\_\+name\+\_\+}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCloset_a108ab29dacfccd5d1c958d5ec88ad64f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_ac1057604430a855ca081cbfe16af10a5}\label{classCloset_ac1057604430a855ca081cbfe16af10a5}} 
+\index{Closet@{Closet}!Import\+Closet@{Import\+Closet}}
+\index{Import\+Closet@{Import\+Closet}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Import\+Closet()}{ImportCloset()}}
+{\footnotesize\ttfamily void Closet\+::\+Import\+Closet (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+This function builds a \mbox{\hyperlink{classCloset}{Closet}} from a file, then calls the default \textquotesingle{}Make\+Closet\textquotesingle{} function. 
+
+\begin{DoxyNote}{Note}
+The filename must end in an acceptable filetype 
+\end{DoxyNote}
+\mbox{\Hypertarget{classCloset_a1b904dfcdafe293f3f530b338afc0601}\label{classCloset_a1b904dfcdafe293f3f530b338afc0601}} 
+\index{Closet@{Closet}!Make\+Closet@{Make\+Closet}}
+\index{Make\+Closet@{Make\+Closet}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Make\+Closet()}{MakeCloset()}}
+{\footnotesize\ttfamily void Closet\+::\+Make\+Closet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function is the wrapper function that is responsible for creating the clothes and then inserting them to the appropriate map. 
+
+For each type of clothing, this function asks the user if they want to add a new clothing of that type. If they do then they call the clothing function to fill in the clothing specific details. This function calls on \textquotesingle{}\mbox{\hyperlink{classWindow}{Window}}\textquotesingle{} to handle the input. 
+
+References \mbox{\hyperlink{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb}{Add\+Belt()}}, \mbox{\hyperlink{classCloset_a86001d9aab63ec5cca05bb2daa67e755}{Add\+Pants()}}, \mbox{\hyperlink{classCloset_aba3296cf8964b43f64911cc69c56cbfd}{Add\+Shirt()}}, \mbox{\hyperlink{classCloset_a489badac5a919460e8cc8e216f8b3eac}{Add\+Shoes()}}, \mbox{\hyperlink{classCloset_aac44ecf78525b3e0ac4ed80af2133186}{Add\+Socks()}}, \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a3c06676b90e6ebe31d6dd276f2f0bcef}{closet\+\_\+name\+\_\+}}, \mbox{\hyperlink{classClothes_a3f6dac172f333126d19010f85ec44e4c}{Clothes\+::\+Get\+I\+D()}}, \mbox{\hyperlink{classNcurses_a9966b2b23b522e415232976acfa1d18f}{Ncurses\+::\+Init()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, \mbox{\hyperlink{classNcurses_a2b4916627ad802a840b95cf65766773f}{Ncurses\+::\+Make\+Window\+Char()}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCloset_a1b904dfcdafe293f3f530b338afc0601_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{classCloset_a1b904dfcdafe293f3f530b338afc0601_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_a1f2ec8e3e912756e35fdc55c9401ea3e}\label{classCloset_a1f2ec8e3e912756e35fdc55c9401ea3e}} 
+\index{Closet@{Closet}!Store\+Closet@{Store\+Closet}}
+\index{Store\+Closet@{Store\+Closet}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{Store\+Closet()}{StoreCloset()}}
+{\footnotesize\ttfamily string Closet\+::\+Store\+Closet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+X\+ML representation of closet 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{classCloset_a1f2ec8e3e912756e35fdc55c9401ea3e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_a3bad65dd75ada9a484eb7f78ebfa3b2a}\label{classCloset_a3bad65dd75ada9a484eb7f78ebfa3b2a}} 
+\index{Closet@{Closet}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}}
+{\footnotesize\ttfamily string Closet\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+References \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{classCloset_a3bad65dd75ada9a484eb7f78ebfa3b2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCloset_a7642f749dfd4ad11a83c2cab5a3bdae2}\label{classCloset_a7642f749dfd4ad11a83c2cab5a3bdae2}} 
+\index{Closet@{Closet}!To\+X\+ML@{To\+X\+ML}}
+\index{To\+X\+ML@{To\+X\+ML}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{To\+X\+M\+L()}{ToXML()}}
+{\footnotesize\ttfamily string Closet\+::\+To\+X\+ML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}\label{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}} 
+\index{Closet@{Closet}!belt\+\_\+map\+\_\+@{belt\+\_\+map\+\_\+}}
+\index{belt\+\_\+map\+\_\+@{belt\+\_\+map\+\_\+}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{belt\+\_\+map\+\_\+}{belt\_map\_}}
+{\footnotesize\ttfamily map$<$int, \mbox{\hyperlink{classBelt}{Belt}}$>$ Closet\+::belt\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCloset_a3c06676b90e6ebe31d6dd276f2f0bcef}\label{classCloset_a3c06676b90e6ebe31d6dd276f2f0bcef}} 
+\index{Closet@{Closet}!closet\+\_\+name\+\_\+@{closet\+\_\+name\+\_\+}}
+\index{closet\+\_\+name\+\_\+@{closet\+\_\+name\+\_\+}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{closet\+\_\+name\+\_\+}{closet\_name\_}}
+{\footnotesize\ttfamily string Closet\+::closet\+\_\+name\+\_\+ = \mbox{\hyperlink{myCloset_8h_abe246d8af0c0b6020aa175c2874b59be}{k\+Dummy\+Closet\+Name}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}\label{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}} 
+\index{Closet@{Closet}!pants\+\_\+map\+\_\+@{pants\+\_\+map\+\_\+}}
+\index{pants\+\_\+map\+\_\+@{pants\+\_\+map\+\_\+}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{pants\+\_\+map\+\_\+}{pants\_map\_}}
+{\footnotesize\ttfamily map$<$int, \mbox{\hyperlink{classPants}{Pants}}$>$ Closet\+::pants\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCloset_a8126a023a2777b84b23436da8d1f4b35}\label{classCloset_a8126a023a2777b84b23436da8d1f4b35}} 
+\index{Closet@{Closet}!shirt\+\_\+map\+\_\+@{shirt\+\_\+map\+\_\+}}
+\index{shirt\+\_\+map\+\_\+@{shirt\+\_\+map\+\_\+}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{shirt\+\_\+map\+\_\+}{shirt\_map\_}}
+{\footnotesize\ttfamily map$<$int, \mbox{\hyperlink{classShirt}{Shirt}}$>$ Closet\+::shirt\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}\label{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}} 
+\index{Closet@{Closet}!shoes\+\_\+map\+\_\+@{shoes\+\_\+map\+\_\+}}
+\index{shoes\+\_\+map\+\_\+@{shoes\+\_\+map\+\_\+}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{shoes\+\_\+map\+\_\+}{shoes\_map\_}}
+{\footnotesize\ttfamily map$<$int, \mbox{\hyperlink{classShoes}{Shoes}}$>$ Closet\+::shoes\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}\label{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}} 
+\index{Closet@{Closet}!socks\+\_\+map\+\_\+@{socks\+\_\+map\+\_\+}}
+\index{socks\+\_\+map\+\_\+@{socks\+\_\+map\+\_\+}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{socks\+\_\+map\+\_\+}{socks\_map\_}}
+{\footnotesize\ttfamily map$<$int, \mbox{\hyperlink{classSocks}{Socks}}$>$ Closet\+::socks\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCloset_af1eb4f786cc4eccd3018b90632236a93}\label{classCloset_af1eb4f786cc4eccd3018b90632236a93}} 
+\index{Closet@{Closet}!window@{window}}
+\index{window@{window}!Closet@{Closet}}
+\subsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNcurses}{Ncurses}} Closet\+::window\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-my\+Closet.\+h\item 
-my\+Closet.\+cc\end{DoxyCompactItemize}
+\mbox{\hyperlink{myCloset_8h}{my\+Closet.\+h}}\item 
+\mbox{\hyperlink{myCloset_8cc}{my\+Closet.\+cc}}\end{DoxyCompactItemize}

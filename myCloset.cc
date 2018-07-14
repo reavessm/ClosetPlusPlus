@@ -1,30 +1,37 @@
 #include "myCloset.h"
-/******************************************************************************
- * File Name: myCloset.cc
- * Created by: Stephen M. Reaves
- * Date Last Modified:
+/**************************************************************************//**
+ * @class Closet
+ * @author Stephen M. Reaves
+ * @date July 14th, 2018
  *
- * Summary:
+ * @brief Creates and stores clothes
  *
  */
 
-/******************************************************************************
- * Constructor
+/**************************************************************************//**
+ * Default Constructor
  */
 Closet::Closet() {
 }
 
-/******************************************************************************
+/**************************************************************************//**
  * Deconstructor
+ *
+ * @brief Closes the window, then kills the Closet
  */
 Closet::~Closet() {
   window.Die();
 }
 
-/**********************************************1********************************
+/*******************************************************************************
  * Accessors and Mutators
  */
 
+/***************************************************************************//**
+ * GetClosetName
+ *
+ * @returns Name of the closet
+ */
 string Closet::GetClosetName() { return this->closet_name_; }
 
 
@@ -32,10 +39,14 @@ string Closet::GetClosetName() { return this->closet_name_; }
  * General Functions
  */
 
-/******************************************************************************
- * Funtion 'MakeCloset'
- * Summary: This function is the wrapper function that is responsible for
- * creating the clothes and then inserting them to the appropriate map
+/**************************************************************************//**
+ * @brief This function is the wrapper function that is responsible for
+ *        creating the clothes and then inserting them to the appropriate map
+ *
+ * @detail For each type of clothing, this function asks the user if they want
+ *         to add a new clothing of that type.  If they do then they call the
+ *         clothing function to fill in the clothing specific details.  This
+ *         function calls on 'Window' to handle the input.
  */
 void Closet::MakeCloset() {
   // Initialize variables
@@ -44,11 +55,11 @@ void Closet::MakeCloset() {
   string message = "";
   window.Init();
 
-  //Name Closet
+  // Name Closet
   message = "Enter a Closet Name: ";
   closet_name_ = window.MakeWindow(message);
  
-  //Add Shirt(s)
+  // Add Shirt(s)
   message = "Would you like to add a shirt? [y/n] ";
   ans = window.MakeWindowChar(message);
   while ( ans == 'y' || ans == 'Y' ) {
@@ -58,10 +69,8 @@ void Closet::MakeCloset() {
     message = "Would you like to add another shirt? [y/n] ";
     ans = window.MakeWindowChar(message);
   }
-  //endwin();
-
-//  cin.ignore();
-  //Add Pants
+  
+  // Add Pants
   message = "Would you like to add a pants? [y/n] ";
   ans = window.MakeWindowChar(message);
   while (ans == 'y' || ans == 'Y') {
@@ -71,19 +80,9 @@ void Closet::MakeCloset() {
 message = "Would you like to add another pair of pants? [y/n] ";
     ans = window.MakeWindowChar(message);
   }
-//  endwin();
 
-  //Add Belt(s)
-/*  cout << "Would you like to add a belt? [y/n]" << endl;
-  cin >> ans;
-  while ( ans == 'y' || ans == 'Y' ) {
-    Belt belt;
-    belt = AddBelt();
-    belt_map_.insert(pair<int, Belt>(belt.GetID(), belt));
-    cout << "Would you like to add another belt? [y/n]" << endl;
-    cin >> ans;
-  }
-*/message = "Would you like to add a belt? [y/n] ";
+  // Add Belt
+  message = "Would you like to add a belt? [y/n] ";
   ans = window.MakeWindowChar(message);
   while (ans == 'y' || ans == 'Y') {
     Belt belt;
@@ -93,52 +92,34 @@ message = "Would you like to add another belt? [y/n] ";
     ans = window.MakeWindowChar(message);
   }
 
-//  cin.ignore();
-  //Add Socks
-/*  cout << "Would you like to add a pair of socks? [y/n]" << endl;
-  cin >> ans;
-  while ( ans == 'y' || ans == 'Y' ) {
-    Socks socks;
-    socks = AddSocks();
-    socks_map_.insert(pair<int, Socks>(socks.GetID(), socks));
-    cout << "Would you like to add another pair of socks? [y/n]" << endl;
-    cin >> ans;
-  }
-*/message = "Would you like to add some socks? [y/n] ";
+  // Add Socks
+message = "Would you like to add some socks? [y/n] ";
   ans = window.MakeWindowChar(message);
   while (ans == 'y' || ans == 'Y') {
     Socks socks;
     socks = AddSocks();
     socks_map_.insert(pair<int, Socks>(socks.GetID(), socks));
-message = "Would you like to add more socks? [y/n] ";
+    message = "Would you like to add more socks? [y/n] ";
     ans = window.MakeWindowChar(message);
   }
 
-//  cin.ignore();
-  //Add Shoes
-/*  cout << "Would you like to add a pair of shoes? [y/n]" << endl;
-  cin >> ans;
-  while ( ans == 'y' || ans == 'Y' ) {
-    Shoes shoes;
-    shoes = AddShoes();
-    shoes_map_.insert(pair<int, Shoes>(shoes.GetID(), shoes));
-    cout << "Would you like to add another pair of shoes? [y/n]" << endl;
-    cin >> ans;
-   }*/message = "Would you like to add some shoes? [y/n] ";
+  // Add Shoes
+  message = "Would you like to add some shoes? [y/n] ";
   ans = window.MakeWindowChar(message);
   while (ans == 'y' || ans == 'Y') {
     Shoes shoes;
     shoes = AddShoes();
     shoes_map_.insert(pair<int, Shoes>(shoes.GetID(), shoes));
-message = "Would you like to add some more shoes? [y/n] ";
+    message = "Would you like to add some more shoes? [y/n] ";
     ans = window.MakeWindowChar(message);
   }
 }
 
-/******************************************************************************
- *  Function 'ImportCloset'
- *  Summary: This function builds a Closet from an XML file, then calls the
- *  default 'MakeCloset' function.
+/**************************************************************************//**
+ *  @brief This function builds a Closet from a file, then calls the default 
+ *         'MakeCloset' function.
+ *
+ *  @note The filename must end in an acceptable filetype
  */
 void Closet::ImportCloset(string filename) {
   // Use TinyXML-2
@@ -164,14 +145,13 @@ void Closet::ImportCloset(string filename) {
   //}
 }
 
-/******************************************************************************
- * Funtion 'AddShirt'
- * Returns:
- *    an instance of the 'Shirt' Class.
- * Summary:
- *    This function will take user input to record the necessary details for
- *    making a new 'Shirt'.  This function then calls the parameterized
- *    constructor for a 'Shirt' using those details.
+/**************************************************************************//**
+ * @brief Creates a 'Shirt' object
+ *
+ * @returns an instance of the 'Shirt' Class.
+ * @detail This function will take user input to record the necessary details 
+ *         for making a new 'Shirt'.  This function then calls the parameterized
+ *         constructor for a 'Shirt' using those details.
  */
 Shirt Closet::AddShirt() {
   //Instantiate variables with dummy values
@@ -187,7 +167,6 @@ Shirt Closet::AddShirt() {
   cin.ignore();//fixes issue where it 'forgot' to ask for name of shirt.  Idk why this works...
 
   //Begin putting in actual values
-  //message = "Please enter the name of the shirt: ";
   shirtName = window.MakeWindow("Please enter the name of the shirt: ");
   shirtPrimColor = window.MakeWindow("Please enter the primary color for " + shirtName + ": ");
   shirtSecColor = window.MakeWindow("Please enter the secondary color for " + shirtName + ": ");
@@ -206,14 +185,12 @@ Shirt Closet::AddShirt() {
   return shirt;
 }
 
-/******************************************************************************
- * Function 'AddPants'
- * Returns:
- *    an instance of the 'Pants' class.
- * Summary:
- *    This function will take user input to record the necessary details for
- *    making a new 'Pants'.  This function then calls the parameterized
- *    constructor for a 'Pants' using those details.
+/**************************************************************************//**
+ * @returns An instance of the 'Pants' class.
+ * @brief Creates a 'Pants' object
+ * @detail This function will take user input to record the necessary details 
+ *         for making a new 'Pants'.  This function then calls the parameterized
+ *         constructor for a 'Pants' using those details.
  */
 Pants Closet::AddPants() {
   //instantiate variables with dummy values
@@ -229,27 +206,6 @@ Pants Closet::AddPants() {
   cin.ignore();
 
   //Begin putting in actual values
-/*  cout << "Please enter a name for this pair of pants:" << endl;
-  getline(cin, pantsName);
-
-  cout << "Please enter the primary color for " << pantsName << "." << endl;
-  getline(cin, pantsPrimColor);
-
-  cout << "Please enter the secondary color for " << pantsName << ", or n/a." << endl;
-  getline(cin, pantsSecColor);
-
-  cout << "Please enter the tertiary color for " << pantsName << ", or n/a." << endl;
-  getline(cin, pantsTertColor);
-  
-  cout << "Please enter the material for " << pantsName << " (denim, chino, etc.)." << endl;
-  getline(cin, pantsMaterial);
-
-  cout << "Please enter the length for " << pantsName << " (long, shorts, capris, etc.)." << endl;
-  getline(cin, pantsLength);
-
-  cout << "Please enter the cut for " << pantsName << " (boot, skinny, etc.)." << endl;
-  getline(cin, pantsCut);
-*/
   pantsName = window.MakeWindow("Please enter the name of the pants: ");
   pantsPrimColor = window.MakeWindow("Please enter the primary color for " 
                            + pantsName + ": ");
@@ -275,11 +231,9 @@ Pants Closet::AddPants() {
   return pants;
 }
 
-/******************************************************************************
- * Function 'AddSocks'
- * Returns:
- *    an instance of the 'Socks' class.
- * Summary:
+/**************************************************************************//**
+ * @returns An instance of the 'Socks' class.
+ * @brief Creates a 'Socks' object
  *    This function will take user input to record the necessary details for
  *    making a new 'Socks'.  This function then calls the parameterized
  *    constructor for a 'Socks' using those details.
@@ -503,10 +457,8 @@ int Closet::AssignID(string type) {
   }
   return id;
 }
-/******************************************************************************
- * Function 'StoreCloset'
- * Returns:
- *    XML representation of closet
+/**************************************************************************//**
+ * @returns XML representation of closet
  */
 string Closet::StoreCloset() const {
   string s = "";
@@ -538,9 +490,7 @@ string Closet::StoreCloset() const {
 }
 
 /******************************************************************************
- * Function 'ToString'
- * Returns:
- *    'string' representing the closet
+ * @returns 'string' representing the closet
  */
 string Closet::ToString() const {
   string s = "";
@@ -572,58 +522,3 @@ string Closet::ToString() const {
 
   return s;
 }
-/*******************************************************************************
- * Function 'window.har'
- * Returns: char representing user input
- * Summary: This function rewrites the ncurses window. */
-
-/* Handled by Ncurses or Vulkan
-char Closet::window.har(string message) {
-  clear();
-  
-  // Initialize variables
-  int row, col;
-  getmaxyx(stdscr,row,col);
-
-
-  // Print Message
-  mvprintw(row/2,(col-message.length())/2,"%s",message.c_str());
-
-  return getch();
-  
-}
-*/
-/*******************************************************************************
- * Function 'window.
- * Returns: string representing user input
- * Summary: This function rewrites the ncurses window. */
-
-/* Handled by Ncurses or Vulkan
-string Closet::window.string message) {
-  clear();
-  
-  // Initialize variables
-  string s = "";
-  int row, col;
-  getmaxyx(stdscr,row,col);
-
-
-  // Print Message
-  mvprintw(row/2,(col-message.length())/2,"%s",message.c_str());
-
-  // Get Input
-  int ch = getch();
-  while (ch != '\n') {
-    s.push_back(ch);
-    ch = getch();
-  }
-
-  // Confirm Input
-  mvprintw(LINES -2, 0, "You Entered: %s", s.c_str());
-  getch();
-
-  return s;
-}
-*/
-
-

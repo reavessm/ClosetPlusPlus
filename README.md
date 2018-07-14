@@ -1,4 +1,5 @@
-# ClosetPlusPlus
+ClosetPlusPlus {#mainpage}
+==============
 
 Clone the repo
 

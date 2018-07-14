@@ -1,8 +1,8 @@
 #include "main.h"
-/******************************************************************************
- * File Name: main.cc
- * Created by: Stephen M. Reaves
- * Date Last Modified:
+/**************************************************************************//**
+ * @file main.cc
+ * @author Stephen M. Reaves
+ * @date July 14th, 2018
  *
  * Summary:
  *

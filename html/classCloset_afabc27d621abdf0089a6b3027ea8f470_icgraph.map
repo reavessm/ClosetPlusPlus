@@ -1,0 +1,9 @@
+<map id="Closet::AssignID" name="Closet::AssignID">
+<area shape="rect" id="node2" href="$classCloset.html#aba3296cf8964b43f64911cc69c56cbfd" title="Creates a &#39;Shirt&#39; object. " alt="" coords="185,5,312,32"/>
+<area shape="rect" id="node5" href="$classCloset.html#a86001d9aab63ec5cca05bb2daa67e755" title="Creates a &#39;Pants&#39; object &#160;This function will take user input to record the necessary details for maki..." alt="" coords="183,56,314,83"/>
+<area shape="rect" id="node6" href="$classCloset.html#aac44ecf78525b3e0ac4ed80af2133186" title="Creates a &#39;Socks&#39; object This function will take user input to record the necessary details for makin..." alt="" coords="181,107,316,133"/>
+<area shape="rect" id="node7" href="$classCloset.html#a489badac5a919460e8cc8e216f8b3eac" title="Closet::AddShoes" alt="" coords="181,157,316,184"/>
+<area shape="rect" id="node8" href="$classCloset.html#ad81782f2bb110f3a0a635a5ac1f929eb" title="Closet::AddBelt" alt="" coords="187,208,310,235"/>
+<area shape="rect" id="node3" href="$classCloset.html#a1b904dfcdafe293f3f530b338afc0601" title="This function is the wrapper function that is responsible for creating the clothes and then inserting..." alt="" coords="364,107,511,133"/>
+<area shape="rect" id="node4" href="$main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="559,107,613,133"/>
+</map>

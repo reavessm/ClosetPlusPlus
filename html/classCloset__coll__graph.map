@@ -1,0 +1,12 @@
+<map id="Closet" name="Closet">
+<area shape="rect" id="node2" href="$classNcurses.html" title="{Ncurses\n||+ Ncurses()\l+ ~Ncurses()\l+ Init()\l+ Die()\l+ MakeWindowChar()\l+ MakeWindow()\l}" alt="" coords="5,860,169,1011"/>
+<area shape="rect" id="node5" href="$classBelt.html" title="This class represents a logical belt. " alt="" coords="673,661,771,797"/>
+<area shape="rect" id="node6" href="$classClothes.html" title="Clothes abstract class to be used by members of closet. Handles the light work. " alt="" coords="802,477,909,599"/>
+<area shape="rect" id="node14" href="$classShoes.html" title="{Shoes\n||+ Shoes()\l+ Shoes()\l+ ~Shoes()\l+ ToXML()\l+ ToString()\l}" alt="" coords="1423,661,1522,797"/>
+<area shape="rect" id="node16" href="$classShirt.html" title="{Shirt\n||+ Shirt()\l+ Shirt()\l+ ~Shirt()\l+ ToXML()\l+ ToString()\l}" alt="" coords="1175,661,1274,797"/>
+<area shape="rect" id="node18" href="$classPants.html" title="{Pants\n||+ Pants()\l+ Pants()\l+ ~Pants()\l+ ToXML()\l+ ToString()\l}" alt="" coords="429,661,527,797"/>
+<area shape="rect" id="node20" href="$classSocks.html" title="{Socks\n||+ Socks()\l+ Socks()\l+ ~Socks()\l+ ToXML()\l+ ToString()\l}" alt="" coords="806,661,905,797"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="433,147,520,224"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="407,5,546,97"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="996,691,1131,768"/>
+</map>

@@ -1,0 +1,39 @@
+\hypertarget{belt_8h_source}{}\section{belt.\+h}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include <cstdlib>}
+00002 \textcolor{preprocessor}{#include <iostream>}
+00003 \textcolor{preprocessor}{#include <string>}
+00004 
+00005 \textcolor{preprocessor}{#include "\mbox{\hyperlink{clothes_8h}{clothes.h}}"}
+00006 
+00007 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestd}{std}};
+00008 
+00009 \textcolor{preprocessor}{#ifndef BELT\_H}
+00010 \textcolor{preprocessor}{#define BELT\_H}
+00011 
+\Hypertarget{belt_8h_source_l00012}\mbox{\hyperlink{classBelt}{00012}} \textcolor{keyword}{class }\mbox{\hyperlink{classBelt}{Belt}} : \textcolor{keyword}{public} \mbox{\hyperlink{classClothes}{Clothes}}\{
+00013   \textcolor{keyword}{public}:
+00014     \textcolor{comment}{//Constructors and Deconstructors}
+00015     \mbox{\hyperlink{classBelt}{Belt}}();
+00016     \mbox{\hyperlink{classBelt}{Belt}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{string} name, \textcolor{keywordtype}{string} prim\_color, \textcolor{keywordtype}{string} sec\_color, 
+00017           \textcolor{keywordtype}{string} tert\_color, \textcolor{keywordtype}{string} material, \textcolor{keywordtype}{string} pattern); 
+00018     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classBelt}{Belt}}();
+00019 
+00020     \textcolor{comment}{//General Functions}
+00021 
+00022     \textcolor{comment}{//bool IsDirty();}
+00023 
+00024     \textcolor{keywordtype}{string} ToXML() \textcolor{keyword}{const};
+00025     \textcolor{keywordtype}{string} ToString() \textcolor{keyword}{const};
+00026   
+00027   \textcolor{keyword}{private}:
+00028     \textcolor{comment}{//Variables}
+00029 
+00030     \textcolor{comment}{//Private Functions}
+00031 
+00032 \};
+00033 
+00034 
+00035 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* BELT\_H */}\textcolor{preprocessor}{ }
+\end{DoxyCode}
