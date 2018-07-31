@@ -9,6 +9,7 @@ var hierarchy =
       [ "Socks", "classSocks.html", null ]
     ] ],
     [ "Ncurses", "classNcurses.html", null ],
-    [ "Vulkan", "classVulkan.html", null ],
-    [ "Window", "classWindow.html", null ]
+    [ "Window", "classWindow.html", [
+      [ "Vulkan", "classVulkan.html", null ]
+    ] ]
 ];

@@ -2,9 +2,9 @@
 <area shape="rect" id="node2" href="$classCloset.html#a1b904dfcdafe293f3f530b338afc0601" title="This function is the wrapper function that is responsible for creating the clothes and then inserting..." alt="" coords="581,105,728,131"/>
 <area shape="rect" id="node4" href="$classCloset.html#aba3296cf8964b43f64911cc69c56cbfd" title="Creates a &#39;Shirt&#39; object. " alt="" coords="403,29,529,55"/>
 <area shape="rect" id="node5" href="$classCloset.html#a86001d9aab63ec5cca05bb2daa67e755" title="Creates a &#39;Pants&#39; object &#160;This function will take user input to record the necessary details for maki..." alt="" coords="401,79,531,106"/>
-<area shape="rect" id="node6" href="$classCloset.html#aac44ecf78525b3e0ac4ed80af2133186" title="Creates a &#39;Socks&#39; object This function will take user input to record the necessary details for makin..." alt="" coords="399,130,533,157"/>
-<area shape="rect" id="node7" href="$classCloset.html#a489badac5a919460e8cc8e216f8b3eac" title="Closet::AddShoes" alt="" coords="399,181,533,207"/>
-<area shape="rect" id="node8" href="$classCloset.html#ad81782f2bb110f3a0a635a5ac1f929eb" title="Closet::AddBelt" alt="" coords="405,231,527,258"/>
-<area shape="rect" id="node9" href="$classCloset.html#afabc27d621abdf0089a6b3027ea8f470" title="Closet::AssignID" alt="" coords="223,181,351,207"/>
+<area shape="rect" id="node6" href="$classCloset.html#aac44ecf78525b3e0ac4ed80af2133186" title="Creates a &#39;Socks&#39; object &#160;This function will take user input to record the necessary details for maki..." alt="" coords="399,130,533,157"/>
+<area shape="rect" id="node7" href="$classCloset.html#a489badac5a919460e8cc8e216f8b3eac" title="Creates a &#39;Shoes&#39; object &#160;This function will take user input to record the necessary details for maki..." alt="" coords="399,181,533,207"/>
+<area shape="rect" id="node8" href="$classCloset.html#ad81782f2bb110f3a0a635a5ac1f929eb" title="Creates a &#39;Belt&#39; object &#160;This function will take user input to record the necessary details for makin..." alt="" coords="405,231,527,258"/>
+<area shape="rect" id="node9" href="$classCloset.html#afabc27d621abdf0089a6b3027ea8f470" title="Assigns unique ID to clothes &#160;This function assigns the next available ID number for a given type..." alt="" coords="223,181,351,207"/>
 <area shape="rect" id="node3" href="$main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="776,105,831,131"/>
 </map>

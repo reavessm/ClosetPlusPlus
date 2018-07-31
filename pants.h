@@ -1,10 +1,8 @@
-/******************************************************************************
- * File Name: pants.h
- * Created by: Stephen M. Reaves
- * Date Last Modified:
- *
- * Summary: Header File for 'Pants' class in the Closet++ program
- *
+/**
+ * @class Pants
+ * @headerfile pants.h ""
+ * @author Stephen M. Reaves
+ * @date
  */
 
 #include <cstdlib>
@@ -19,27 +17,24 @@ using namespace std;
 #define PANTS_H
 
 class Pants : public Clothes {
-  public:
-    //Constructors and Deconstructors
-    Pants();
-    Pants(int id, string name, string prim_color, string sec_color, 
-          string tert_color, string material, string length, 
-          string cut);
-    virtual ~Pants();
+ public:
+  // Constructors and Deconstructors
+  Pants();
+  Pants(int id, string name, string prim_color, string sec_color,
+        string tert_color, string material, string length, string cut);
+  virtual ~Pants();
 
-    //General Functions
+  // General Functions
 
-    //bool IsDirty();
+  // bool IsDirty();
 
-    string ToXML() const;
-    string ToString() const;
-  
-  private:
-    //Variables
+  string ToXML() const;
+  string ToString() const;
 
-    //Private Functions
+ private:
+  // Variables
 
+  // Private Functions
 };
 
-
-#endif /* PANTS_H */ 
+#endif /* PANTS_H */

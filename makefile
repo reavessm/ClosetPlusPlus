@@ -6,7 +6,7 @@ SRC = $(wildcard *.cc)
 OBJ = $(SRC:.cc=.o)
 DEP = $(wildcard *.h)
 
-.PHONY: clean todo debug doc
+.PHONY: clean todo debug doc format
 
 Closet++: $(OBJ)
 	$(GCC) $(LIBS) -o $@ $^
@@ -27,6 +27,8 @@ debug: $(OBJ)
 	$(GCC) $(LIBS) -g -o Closet++ $(OBJ)
 	gdb Closet++
 
-doc:
+doc: format
 	doxygen closetPlusPlussDocs.conf
 
+format: $(SRC) $(DEP)
+	clang-format -i -style=Google $^

@@ -19,26 +19,24 @@ using namespace std;
 #define SHOES_H
 
 class Shoes : public Clothes {
-  public:
-    //Constructors and Deconstructors
-    Shoes();
-    Shoes(int id, string name, string prim_color, string sec_color, 
-          string tert_color, string material, string style); 
-    virtual ~Shoes();
+ public:
+  // Constructors and Deconstructors
+  Shoes();
+  Shoes(int id, string name, string prim_color, string sec_color,
+        string tert_color, string material, string style);
+  virtual ~Shoes();
 
-    //General Functions
+  // General Functions
 
-    //bool IsDirty();
+  // bool IsDirty();
 
-    string ToXML() const;
-    string ToString() const;
-  
-  private:
-    //Variables
+  string ToXML() const;
+  string ToString() const;
 
-    //Private Functions
+ private:
+  // Variables
 
+  // Private Functions
 };
 
-
-#endif /* SHOES_H */ 
+#endif /* SHOES_H */

@@ -1,18 +1,20 @@
 #include "belt.h"
 /**
  * @class Belt
+ * @file belt.cc
  * @author Stephen M. Reaves
  * @brief This class represents a logical belt
  * @date July 14th, 2018
  */
-/**************************************************************************//**
+
+/**
  * Default Constructor
  *
  * @returns Belt Object
  */
 Belt::Belt() {}
 
-/**************************************************************************//**
+/**
  * Parameterized Constructor
  *
  * @param id Integer uniquely identifying this object across the whole closet
@@ -25,7 +27,7 @@ Belt::Belt() {}
  *
  * @returns Belt Object
  */
-Belt::Belt(int id, string name, string prim_color, string sec_color, 
+Belt::Belt(int id, string name, string prim_color, string sec_color,
            string tert_color, string material, string pattern) {
   this->id_ = id;
   this->name_ = name;
@@ -36,13 +38,14 @@ Belt::Belt(int id, string name, string prim_color, string sec_color,
   this->pattern_ = pattern;
 }
 
-/**************************************************************************//**
+/**
  * Deconstructor
  */
 Belt::~Belt() {}
 
-/**************************************************************************//**
- * DEPRECATED
+/**
+ * ToXML
+ * @deprecated
  * @returns XML representing the belt.
  */
 string Belt::ToXML() const {
@@ -51,7 +54,8 @@ string Belt::ToXML() const {
   s += "  <Belt ID=" + to_string(this->id_) + ">\n";
   s += "    <Name>" + this->name_ + "</Name>\n";
   s += "    <Primary Color>" + this->primary_color_ + "</Primary Color>\n";
-  s += "    <Secondary Color>" + this->secondary_color_ + "</Secondary Color>\n";
+  s +=
+      "    <Secondary Color>" + this->secondary_color_ + "</Secondary Color>\n";
   s += "    <Tertiary Color>" + this->tertiary_color_ + "</Tertiary Color>\n";
   s += "    <Material>" + this->material_ + "</Material>\n";
   s += "  </Belt>\n";
@@ -59,8 +63,8 @@ string Belt::ToXML() const {
   return s;
 }
 
-/**************************************************************************//**
- * Function 'ToString'
+/**
+ * ToString
  * @returns 'string' representing the belt.
  */
 string Belt::ToString() const {

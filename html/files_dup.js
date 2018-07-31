@@ -10,9 +10,7 @@ var files_dup =
     [ "myCloset.cc", "myCloset_8cc.html", null ],
     [ "myCloset.h", "myCloset_8h.html", "myCloset_8h" ],
     [ "ncurses.cc", "ncurses_8cc.html", null ],
-    [ "ncurses.h", "ncurses_8h.html", [
-      [ "Ncurses", "classNcurses.html", "classNcurses" ]
-    ] ],
+    [ "ncurses.h", "ncurses_8h.html", null ],
     [ "pants.cc", "pants_8cc.html", null ],
     [ "pants.h", "pants_8h.html", [
       [ "Pants", "classPants.html", "classPants" ]

@@ -2,16 +2,12 @@
 \label{classCloset}\index{Closet@{Closet}}
 
 
-Creates and stores clothes.  
+{\ttfamily \#include \char`\"{}my\+Closet.\+h\char`\"{}}
 
 
 
-
-{\ttfamily \#include $<$my\+Closet.\+h$>$}
-
-
-
-Collaboration diagram for Closet\+:\nopagebreak
+Collaboration diagram for Closet\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -45,13 +41,13 @@ string \mbox{\hyperlink{classCloset_a108ab29dacfccd5d1c958d5ec88ad64f}{Get\+Clos
 \mbox{\hyperlink{classPants}{Pants}} \mbox{\hyperlink{classCloset_a86001d9aab63ec5cca05bb2daa67e755}{Add\+Pants}} ()
 \begin{DoxyCompactList}\small\item\em Creates a \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} using those details. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classSocks}{Socks}} \mbox{\hyperlink{classCloset_aac44ecf78525b3e0ac4ed80af2133186}{Add\+Socks}} ()
-\begin{DoxyCompactList}\small\item\em Creates a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} object This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} using those details. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} using those details. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classShoes}{Shoes}} \mbox{\hyperlink{classCloset_a489badac5a919460e8cc8e216f8b3eac}{Add\+Shoes}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a \textquotesingle{}\mbox{\hyperlink{classShoes}{Shoes}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classShoes}{Shoes}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classShoes}{Shoes}}\textquotesingle{} using those details. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classBelt}{Belt}} \mbox{\hyperlink{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb}{Add\+Belt}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a \textquotesingle{}\mbox{\hyperlink{classBelt}{Belt}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classBelt}{Belt}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classBelt}{Belt}}\textquotesingle{} using those details. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+ID}} (string type)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Assigns unique ID to clothes  This function assigns the next available ID number for a given type. The last two numbers represent the number of the given type, while the other numbers represent the type. For Example, if there are currently 4 shirts, then the next shirt will have the ID of 105. The 100 represents shirts, while the 05 means it is the fifth shirt. This allows for 99 items of a given type and (2$^\wedge$29)-\/1 types??? \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -72,8 +68,6 @@ map$<$ int, \mbox{\hyperlink{classBelt}{Belt}} $>$ \mbox{\hyperlink{classCloset_
 
 
 \subsection{Detailed Description}
-Creates and stores clothes. 
-
 \begin{DoxyAuthor}{Author}
 Stephen M. Reaves 
 \end{DoxyAuthor}
@@ -101,15 +95,8 @@ Closes the window, then kills the \mbox{\hyperlink{classCloset}{Closet}}.
 
 Deconstructor 
 
-References \mbox{\hyperlink{classNcurses_af9467a004e66043d4dbe540e24524f1f}{Ncurses\+::\+Die()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+References \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=286pt]{classCloset_a5afebda9b625af231a1d980ff851b2a3_cgraph}
-\end{center}
-\end{figure}
 
 
 \subsection{Member Function Documentation}
@@ -121,16 +108,25 @@ Here is the call graph for this function\+:\nopagebreak
 
 
 
-References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+Creates a \textquotesingle{}\mbox{\hyperlink{classBelt}{Belt}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classBelt}{Belt}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classBelt}{Belt}}\textquotesingle{} using those details. 
 
-Here is the call graph for this function\+:\nopagebreak
+Add\+Belt \begin{DoxyReturn}{Returns}
+An instance of the \textquotesingle{}\mbox{\hyperlink{classBelt}{Belt}}\textquotesingle{} class. 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb_cgraph}
+\includegraphics[width=304pt]{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -147,21 +143,23 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Creates a \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} using those details. 
 
-\begin{DoxyReturn}{Returns}
+Add\+Pants \begin{DoxyReturn}{Returns}
 An instance of the \textquotesingle{}\mbox{\hyperlink{classPants}{Pants}}\textquotesingle{} class. 
 \end{DoxyReturn}
 
 
-References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classCloset_a86001d9aab63ec5cca05bb2daa67e755_cgraph}
+\includegraphics[width=310pt]{classCloset_a86001d9aab63ec5cca05bb2daa67e755_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -178,21 +176,23 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Creates a \textquotesingle{}\mbox{\hyperlink{classShirt}{Shirt}}\textquotesingle{} object. 
 
-\begin{DoxyReturn}{Returns}
+Add\+Shirt \begin{DoxyReturn}{Returns}
 an instance of the \textquotesingle{}\mbox{\hyperlink{classShirt}{Shirt}}\textquotesingle{} Class.  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classShirt}{Shirt}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classShirt}{Shirt}}\textquotesingle{} using those details. 
 \end{DoxyReturn}
 
 
-References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classCloset_aba3296cf8964b43f64911cc69c56cbfd_cgraph}
+\includegraphics[width=307pt]{classCloset_aba3296cf8964b43f64911cc69c56cbfd_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -207,16 +207,25 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+Creates a \textquotesingle{}\mbox{\hyperlink{classShoes}{Shoes}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classShoes}{Shoes}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classShoes}{Shoes}}\textquotesingle{} using those details. 
 
-Here is the call graph for this function\+:\nopagebreak
+Add\+Shoes \begin{DoxyReturn}{Returns}
+An instance of the \textquotesingle{}\mbox{\hyperlink{classShoes}{Shoes}}\textquotesingle{} class. 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classCloset_a489badac5a919460e8cc8e216f8b3eac_cgraph}
+\includegraphics[width=313pt]{classCloset_a489badac5a919460e8cc8e216f8b3eac_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -231,23 +240,25 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-Creates a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} object This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} using those details. 
+Creates a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} object  This function will take user input to record the necessary details for making a new \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{}. This function then calls the parameterized constructor for a \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} using those details. 
 
-\begin{DoxyReturn}{Returns}
+Add\+Socks \begin{DoxyReturn}{Returns}
 An instance of the \textquotesingle{}\mbox{\hyperlink{classSocks}{Socks}}\textquotesingle{} class. 
 \end{DoxyReturn}
 
 
-References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+References \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Assign\+I\+D()}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classCloset_aac44ecf78525b3e0ac4ed80af2133186_cgraph}
+\includegraphics[width=313pt]{classCloset_aac44ecf78525b3e0ac4ed80af2133186_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -262,16 +273,27 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-References \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+Assigns unique ID to clothes  This function assigns the next available ID number for a given type. The last two numbers represent the number of the given type, while the other numbers represent the type. For Example, if there are currently 4 shirts, then the next shirt will have the ID of 105. The 100 represents shirts, while the 05 means it is the fifth shirt. This allows for 99 items of a given type and (2$^\wedge$29)-\/1 types??? 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=339pt]{classCloset_afabc27d621abdf0089a6b3027ea8f470_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Assign\+ID 
+\begin{DoxyParams}{Parameters}
+{\em type} & A string dictating the type of clothing to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer corrosponding to the next available ID for the given type, or -\/1 for an error. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+So far the types are hard coded in. Meaning you can only create clothes that are either shirts, pants, belts, socks, or shoes. There is currently no way to dynamically add types. Underwear types were intentionally left out to test the best way to dynamically add new types. 
+\end{DoxyNote}
+$<$\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Use Switch-\/case for \mbox{\hyperlink{classCloset_afabc27d621abdf0089a6b3027ea8f470}{Closet\+::\+Assign\+ID}} \end{DoxyRefDesc}
+
+
+References \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -293,7 +315,8 @@ Name of the closet
 
 References \mbox{\hyperlink{classCloset_a3c06676b90e6ebe31d6dd276f2f0bcef}{closet\+\_\+name\+\_\+}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -310,7 +333,7 @@ Here is the caller graph for this function\+:\nopagebreak
 
 This function builds a \mbox{\hyperlink{classCloset}{Closet}} from a file, then calls the default \textquotesingle{}Make\+Closet\textquotesingle{} function. 
 
-\begin{DoxyNote}{Note}
+Import\+Closet \begin{DoxyNote}{Note}
 The filename must end in an acceptable filetype 
 \end{DoxyNote}
 \mbox{\Hypertarget{classCloset_a1b904dfcdafe293f3f530b338afc0601}\label{classCloset_a1b904dfcdafe293f3f530b338afc0601}} 
@@ -323,18 +346,20 @@ The filename must end in an acceptable filetype
 
 This function is the wrapper function that is responsible for creating the clothes and then inserting them to the appropriate map. 
 
-For each type of clothing, this function asks the user if they want to add a new clothing of that type. If they do then they call the clothing function to fill in the clothing specific details. This function calls on \textquotesingle{}\mbox{\hyperlink{classWindow}{Window}}\textquotesingle{} to handle the input. 
+Make\+Closet  For each type of clothing, this function asks the user if they want to add a new clothing of that type. If they do then they call the clothing function to fill in the clothing specific details. This function calls on \textquotesingle{}\mbox{\hyperlink{classWindow}{Window}}\textquotesingle{} to handle the input. 
 
-References \mbox{\hyperlink{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb}{Add\+Belt()}}, \mbox{\hyperlink{classCloset_a86001d9aab63ec5cca05bb2daa67e755}{Add\+Pants()}}, \mbox{\hyperlink{classCloset_aba3296cf8964b43f64911cc69c56cbfd}{Add\+Shirt()}}, \mbox{\hyperlink{classCloset_a489badac5a919460e8cc8e216f8b3eac}{Add\+Shoes()}}, \mbox{\hyperlink{classCloset_aac44ecf78525b3e0ac4ed80af2133186}{Add\+Socks()}}, \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a3c06676b90e6ebe31d6dd276f2f0bcef}{closet\+\_\+name\+\_\+}}, \mbox{\hyperlink{classClothes_a3f6dac172f333126d19010f85ec44e4c}{Clothes\+::\+Get\+I\+D()}}, \mbox{\hyperlink{classNcurses_a9966b2b23b522e415232976acfa1d18f}{Ncurses\+::\+Init()}}, \mbox{\hyperlink{classNcurses_a1d8def11419a444c5696b5043da680d4}{Ncurses\+::\+Make\+Window()}}, \mbox{\hyperlink{classNcurses_a2b4916627ad802a840b95cf65766773f}{Ncurses\+::\+Make\+Window\+Char()}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
+References \mbox{\hyperlink{classCloset_ad81782f2bb110f3a0a635a5ac1f929eb}{Add\+Belt()}}, \mbox{\hyperlink{classCloset_a86001d9aab63ec5cca05bb2daa67e755}{Add\+Pants()}}, \mbox{\hyperlink{classCloset_aba3296cf8964b43f64911cc69c56cbfd}{Add\+Shirt()}}, \mbox{\hyperlink{classCloset_a489badac5a919460e8cc8e216f8b3eac}{Add\+Shoes()}}, \mbox{\hyperlink{classCloset_aac44ecf78525b3e0ac4ed80af2133186}{Add\+Socks()}}, \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a3c06676b90e6ebe31d6dd276f2f0bcef}{closet\+\_\+name\+\_\+}}, \mbox{\hyperlink{classClothes_a3f6dac172f333126d19010f85ec44e4c}{Clothes\+::\+Get\+I\+D()}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_af1eb4f786cc4eccd3018b90632236a93}{window}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classCloset_a1b904dfcdafe293f3f530b338afc0601_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -347,14 +372,15 @@ Here is the caller graph for this function\+:\nopagebreak
 \subsubsection{\texorpdfstring{Store\+Closet()}{StoreCloset()}}
 {\footnotesize\ttfamily string Closet\+::\+Store\+Closet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+Store\+Closet \begin{DoxyReturn}{Returns}
 X\+ML representation of closet 
 \end{DoxyReturn}
 
 
 References \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -367,11 +393,15 @@ Here is the caller graph for this function\+:\nopagebreak
 \subsubsection{\texorpdfstring{To\+String()}{ToString()}}
 {\footnotesize\ttfamily string Closet\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+To\+String \begin{DoxyReturn}{Returns}
+\textquotesingle{}string\textquotesingle{} representing the closet 
+\end{DoxyReturn}
 
 
 References \mbox{\hyperlink{classCloset_a0631fe46e3c955109a613e1cd1d2cb52}{belt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8be78859dfab9e2aa09bfbbb8f191dab}{pants\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_a8126a023a2777b84b23436da8d1f4b35}{shirt\+\_\+map\+\_\+}}, \mbox{\hyperlink{classCloset_ab1e1ce9110a044c90244407f0f6f92c4}{shoes\+\_\+map\+\_\+}}, and \mbox{\hyperlink{classCloset_a33a48dfc5ef542261bb0dd373f899f9e}{socks\+\_\+map\+\_\+}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

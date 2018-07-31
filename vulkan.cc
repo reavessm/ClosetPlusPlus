@@ -15,8 +15,8 @@
 
 using namespace std;
 
-Vulkan::Vulkan(){}
-Vulkan::~Vulkan(){}
+Vulkan::Vulkan() {}
+Vulkan::~Vulkan() {}
 
 bool Vulkan::Init() {
   isInit_ = false;
@@ -24,28 +24,18 @@ bool Vulkan::Init() {
   return isInit_;
 }
 
-void Vulkan::Die() {
-  
-}
-
+void Vulkan::Die() {}
 
 /*******************************************************************************
  * Function 'MakeWindowChar'
  * Returns: char representing user input
  * Summary: This function rewrites the vulkan window
  */
-char Vulkan::MakeWindowChar(string message) {
-  return 'a';
-}
-
-
-
+char Vulkan::MakeWindowChar(string message) { return 'a'; }
 
 /*******************************************************************************
  * Function 'MakeWindow'
  * Returns: string representing user input
  * Summary: This function rewrites the vulkan window
  */
-string Vulkan::MakeWindow(string message) {
-  return message;
-}
+string Vulkan::MakeWindow(string message) { return message; }

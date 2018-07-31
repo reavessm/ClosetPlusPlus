@@ -1,4 +1,4 @@
-.TH "Vulkan" 3 "Sat Jul 14 2018" "ClosetPlusPlus" \" -*- nroff -*-
+.TH "Vulkan" 3 "Thu Jul 19 2018" "ClosetPlusPlus" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -8,6 +8,8 @@ Vulkan
 .PP
 .PP
 \fC#include <vulkan\&.h>\fP
+.PP
+Inherits \fBWindow\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
@@ -45,14 +47,22 @@ Vulkan
 
 .SH "Member Function Documentation"
 .PP 
-.SS "void Vulkan::Die ()"
+.SS "void Vulkan::Die ()\fC [virtual]\fP"
 
-.SS "bool Vulkan::Init ()"
+.PP
+Implements \fBWindow\fP\&.
+.SS "bool Vulkan::Init ()\fC [virtual]\fP"
 
-.SS "string Vulkan::MakeWindow (string message)"
+.PP
+Implements \fBWindow\fP\&.
+.SS "string Vulkan::MakeWindow (string message)\fC [virtual]\fP"
 
-.SS "char Vulkan::MakeWindowChar (string message)"
+.PP
+Implements \fBWindow\fP\&.
+.SS "char Vulkan::MakeWindowChar (string message)\fC [virtual]\fP"
 
+.PP
+Implements \fBWindow\fP\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "bool Vulkan::isInit_ = false\fC [private]\fP"

@@ -1,5 +1,5 @@
 <map id="Clothes" name="Clothes">
-<area shape="rect" id="node2" href="$classBelt.html" title="This class represents a logical belt. " alt="" coords="5,336,104,472"/>
+<area shape="rect" id="node2" href="$classBelt.html" title="{Belt\n||+ Belt()\l+ Belt()\l+ ~Belt()\l+ ToXML()\l+ ToString()\l}" alt="" coords="5,336,104,472"/>
 <area shape="rect" id="node3" href="$classPants.html" title="{Pants\n||+ Pants()\l+ Pants()\l+ ~Pants()\l+ ToXML()\l+ ToString()\l}" alt="" coords="128,336,227,472"/>
 <area shape="rect" id="node4" href="$classShirt.html" title="{Shirt\n||+ Shirt()\l+ Shirt()\l+ ~Shirt()\l+ ToXML()\l+ ToString()\l}" alt="" coords="251,336,349,472"/>
 <area shape="rect" id="node5" href="$classShoes.html" title="{Shoes\n||+ Shoes()\l+ Shoes()\l+ ~Shoes()\l+ ToXML()\l+ ToString()\l}" alt="" coords="373,336,472,472"/>

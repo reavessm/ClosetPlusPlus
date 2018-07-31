@@ -1,34 +1,32 @@
-/******************************************************************************
- * File Name: ncurses.cc
- * Created by: Stephen M. Reaves
- * Date Last Modified:
- *
- * Summary:
- *
+/**
+ * @class Ncurses
+ * @file ncurses.cc
+ * @author Stephen M. Reaves
+ * @date July 14th, 2018
  */
 
 #include "ncurses.h"
 
 using namespace std;
 
-/*******************************************************************************
- * Constructor
+/**
+ * Default Constructor
  */
 Ncurses::Ncurses() {}
 
-/*******************************************************************************
+/**
  * Deconstructor
  */
 Ncurses::~Ncurses() {}
 
-/*******************************************************************************
- * Function 'Init'
- * Returns: boolean representing success (or failure) of initialization
- * Summary:
+/**
+ * Init
+ * @returns Boolean representing success (or failure) of initialization
+ * @brief Creates window and color pairs for Ncurses
  */
 bool Ncurses::Init() {
   isInit_ = false;
-  
+
   initscr();
   start_color();
 
@@ -42,15 +40,17 @@ bool Ncurses::Init() {
   return isInit_;
 }
 
-void Ncurses::Die() {
-  endwin();
-}
+/**
+ * Die
+ * @brief Kills the window
+ */
+void Ncurses::Die() { endwin(); }
 
-
-/*******************************************************************************
- * Function 'MakeWindowChar'
- * Returns: char representing user input
- * Summary: This function rewrites the ncurses window
+/**
+ * MakeWindowChar
+ * @param message String to be displayed
+ * @returns Char representing user input
+ * @brief This function rewrites the ncurses window and returns a char
  */
 char Ncurses::MakeWindowChar(string message) {
   clear();
@@ -60,18 +60,16 @@ char Ncurses::MakeWindowChar(string message) {
   getmaxyx(stdscr, row, col);
 
   // Print Message
-  mvprintw(row/2,(col-message.length())/2, "%s", message.c_str());
+  mvprintw(row / 2, (col - message.length()) / 2, "%s", message.c_str());
 
   return getch();
 }
 
-
-
-
-/*******************************************************************************
- * Function 'Window'
- * Returns: string representing user input
- * Summary: This function rewrites the ncurses window
+/**
+ * MakeWindow
+ * @param message String to be displayed
+ * @returns String representing user input
+ * @brief This function rewrites the ncurses window and returns a string
  */
 string Ncurses::MakeWindow(string message) {
   clear();
@@ -79,10 +77,10 @@ string Ncurses::MakeWindow(string message) {
   // Initialize Variables
   string s = "";
   int row, col;
-  getmaxyx(stdscr,row,col);
+  getmaxyx(stdscr, row, col);
 
   // Print Message
-  mvprintw(row/2,(col-message.length())/2, "%s", message.c_str());
+  mvprintw(row / 2, (col - message.length()) / 2, "%s", message.c_str());
 
   // Get Input
   int ch = getch();

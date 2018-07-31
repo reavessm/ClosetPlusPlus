@@ -1,17 +1,14 @@
-/******************************************************************************
- * File Name: main.h
- * Created by: Stephen M. Reaves
- * Date Last Modified:
- *
- * Summary:
- *
+/**
+ * @headerfile main.h
+ * @author Stephen M. Reaves
+ * @date July 14th, 2018
  */
 
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include <string>
 #include <ncurses.h>
+#include <cstdlib>
+#include <fstream>
+#include <iostream>
+#include <string>
 
 #include "myCloset.h"
 #include "ncurses.h"
@@ -30,4 +27,3 @@ string window_type_ = "ncurses";
 #endif
 
 #endif /* MAIN_H */
-

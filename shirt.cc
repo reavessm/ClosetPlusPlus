@@ -1,21 +1,35 @@
 #include "shirt.h"
-/******************************************************************************
- * File Name: shirt.cc
- * Created by: Stephen M. Reaves
- * Date Last Modified:
- *
- * Summary:
- *
+/**
+ * @class Shirt
+ * @file shirt.cc
+ * @author Stephen M. Reaves
+ * @date July 14th, 2018
  */
 
 using namespace std;
 
-/******************************************************************************
- * Constructor
+/**
+ * Default Constructor
  */
 Shirt::Shirt() {}
 
-Shirt::Shirt(int id, string name, string prim_color, string sec_color, string tert_color, string pattern, string sleeve_length, string collar) {
+/**
+ * Parameterized Constructor
+ *
+ * @param id Integer to identify this shirt uniquely across the closet
+ * @param name String to identify this shirt to the user
+ * @param prim_color Primary color
+ * @param sec_color Secondary color
+ * @param tert_color Tertiary color
+ * @param pattern Design pattern
+ * @param sleeve_length Length of the sleeve
+ * @param collar Type of collar
+ *
+ * @returns Shirt object
+ */
+Shirt::Shirt(int id, string name, string prim_color, string sec_color,
+             string tert_color, string pattern, string sleeve_length,
+             string collar) {
   this->id_ = id;
   this->name_ = name;
   this->primary_color_ = prim_color;
@@ -26,7 +40,7 @@ Shirt::Shirt(int id, string name, string prim_color, string sec_color, string te
   this->collar_ = collar;
 }
 
-/******************************************************************************
+/**
  * Deconstructor
  */
 Shirt::~Shirt() {}
@@ -35,25 +49,23 @@ Shirt::~Shirt() {}
  * Accessors and Mutators
  */
 
-
 /******************************************************************************
  * General Functions
  */
 
-/******************************************************************************
- * DEPRECATED
- *
- * Function 'ToXML'
- * Returns:
- *    XML representing the shirt.
+/**
+ * ToXML
+ * @deprecated
+ * @returns XML representing the shirt.
  */
-string Shirt::ToXML() const{
+string Shirt::ToXML() const {
   string s = "";
-  
+
   s += "  <Shirt ID=" + to_string(this->id_) + ">\n";
   s += "    <Name>" + this->name_ + "</Name>\n";
   s += "    <Primary Color>" + this->primary_color_ + "</Primary Color>\n";
-  s += "    <Secondary Color>" + this->secondary_color_ + "</Secondary Color>\n";
+  s +=
+      "    <Secondary Color>" + this->secondary_color_ + "</Secondary Color>\n";
   s += "    <Tertiary Color>" + this->tertiary_color_ + "</Tertiary Color>\n";
   s += "    <Pattern>" + this->pattern_ + "</Pattern>\n";
   s += "    <Sleeve Length>" + this->sleeve_length_ + "</Sleeve Length>\n";
@@ -63,12 +75,11 @@ string Shirt::ToXML() const{
   return s;
 }
 
-/******************************************************************************
- * Function 'ToString'
- * Returns:
- *    'string' representing the shirt.
+/**
+ * ToString
+ * @returns 'string' representing the shirt.
  */
-string Shirt::ToString() const{
+string Shirt::ToString() const {
   string s = "\n";
 
   s += "Name: " + this->name_ + "\n";

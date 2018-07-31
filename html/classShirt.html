@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('classShirt.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="shirt_8h_source.html">shirt.h</a>&gt;</code></p>
+<p><code>#include &quot;<a class="el" href="shirt_8h_source.html">shirt.h</a>&quot;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for Shirt:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -178,7 +178,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:ae2e5026257b3a2f2ddbf61757fd3b57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of collar.  <a href="#ae2e5026257b3a2f2ddbf61757fd3b57b">More...</a><br /></td></tr>
 <tr class="separator:ae2e5026257b3a2f2ddbf61757fd3b57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Stephen M. Reaves </dd></dl>
+<dl class="section date"><dt>Date</dt><dd></dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a38664a136cdc92583d8c13a8281905d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38664a136cdc92583d8c13a8281905d5">&#9670;&nbsp;</a></span>Shirt() <span class="overload">[1/2]</span></h2>
 
@@ -193,6 +196,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Default Constructor </p>
 
 </div>
 </div>
@@ -257,6 +261,21 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Parameterized Constructor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Integer to identify this shirt uniquely across the closet </td></tr>
+    <tr><td class="paramname">name</td><td>String to identify this shirt to the user </td></tr>
+    <tr><td class="paramname">prim_color</td><td>Primary color </td></tr>
+    <tr><td class="paramname">sec_color</td><td>Secondary color </td></tr>
+    <tr><td class="paramname">tert_color</td><td>Tertiary color </td></tr>
+    <tr><td class="paramname">pattern</td><td>Design pattern </td></tr>
+    <tr><td class="paramname">sleeve_length</td><td>Length of the sleeve </td></tr>
+    <tr><td class="paramname">collar</td><td>Type of collar</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classShirt.html">Shirt</a> object </dd></dl>
 
 </div>
 </div>
@@ -282,6 +301,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Deconstructor </p>
 
 </div>
 </div>
@@ -344,7 +364,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is what makes this a purely abstract class. The implementation of these will be changed from one article of clothing to the next. </p>
+<p>ToString </p><dl class="section return"><dt>Returns</dt><dd>'string' representing the shirt. </dd></dl>
 
 <p>Implements <a class="el" href="classClothes.html#a953d143394e9a2c007ab0c3a638973cf">Clothes</a>.</p>
 
@@ -364,6 +384,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>ToXML </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>XML representing the shirt. </dd></dl>
 
 </div>
 </div>

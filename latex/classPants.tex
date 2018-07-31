@@ -2,7 +2,7 @@
 \label{classPants}\index{Pants@{Pants}}
 
 
-{\ttfamily \#include $<$pants.\+h$>$}
+{\ttfamily \#include \char`\"{}pants.\+h\char`\"{}}
 
 
 
@@ -66,6 +66,15 @@ string \mbox{\hyperlink{classClothes_ae2e5026257b3a2f2ddbf61757fd3b57b}{collar\+
 \begin{DoxyCompactList}\small\item\em Type of collar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Stephen M. Reaves 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+
+
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classPants_a6e19084b693fdb83029addacdecdc2e2}\label{classPants_a6e19084b693fdb83029addacdecdc2e2}} 
 \index{Pants@{Pants}!Pants@{Pants}}
@@ -73,12 +82,26 @@ string \mbox{\hyperlink{classClothes_ae2e5026257b3a2f2ddbf61757fd3b57b}{collar\+
 \subsubsection{\texorpdfstring{Pants()}{Pants()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Pants\+::\+Pants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classPants_a9ca6f6ddce0ac46556b6e56a9d73ddd0}\label{classPants_a9ca6f6ddce0ac46556b6e56a9d73ddd0}} 
+Default Constructor \mbox{\Hypertarget{classPants_a9ca6f6ddce0ac46556b6e56a9d73ddd0}\label{classPants_a9ca6f6ddce0ac46556b6e56a9d73ddd0}} 
 \index{Pants@{Pants}!Pants@{Pants}}
 \index{Pants@{Pants}!Pants@{Pants}}
 \subsubsection{\texorpdfstring{Pants()}{Pants()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Pants\+::\+Pants (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{name,  }\item[{string}]{prim\+\_\+color,  }\item[{string}]{sec\+\_\+color,  }\item[{string}]{tert\+\_\+color,  }\item[{string}]{material,  }\item[{string}]{length,  }\item[{string}]{cut }\end{DoxyParamCaption})}
 
+Parameterized Constructor 
+\begin{DoxyParams}{Parameters}
+{\em id} & Integer to identify this pants uniquely across the closet \\
+\hline
+{\em name} & String to identify this pants to the user \\
+\hline
+{\em prim\+\_\+color} & Primary color \\
+\hline
+{\em sec\+\_\+color} & Secondary color  Tertiary color  Material of these pants  Length of the pants\textquotesingle{} legs  Cut of the pants\textquotesingle{} legs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classPants}{Pants}} object 
+\end{DoxyReturn}
 
 
 References \mbox{\hyperlink{classClothes_ac1c2286c8928a5eee91d818a098a44ac}{Clothes\+::cut\+\_\+}}, \mbox{\hyperlink{classClothes_a8978d931db5ca47c3ccea30def4ae83e}{Clothes\+::id\+\_\+}}, \mbox{\hyperlink{classClothes_ae02603eda727e33caf46ec30e761e3c3}{Clothes\+::length\+\_\+}}, \mbox{\hyperlink{classClothes_adbb9ed311f14ccbb1e4fe0e8378a95d4}{Clothes\+::material\+\_\+}}, \mbox{\hyperlink{classClothes_a7f2275aaae24224d60c48af922c31b65}{Clothes\+::name\+\_\+}}, \mbox{\hyperlink{classClothes_a7cb005bf6cbb7f4eaa40f1b31817559c}{Clothes\+::primary\+\_\+color\+\_\+}}, \mbox{\hyperlink{classClothes_ab8f55f67b956b25d71260cffcf273673}{Clothes\+::secondary\+\_\+color\+\_\+}}, and \mbox{\hyperlink{classClothes_a3c5f1e7ab531e3ba7a38b930da8078a0}{Clothes\+::tertiary\+\_\+color\+\_\+}}.
@@ -89,7 +112,7 @@ References \mbox{\hyperlink{classClothes_ac1c2286c8928a5eee91d818a098a44ac}{Clot
 \subsubsection{\texorpdfstring{$\sim$\+Pants()}{~Pants()}}
 {\footnotesize\ttfamily Pants\+::$\sim$\+Pants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-
+Deconstructor 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classClothes_a3f6dac172f333126d19010f85ec44e4c}\label{classClothes_a3f6dac172f333126d19010f85ec44e4c}} 
@@ -112,7 +135,10 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{To\+String()}{ToString()}}
 {\footnotesize\ttfamily string Pants\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-This is what makes this a purely abstract class. The implementation of these will be changed from one article of clothing to the next. 
+To\+String \begin{DoxyReturn}{Returns}
+\textquotesingle{}string\textquotesingle{} representing the pants. 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{classClothes_a953d143394e9a2c007ab0c3a638973cf}{Clothes}}.
 
@@ -126,6 +152,13 @@ References \mbox{\hyperlink{classClothes_a8978d931db5ca47c3ccea30def4ae83e}{Clot
 \subsubsection{\texorpdfstring{To\+X\+M\+L()}{ToXML()}}
 {\footnotesize\ttfamily string Pants\+::\+To\+X\+ML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+To\+X\+ML \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+X\+ML representation of the shirt 
+\end{DoxyReturn}
 
 
 References \mbox{\hyperlink{classClothes_a8978d931db5ca47c3ccea30def4ae83e}{Clothes\+::id\+\_\+}}, \mbox{\hyperlink{classClothes_ae02603eda727e33caf46ec30e761e3c3}{Clothes\+::length\+\_\+}}, \mbox{\hyperlink{classClothes_adbb9ed311f14ccbb1e4fe0e8378a95d4}{Clothes\+::material\+\_\+}}, \mbox{\hyperlink{classClothes_a7f2275aaae24224d60c48af922c31b65}{Clothes\+::name\+\_\+}}, \mbox{\hyperlink{classClothes_a7cb005bf6cbb7f4eaa40f1b31817559c}{Clothes\+::primary\+\_\+color\+\_\+}}, \mbox{\hyperlink{classClothes_ab8f55f67b956b25d71260cffcf273673}{Clothes\+::secondary\+\_\+color\+\_\+}}, and \mbox{\hyperlink{classClothes_a3c5f1e7ab531e3ba7a38b930da8078a0}{Clothes\+::tertiary\+\_\+color\+\_\+}}.

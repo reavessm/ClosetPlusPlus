@@ -10,30 +10,31 @@
 00007 \textcolor{comment}{ *}
 00008 \textcolor{comment}{ */}
 00009 
-00010 \textcolor{preprocessor}{#include <cstdlib>}
-00011 \textcolor{preprocessor}{#include <iostream>}
-00012 \textcolor{preprocessor}{#include <string>}
-00013 \textcolor{preprocessor}{#include <\mbox{\hyperlink{ncurses_8h}{ncurses.h}}>}
+00010 \textcolor{preprocessor}{#include <\mbox{\hyperlink{ncurses_8h}{ncurses.h}}>}
+00011 \textcolor{preprocessor}{#include <cstdlib>}
+00012 \textcolor{preprocessor}{#include <iostream>}
+00013 \textcolor{preprocessor}{#include <string>}
 00014 
-00015 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestd}{std}};
+00015 \textcolor{preprocessor}{#include "\mbox{\hyperlink{window_8h}{window.h}}"}
 00016 
-00017 \textcolor{preprocessor}{#ifndef VULKAN\_H}
-00018 \textcolor{preprocessor}{#define VULKAN\_H}
-00019 
-\Hypertarget{vulkan_8h_source_l00020}\mbox{\hyperlink{classVulkan}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classVulkan}{Vulkan}} \{
-00021   \textcolor{keyword}{public}:
-00022     \mbox{\hyperlink{classVulkan}{Vulkan}}();
-00023     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classVulkan}{Vulkan}}();
-00024 
-00025     \textcolor{keywordtype}{bool} Init();
-00026     \textcolor{keywordtype}{void} Die();
-00027     \textcolor{keywordtype}{char} MakeWindowChar(\textcolor{keywordtype}{string} message);
-00028     \textcolor{keywordtype}{string} MakeWindow(\textcolor{keywordtype}{string} message);
-00029 
-00030   \textcolor{keyword}{private}:
-\Hypertarget{vulkan_8h_source_l00031}\mbox{\hyperlink{classVulkan_aa19833e837744cc2f6b1f93c1d66a693}{00031}}     \textcolor{keywordtype}{bool} isInit\_ = \textcolor{keyword}{false};
-00032 \};
-00033 
-00034 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* VULKAN\_H */}\textcolor{preprocessor}{}
+00017 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestd}{std}};
+00018 
+00019 \textcolor{preprocessor}{#ifndef VULKAN\_H}
+00020 \textcolor{preprocessor}{#define VULKAN\_H}
+00021 
+\Hypertarget{vulkan_8h_source_l00022}\mbox{\hyperlink{classVulkan}{00022}} \textcolor{keyword}{class }\mbox{\hyperlink{classVulkan}{Vulkan}} : \textcolor{keyword}{public} \mbox{\hyperlink{classWindow}{Window}} \{
+00023  \textcolor{keyword}{public}:
+00024   \mbox{\hyperlink{classVulkan}{Vulkan}}();
+00025   \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classVulkan}{Vulkan}}();
+00026 
+00027   \textcolor{keywordtype}{bool} Init();
+00028   \textcolor{keywordtype}{void} Die();
+00029   \textcolor{keywordtype}{char} MakeWindowChar(\textcolor{keywordtype}{string} message);
+00030   \textcolor{keywordtype}{string} MakeWindow(\textcolor{keywordtype}{string} message);
+00031 
+00032  \textcolor{keyword}{private}:
+\Hypertarget{vulkan_8h_source_l00033}\mbox{\hyperlink{classVulkan_aa19833e837744cc2f6b1f93c1d66a693}{00033}}   \textcolor{keywordtype}{bool} isInit\_ = \textcolor{keyword}{false};
+00034 \};
 00035 
+00036 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* VULKAN\_H */}\textcolor{preprocessor}{}
 \end{DoxyCode}

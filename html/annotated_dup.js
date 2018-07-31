@@ -3,7 +3,7 @@ var annotated_dup =
     [ "Belt", "classBelt.html", "classBelt" ],
     [ "Closet", "classCloset.html", "classCloset" ],
     [ "Clothes", "classClothes.html", "classClothes" ],
-    [ "Ncurses", "classNcurses.html", "classNcurses" ],
+    [ "Ncurses", "classNcurses.html", null ],
     [ "Pants", "classPants.html", "classPants" ],
     [ "Shirt", "classShirt.html", "classShirt" ],
     [ "Shoes", "classShoes.html", "classShoes" ],

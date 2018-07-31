@@ -8,13 +8,13 @@
  *
  */
 
-
 /******************************************************************************
  * Constructor
  */
 Socks::Socks() {}
 
-Socks::Socks(int id, string name, string prim_color, string sec_color, string tert_color, string pattern) {
+Socks::Socks(int id, string name, string prim_color, string sec_color,
+             string tert_color, string pattern) {
   this->id_ = id;
   this->name_ = name;
   this->primary_color_ = prim_color;
@@ -31,7 +31,6 @@ Socks::~Socks() {}
 /******************************************************************************
  * Accessors and Mutators
  */
-
 
 /******************************************************************************
  * General Functions
@@ -50,7 +49,8 @@ string Socks::ToXML() const {
   s += "  <Socks ID=" + to_string(this->id_) + ">\n";
   s += "    <Name>" + this->name_ + "</Name>\n";
   s += "    <Primary Color>" + this->primary_color_ + "</Primary Color>\n";
-  s += "    <Secondary Color>" + this->secondary_color_ + "</Secondary Color>\n";
+  s +=
+      "    <Secondary Color>" + this->secondary_color_ + "</Secondary Color>\n";
   s += "    <Tertiary Color>" + this->tertiary_color_ + "</Tertiary Color>\n";
   s += "    <Pattern>" + this->pattern_ + "</Pattern>\n";
   s += "  </Socks>\n";

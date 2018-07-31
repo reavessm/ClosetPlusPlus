@@ -1,13 +1,16 @@
-.TH "Window" 3 "Sat Jul 14 2018" "ClosetPlusPlus" \" -*- nroff -*-
+.TH "Window" 3 "Thu Jul 19 2018" "ClosetPlusPlus" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-Window
+Window \- Abstract class for User Interfaces\&.  
+
 .SH SYNOPSIS
 .br
 .PP
 .PP
 \fC#include <window\&.h>\fP
+.PP
+Inherited by \fBVulkan\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
@@ -37,22 +40,47 @@ Window
 .RI "bool \fBisInit_\fP = false"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+Abstract class for User Interfaces\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Stephen M\&. Reaves 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+Jul 19, 2018 
+.RE
+.PP
+
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "Window::Window ()"
+.SS "Window::Window ()\fC [inline]\fP"
 
-.SS "virtual Window::~Window ()\fC [virtual]\fP"
+.SS "virtual Window::~Window ()\fC [inline]\fP, \fC [virtual]\fP"
 
 .SH "Member Function Documentation"
 .PP 
 .SS "virtual void Window::Die ()\fC [pure virtual]\fP"
 
+.PP
+Implemented in \fBVulkan\fP\&.
 .SS "virtual bool Window::Init ()\fC [pure virtual]\fP"
 
+.PP
+Implemented in \fBVulkan\fP\&.
 .SS "virtual string Window::MakeWindow (string message)\fC [pure virtual]\fP"
 
+.PP
+Implemented in \fBVulkan\fP\&.
 .SS "virtual char Window::MakeWindowChar (string message)\fC [pure virtual]\fP"
 
+.PP
+Implemented in \fBVulkan\fP\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "bool Window::isInit_ = false\fC [protected]\fP"

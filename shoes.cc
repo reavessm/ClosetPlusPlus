@@ -8,13 +8,13 @@
  *
  */
 
-
 /******************************************************************************
  * Constructor
  */
 Shoes::Shoes() {}
 
-Shoes::Shoes(int id, string name, string prim_color, string sec_color, string tert_color, string material, string style) {
+Shoes::Shoes(int id, string name, string prim_color, string sec_color,
+             string tert_color, string material, string style) {
   this->id_ = id;
   this->name_ = name;
   this->primary_color_ = prim_color;
@@ -33,7 +33,6 @@ Shoes::~Shoes() {}
  * Accessors and Mutators
  */
 
-
 /******************************************************************************
  * General Functions
  */
@@ -51,7 +50,8 @@ string Shoes::ToXML() const {
   s += "  <Shoes ID=" + to_string(this->id_) + ">\n";
   s += "    <Name>" + this->name_ + "</Name>\n";
   s += "    <Primary Color>" + this->primary_color_ + "</Primary Color>\n";
-  s += "    <Secondary Color>" + this->secondary_color_ + "</Secondary Color>\n";
+  s +=
+      "    <Secondary Color>" + this->secondary_color_ + "</Secondary Color>\n";
   s += "    <Tertiary Color>" + this->tertiary_color_ + "</Tertiary Color>\n";
   s += "    <Material>" + this->material_ + "</Material>\n";
   s += "    <Style>" + this->style_ + "</Style>\n";

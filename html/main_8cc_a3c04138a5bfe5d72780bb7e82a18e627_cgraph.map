@@ -1,16 +1,13 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$classCloset.html#a108ab29dacfccd5d1c958d5ec88ad64f" title="Closet::GetClosetName" alt="" coords="108,157,283,184"/>
-<area shape="rect" id="node3" href="$classCloset.html#a1b904dfcdafe293f3f530b338afc0601" title="This function is the wrapper function that is responsible for creating the clothes and then inserting..." alt="" coords="122,208,269,235"/>
-<area shape="rect" id="node14" href="$classCloset.html#a1f2ec8e3e912756e35fdc55c9401ea3e" title="Closet::StoreCloset" alt="" coords="122,259,269,285"/>
-<area shape="rect" id="node15" href="$classCloset.html#a3bad65dd75ada9a484eb7f78ebfa3b2a" title="Closet::ToString" alt="" coords="134,309,257,336"/>
-<area shape="rect" id="node4" href="$classNcurses.html#a9966b2b23b522e415232976acfa1d18f" title="Ncurses::Init" alt="" coords="379,5,481,32"/>
-<area shape="rect" id="node5" href="$classNcurses.html#a1d8def11419a444c5696b5043da680d4" title="Ncurses::MakeWindow" alt="" coords="753,208,923,235"/>
-<area shape="rect" id="node6" href="$classNcurses.html#a2b4916627ad802a840b95cf65766773f" title="Ncurses::MakeWindowChar" alt="" coords="331,360,529,387"/>
-<area shape="rect" id="node7" href="$classCloset.html#aba3296cf8964b43f64911cc69c56cbfd" title="Creates a &#39;Shirt&#39; object. " alt="" coords="367,107,493,133"/>
-<area shape="rect" id="node9" href="$classClothes.html#a3f6dac172f333126d19010f85ec44e4c" title="Clothes::GetID" alt="" coords="372,411,488,437"/>
-<area shape="rect" id="node10" href="$classCloset.html#a86001d9aab63ec5cca05bb2daa67e755" title="Creates a &#39;Pants&#39; object &#160;This function will take user input to record the necessary details for maki..." alt="" coords="365,157,495,184"/>
-<area shape="rect" id="node11" href="$classCloset.html#ad81782f2bb110f3a0a635a5ac1f929eb" title="Closet::AddBelt" alt="" coords="369,208,491,235"/>
-<area shape="rect" id="node12" href="$classCloset.html#aac44ecf78525b3e0ac4ed80af2133186" title="Creates a &#39;Socks&#39; object This function will take user input to record the necessary details for makin..." alt="" coords="363,259,497,285"/>
-<area shape="rect" id="node13" href="$classCloset.html#a489badac5a919460e8cc8e216f8b3eac" title="Closet::AddShoes" alt="" coords="363,309,497,336"/>
-<area shape="rect" id="node8" href="$classCloset.html#afabc27d621abdf0089a6b3027ea8f470" title="Closet::AssignID" alt="" coords="577,259,705,285"/>
+<area shape="rect" id="node2" href="$classCloset.html#a108ab29dacfccd5d1c958d5ec88ad64f" title="Closet::GetClosetName" alt="" coords="108,81,283,108"/>
+<area shape="rect" id="node3" href="$classCloset.html#a1b904dfcdafe293f3f530b338afc0601" title="This function is the wrapper function that is responsible for creating the clothes and then inserting..." alt="" coords="122,132,269,159"/>
+<area shape="rect" id="node11" href="$classCloset.html#a1f2ec8e3e912756e35fdc55c9401ea3e" title="Closet::StoreCloset" alt="" coords="122,183,269,209"/>
+<area shape="rect" id="node12" href="$classCloset.html#a3bad65dd75ada9a484eb7f78ebfa3b2a" title="Closet::ToString" alt="" coords="134,233,257,260"/>
+<area shape="rect" id="node4" href="$classCloset.html#aba3296cf8964b43f64911cc69c56cbfd" title="Creates a &#39;Shirt&#39; object. " alt="" coords="335,5,461,32"/>
+<area shape="rect" id="node6" href="$classClothes.html#a3f6dac172f333126d19010f85ec44e4c" title="Clothes::GetID" alt="" coords="340,56,456,83"/>
+<area shape="rect" id="node7" href="$classCloset.html#a86001d9aab63ec5cca05bb2daa67e755" title="Creates a &#39;Pants&#39; object &#160;This function will take user input to record the necessary details for maki..." alt="" coords="333,107,463,133"/>
+<area shape="rect" id="node8" href="$classCloset.html#ad81782f2bb110f3a0a635a5ac1f929eb" title="Creates a &#39;Belt&#39; object &#160;This function will take user input to record the necessary details for makin..." alt="" coords="337,157,459,184"/>
+<area shape="rect" id="node9" href="$classCloset.html#aac44ecf78525b3e0ac4ed80af2133186" title="Creates a &#39;Socks&#39; object &#160;This function will take user input to record the necessary details for maki..." alt="" coords="331,208,465,235"/>
+<area shape="rect" id="node10" href="$classCloset.html#a489badac5a919460e8cc8e216f8b3eac" title="Creates a &#39;Shoes&#39; object &#160;This function will take user input to record the necessary details for maki..." alt="" coords="331,259,465,285"/>
+<area shape="rect" id="node5" href="$classCloset.html#afabc27d621abdf0089a6b3027ea8f470" title="Assigns unique ID to clothes &#160;This function assigns the next available ID number for a given type..." alt="" coords="513,157,641,184"/>
 </map>

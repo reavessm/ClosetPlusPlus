@@ -1,4 +1,4 @@
-.TH "Pants" 3 "Sat Jul 14 2018" "ClosetPlusPlus" \" -*- nroff -*-
+.TH "Pants" 3 "Thu Jul 19 2018" "ClosetPlusPlus" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,7 +7,7 @@ Pants
 .br
 .PP
 .PP
-\fC#include <pants\&.h>\fP
+\fC#include 'pants\&.h'\fP
 .PP
 Inherits \fBClothes\fP\&.
 .SS "Public Member Functions"
@@ -84,27 +84,79 @@ Inherits \fBClothes\fP\&.
 .br
 .RI "Type of collar\&. "
 .in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Stephen M\&. Reaves 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+.RE
+.PP
+
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Pants::Pants ()"
-
+Default Constructor 
 .SS "Pants::Pants (int id, string name, string prim_color, string sec_color, string tert_color, string material, string length, string cut)"
+Parameterized Constructor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIid\fP Integer to identify this pants uniquely across the closet 
+.br
+\fIname\fP String to identify this pants to the user 
+.br
+\fIprim_color\fP Primary color 
+.br
+\fIsec_color\fP Secondary color  Tertiary color  Material of these pants  Length of the pants' legs  Cut of the pants' legs 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBPants\fP object 
+.RE
+.PP
 
 .PP
 References Clothes::cut_, Clothes::id_, Clothes::length_, Clothes::material_, Clothes::name_, Clothes::primary_color_, Clothes::secondary_color_, and Clothes::tertiary_color_\&.
 .SS "Pants::~Pants ()\fC [virtual]\fP"
-
+Deconstructor 
 .SH "Member Function Documentation"
 .PP 
 .SS "int Clothes::GetID ()\fC [inline]\fP, \fC [inherited]\fP"
 
 .SS "string Pants::ToString () const\fC [virtual]\fP"
-This is what makes this a purely abstract class\&. The implementation of these will be changed from one article of clothing to the next\&. 
+ToString 
+.PP
+\fBReturns:\fP
+.RS 4
+'string' representing the pants\&. 
+.RE
+.PP
+
 .PP
 Implements \fBClothes\fP\&.
 .PP
 References Clothes::id_, Clothes::length_, Clothes::material_, Clothes::name_, Clothes::primary_color_, Clothes::secondary_color_, and Clothes::tertiary_color_\&.
 .SS "string Pants::ToXML () const"
+ToXML 
+.PP
+\fBDeprecated\fP
+.RS 4
+
+.RE
+.PP
+.PP
+\fBReturns:\fP
+.RS 4
+XML representation of the shirt 
+.RE
+.PP
 
 .PP
 References Clothes::id_, Clothes::length_, Clothes::material_, Clothes::name_, Clothes::primary_color_, Clothes::secondary_color_, and Clothes::tertiary_color_\&.

@@ -2,7 +2,7 @@
 \label{classShirt}\index{Shirt@{Shirt}}
 
 
-{\ttfamily \#include $<$shirt.\+h$>$}
+{\ttfamily \#include \char`\"{}shirt.\+h\char`\"{}}
 
 
 
@@ -66,6 +66,15 @@ string \mbox{\hyperlink{classClothes_ae2e5026257b3a2f2ddbf61757fd3b57b}{collar\+
 \begin{DoxyCompactList}\small\item\em Type of collar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Stephen M. Reaves 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+
+
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classShirt_a38664a136cdc92583d8c13a8281905d5}\label{classShirt_a38664a136cdc92583d8c13a8281905d5}} 
 \index{Shirt@{Shirt}!Shirt@{Shirt}}
@@ -73,19 +82,43 @@ string \mbox{\hyperlink{classClothes_ae2e5026257b3a2f2ddbf61757fd3b57b}{collar\+
 \subsubsection{\texorpdfstring{Shirt()}{Shirt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Shirt\+::\+Shirt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classShirt_a5df3975569b7f5874a905d31e4056b7b}\label{classShirt_a5df3975569b7f5874a905d31e4056b7b}} 
+Default Constructor \mbox{\Hypertarget{classShirt_a5df3975569b7f5874a905d31e4056b7b}\label{classShirt_a5df3975569b7f5874a905d31e4056b7b}} 
 \index{Shirt@{Shirt}!Shirt@{Shirt}}
 \index{Shirt@{Shirt}!Shirt@{Shirt}}
 \subsubsection{\texorpdfstring{Shirt()}{Shirt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Shirt\+::\+Shirt (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{name,  }\item[{string}]{prim\+\_\+color,  }\item[{string}]{sec\+\_\+color,  }\item[{string}]{tert\+\_\+color,  }\item[{string}]{pattern,  }\item[{string}]{sleeve\+\_\+length,  }\item[{string}]{collar }\end{DoxyParamCaption})}
 
+Parameterized Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Integer to identify this shirt uniquely across the closet \\
+\hline
+{\em name} & String to identify this shirt to the user \\
+\hline
+{\em prim\+\_\+color} & Primary color \\
+\hline
+{\em sec\+\_\+color} & Secondary color \\
+\hline
+{\em tert\+\_\+color} & Tertiary color \\
+\hline
+{\em pattern} & Design pattern \\
+\hline
+{\em sleeve\+\_\+length} & Length of the sleeve \\
+\hline
+{\em collar} & Type of collar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classShirt}{Shirt}} object 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classShirt_a2cff1b945a014210e8bf009eb4269695}\label{classShirt_a2cff1b945a014210e8bf009eb4269695}} 
 \index{Shirt@{Shirt}!````~Shirt@{$\sim$\+Shirt}}
 \index{````~Shirt@{$\sim$\+Shirt}!Shirt@{Shirt}}
 \subsubsection{\texorpdfstring{$\sim$\+Shirt()}{~Shirt()}}
 {\footnotesize\ttfamily Shirt\+::$\sim$\+Shirt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-
+Deconstructor 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classClothes_a3f6dac172f333126d19010f85ec44e4c}\label{classClothes_a3f6dac172f333126d19010f85ec44e4c}} 
@@ -107,7 +140,10 @@ Here is the caller graph for this function\+:\nopagebreak
 \subsubsection{\texorpdfstring{To\+String()}{ToString()}}
 {\footnotesize\ttfamily string Shirt\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-This is what makes this a purely abstract class. The implementation of these will be changed from one article of clothing to the next. 
+To\+String \begin{DoxyReturn}{Returns}
+\textquotesingle{}string\textquotesingle{} representing the shirt. 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{classClothes_a953d143394e9a2c007ab0c3a638973cf}{Clothes}}.
 
@@ -117,6 +153,11 @@ Implements \mbox{\hyperlink{classClothes_a953d143394e9a2c007ab0c3a638973cf}{Clot
 \subsubsection{\texorpdfstring{To\+X\+M\+L()}{ToXML()}}
 {\footnotesize\ttfamily string Shirt\+::\+To\+X\+ML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+To\+X\+ML \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]\end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+X\+ML representing the shirt. 
+\end{DoxyReturn}
 
 
 \subsection{Member Data Documentation}

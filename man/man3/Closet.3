@@ -1,14 +1,13 @@
-.TH "Closet" 3 "Sat Jul 14 2018" "ClosetPlusPlus" \" -*- nroff -*-
+.TH "Closet" 3 "Thu Jul 19 2018" "ClosetPlusPlus" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-Closet \- Creates and stores clothes\&.  
-
+Closet
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <myCloset\&.h>\fP
+\fC#include 'myCloset\&.h'\fP
 .SS "Public Member Functions"
 
 .in +1c
@@ -54,16 +53,19 @@ Closet \- Creates and stores clothes\&.
 .ti -1c
 .RI "\fBSocks\fP \fBAddSocks\fP ()"
 .br
-.RI "Creates a '\fBSocks\fP' object This function will take user input to record the necessary details for making a new '\fBSocks\fP'\&. This function then calls the parameterized constructor for a '\fBSocks\fP' using those details\&. "
+.RI "Creates a '\fBSocks\fP' object  This function will take user input to record the necessary details for making a new '\fBSocks\fP'\&. This function then calls the parameterized constructor for a '\fBSocks\fP' using those details\&. "
 .ti -1c
 .RI "\fBShoes\fP \fBAddShoes\fP ()"
 .br
+.RI "Creates a '\fBShoes\fP' object  This function will take user input to record the necessary details for making a new '\fBShoes\fP'\&. This function then calls the parameterized constructor for a '\fBShoes\fP' using those details\&. "
 .ti -1c
 .RI "\fBBelt\fP \fBAddBelt\fP ()"
 .br
+.RI "Creates a '\fBBelt\fP' object  This function will take user input to record the necessary details for making a new '\fBBelt\fP'\&. This function then calls the parameterized constructor for a '\fBBelt\fP' using those details\&. "
 .ti -1c
 .RI "int \fBAssignID\fP (string type)"
 .br
+.RI "Assigns unique ID to clothes  This function assigns the next available ID number for a given type\&. The last two numbers represent the number of the given type, while the other numbers represent the type\&. For Example, if there are currently 4 shirts, then the next shirt will have the ID of 105\&. The 100 represents shirts, while the 05 means it is the fifth shirt\&. This allows for 99 items of a given type and (2^29)-1 types??? "
 .in -1c
 .SS "Private Attributes"
 
@@ -92,8 +94,6 @@ Closet \- Creates and stores clothes\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Creates and stores clothes\&. 
-
 
 .PP
 \fBAuthor:\fP
@@ -116,17 +116,26 @@ Default Constructor
 .PP
 Closes the window, then kills the \fBCloset\fP\&. Deconstructor 
 .PP
-References Ncurses::Die(), and window\&.
+References window\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBBelt\fP Closet::AddBelt ()\fC [private]\fP"
 
 .PP
-References AssignID(), Ncurses::MakeWindow(), and window\&.
+Creates a '\fBBelt\fP' object  This function will take user input to record the necessary details for making a new '\fBBelt\fP'\&. This function then calls the parameterized constructor for a '\fBBelt\fP' using those details\&. AddBelt 
+.PP
+\fBReturns:\fP
+.RS 4
+An instance of the '\fBBelt\fP' class\&. 
+.RE
+.PP
+
+.PP
+References AssignID(), and window\&.
 .SS "\fBPants\fP Closet::AddPants ()\fC [private]\fP"
 
 .PP
-Creates a '\fBPants\fP' object  This function will take user input to record the necessary details for making a new '\fBPants\fP'\&. This function then calls the parameterized constructor for a '\fBPants\fP' using those details\&. 
+Creates a '\fBPants\fP' object  This function will take user input to record the necessary details for making a new '\fBPants\fP'\&. This function then calls the parameterized constructor for a '\fBPants\fP' using those details\&. AddPants 
 .PP
 \fBReturns:\fP
 .RS 4
@@ -135,11 +144,11 @@ An instance of the '\fBPants\fP' class\&.
 .PP
 
 .PP
-References AssignID(), Ncurses::MakeWindow(), and window\&.
+References AssignID(), and window\&.
 .SS "\fBShirt\fP Closet::AddShirt ()\fC [private]\fP"
 
 .PP
-Creates a '\fBShirt\fP' object\&. 
+Creates a '\fBShirt\fP' object\&. AddShirt 
 .PP
 \fBReturns:\fP
 .RS 4
@@ -148,15 +157,24 @@ an instance of the '\fBShirt\fP' Class\&.  This function will take user input to
 .PP
 
 .PP
-References AssignID(), Ncurses::MakeWindow(), and window\&.
+References AssignID(), and window\&.
 .SS "\fBShoes\fP Closet::AddShoes ()\fC [private]\fP"
 
 .PP
-References AssignID(), Ncurses::MakeWindow(), and window\&.
+Creates a '\fBShoes\fP' object  This function will take user input to record the necessary details for making a new '\fBShoes\fP'\&. This function then calls the parameterized constructor for a '\fBShoes\fP' using those details\&. AddShoes 
+.PP
+\fBReturns:\fP
+.RS 4
+An instance of the '\fBShoes\fP' class\&. 
+.RE
+.PP
+
+.PP
+References AssignID(), and window\&.
 .SS "\fBSocks\fP Closet::AddSocks ()\fC [private]\fP"
 
 .PP
-Creates a '\fBSocks\fP' object This function will take user input to record the necessary details for making a new '\fBSocks\fP'\&. This function then calls the parameterized constructor for a '\fBSocks\fP' using those details\&. 
+Creates a '\fBSocks\fP' object  This function will take user input to record the necessary details for making a new '\fBSocks\fP'\&. This function then calls the parameterized constructor for a '\fBSocks\fP' using those details\&. AddSocks 
 .PP
 \fBReturns:\fP
 .RS 4
@@ -165,11 +183,37 @@ An instance of the '\fBSocks\fP' class\&.
 .PP
 
 .PP
-References AssignID(), Ncurses::MakeWindow(), and window\&.
+References AssignID(), and window\&.
 .SS "int Closet::AssignID (string type)\fC [private]\fP"
 
 .PP
-References belt_map_, Ncurses::MakeWindow(), pants_map_, shirt_map_, shoes_map_, socks_map_, and window\&.
+Assigns unique ID to clothes  This function assigns the next available ID number for a given type\&. The last two numbers represent the number of the given type, while the other numbers represent the type\&. For Example, if there are currently 4 shirts, then the next shirt will have the ID of 105\&. The 100 represents shirts, while the 05 means it is the fifth shirt\&. This allows for 99 items of a given type and (2^29)-1 types??? AssignID 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype\fP A string dictating the type of clothing to check\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An integer corrosponding to the next available ID for the given type, or -1 for an error\&. 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+So far the types are hard coded in\&. Meaning you can only create clothes that are either shirts, pants, belts, socks, or shoes\&. There is currently no way to dynamically add types\&. Underwear types were intentionally left out to test the best way to dynamically add new types\&. 
+.RE
+.PP
+<
+.PP
+\fBTodo\fP
+.RS 4
+Use Switch-case for \fBCloset::AssignID\fP 
+.RE
+.PP
+
+.PP
+References belt_map_, pants_map_, shirt_map_, shoes_map_, socks_map_, and window\&.
 .SS "string Closet::GetClosetName ()"
 GetClosetName
 .PP
@@ -184,7 +228,7 @@ References closet_name_\&.
 .SS "void Closet::ImportCloset (string filename)"
 
 .PP
-This function builds a \fBCloset\fP from a file, then calls the default 'MakeCloset' function\&. 
+This function builds a \fBCloset\fP from a file, then calls the default 'MakeCloset' function\&. ImportCloset 
 .PP
 \fBNote:\fP
 .RS 4
@@ -195,11 +239,11 @@ The filename must end in an acceptable filetype
 .SS "void Closet::MakeCloset ()"
 
 .PP
-This function is the wrapper function that is responsible for creating the clothes and then inserting them to the appropriate map\&. For each type of clothing, this function asks the user if they want to add a new clothing of that type\&. If they do then they call the clothing function to fill in the clothing specific details\&. This function calls on '\fBWindow\fP' to handle the input\&. 
+This function is the wrapper function that is responsible for creating the clothes and then inserting them to the appropriate map\&. MakeCloset  For each type of clothing, this function asks the user if they want to add a new clothing of that type\&. If they do then they call the clothing function to fill in the clothing specific details\&. This function calls on '\fBWindow\fP' to handle the input\&. 
 .PP
-References AddBelt(), AddPants(), AddShirt(), AddShoes(), AddSocks(), belt_map_, closet_name_, Clothes::GetID(), Ncurses::Init(), Ncurses::MakeWindow(), Ncurses::MakeWindowChar(), pants_map_, shirt_map_, shoes_map_, socks_map_, and window\&.
+References AddBelt(), AddPants(), AddShirt(), AddShoes(), AddSocks(), belt_map_, closet_name_, Clothes::GetID(), pants_map_, shirt_map_, shoes_map_, socks_map_, and window\&.
 .SS "string Closet::StoreCloset () const"
-
+StoreCloset 
 .PP
 \fBReturns:\fP
 .RS 4
@@ -210,6 +254,13 @@ XML representation of closet
 .PP
 References belt_map_, pants_map_, shirt_map_, shoes_map_, and socks_map_\&.
 .SS "string Closet::ToString () const"
+ToString 
+.PP
+\fBReturns:\fP
+.RS 4
+'string' representing the closet 
+.RE
+.PP
 
 .PP
 References belt_map_, pants_map_, shirt_map_, shoes_map_, and socks_map_\&.

@@ -1,4 +1,4 @@
-.TH "Clothes" 3 "Sat Jul 14 2018" "ClosetPlusPlus" \" -*- nroff -*-
+.TH "Clothes" 3 "Thu Jul 19 2018" "ClosetPlusPlus" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -8,7 +8,7 @@ Clothes \- \fBClothes\fP abstract class to be used by members of closet\&. Handl
 .br
 .PP
 .PP
-\fC#include <clothes\&.h>\fP
+\fC#include 'clothes\&.h'\fP
 .PP
 Inherited by \fBBelt\fP, \fBPants\fP, \fBShirt\fP, \fBShoes\fP, and \fBSocks\fP\&.
 .SS "Public Member Functions"
@@ -109,7 +109,7 @@ These global variables are set for all clothes, but not all clothes use them\&. 
 .SS "virtual string Clothes::ToString () const\fC [pure virtual]\fP"
 This is what makes this a purely abstract class\&. The implementation of these will be changed from one article of clothing to the next\&. 
 .PP
-Implemented in \fBShirt\fP, \fBPants\fP, \fBShoes\fP, \fBSocks\fP, and \fBBelt\fP\&.
+Implemented in \fBShoes\fP, \fBSocks\fP, \fBBelt\fP, \fBPants\fP, and \fBShirt\fP\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "string Clothes::collar_ = \fBkDummyCollar\fP\fC [protected]\fP"

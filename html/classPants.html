@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('classPants.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="pants_8h_source.html">pants.h</a>&gt;</code></p>
+<p><code>#include &quot;<a class="el" href="pants_8h_source.html">pants.h</a>&quot;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for Pants:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -178,7 +178,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:ae2e5026257b3a2f2ddbf61757fd3b57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of collar.  <a href="#ae2e5026257b3a2f2ddbf61757fd3b57b">More...</a><br /></td></tr>
 <tr class="separator:ae2e5026257b3a2f2ddbf61757fd3b57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Stephen M. Reaves </dd></dl>
+<dl class="section date"><dt>Date</dt><dd></dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6e19084b693fdb83029addacdecdc2e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e19084b693fdb83029addacdecdc2e2">&#9670;&nbsp;</a></span>Pants() <span class="overload">[1/2]</span></h2>
 
@@ -193,6 +196,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Default Constructor </p>
 
 </div>
 </div>
@@ -257,6 +261,16 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Parameterized Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Integer to identify this pants uniquely across the closet </td></tr>
+    <tr><td class="paramname">name</td><td>String to identify this pants to the user </td></tr>
+    <tr><td class="paramname">prim_color</td><td>Primary color </td></tr>
+    <tr><td class="paramname">sec_color</td><td>Secondary color  Tertiary color  Material of these pants  Length of the pants' legs  Cut of the pants' legs </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classPants.html">Pants</a> object </dd></dl>
 
 <p class="reference">References <a class="el" href="classClothes.html#ac1c2286c8928a5eee91d818a098a44ac">Clothes::cut_</a>, <a class="el" href="classClothes.html#a8978d931db5ca47c3ccea30def4ae83e">Clothes::id_</a>, <a class="el" href="classClothes.html#ae02603eda727e33caf46ec30e761e3c3">Clothes::length_</a>, <a class="el" href="classClothes.html#adbb9ed311f14ccbb1e4fe0e8378a95d4">Clothes::material_</a>, <a class="el" href="classClothes.html#a7f2275aaae24224d60c48af922c31b65">Clothes::name_</a>, <a class="el" href="classClothes.html#a7cb005bf6cbb7f4eaa40f1b31817559c">Clothes::primary_color_</a>, <a class="el" href="classClothes.html#ab8f55f67b956b25d71260cffcf273673">Clothes::secondary_color_</a>, and <a class="el" href="classClothes.html#a3c5f1e7ab531e3ba7a38b930da8078a0">Clothes::tertiary_color_</a>.</p>
 
@@ -284,6 +298,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Deconstructor </p>
 
 </div>
 </div>
@@ -346,7 +361,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is what makes this a purely abstract class. The implementation of these will be changed from one article of clothing to the next. </p>
+<p>ToString </p><dl class="section return"><dt>Returns</dt><dd>'string' representing the pants. </dd></dl>
 
 <p>Implements <a class="el" href="classClothes.html#a953d143394e9a2c007ab0c3a638973cf">Clothes</a>.</p>
 
@@ -368,6 +383,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>ToXML </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>XML representation of the shirt </dd></dl>
 
 <p class="reference">References <a class="el" href="classClothes.html#a8978d931db5ca47c3ccea30def4ae83e">Clothes::id_</a>, <a class="el" href="classClothes.html#ae02603eda727e33caf46ec30e761e3c3">Clothes::length_</a>, <a class="el" href="classClothes.html#adbb9ed311f14ccbb1e4fe0e8378a95d4">Clothes::material_</a>, <a class="el" href="classClothes.html#a7f2275aaae24224d60c48af922c31b65">Clothes::name_</a>, <a class="el" href="classClothes.html#a7cb005bf6cbb7f4eaa40f1b31817559c">Clothes::primary_color_</a>, <a class="el" href="classClothes.html#ab8f55f67b956b25d71260cffcf273673">Clothes::secondary_color_</a>, and <a class="el" href="classClothes.html#a3c5f1e7ab531e3ba7a38b930da8078a0">Clothes::tertiary_color_</a>.</p>
 
