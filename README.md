@@ -1,4 +1,4 @@
-ClosetPlusPlus {#mainpage}
+ClosetPlusPlus
 ==============
 
 Clone the repo
