@@ -37,6 +37,7 @@
 
 # Vim Open File things
 *.swp
+*.swo
 
 html/*
 man/*
