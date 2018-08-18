@@ -11,6 +11,8 @@
 #include <string>
 
 #include "myCloset.h"
+#include "frontend.h"
+#include "backend.h"
 #include "ncurses.h"
 #include "vulkan.h"
 #include "window.h"

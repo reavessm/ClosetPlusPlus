@@ -1,36 +1,33 @@
-/******************************************************************************
- * File Name: vulkan.h
- * Created by: Stephen M. Reaves
- * Date Last Modified:
- *
- * Summary:
- *
- */
-
+/**
+* @class Vulkan
+* @author Stephen M. Reaves
+* @headerfile vulkan.h
+* @date Aug 12, 2018
+*/
 #include <ncurses.h>
 #include <cstdlib>
 #include <iostream>
 #include <string>
 
-#include "window.h"
+#include "frontend.h"
 
 using namespace std;
 
 #ifndef VULKAN_H
 #define VULKAN_H
 
-class Vulkan : public Window {
+class Vulkan : public Frontend {
  public:
   Vulkan();
   virtual ~Vulkan();
 
-  bool Init();
-  void Die();
-  char MakeWindowChar(string message);
-  string MakeWindow(string message);
+  //bool Init();
+  //void Die();
+  //char MakeWindowChar(string message);
+  //string MakeWindow(string message);
 
  private:
-  bool isInit_ = false;
+  //bool isInit_ = false;
 };
 
 #endif /* VULKAN_H */

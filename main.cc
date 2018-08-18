@@ -13,13 +13,14 @@ int main(int argc, char** argv) {
   string fileFrontName = "Dummy";
   string filename = "FakeFileName";
   string cloname = "fakeCLoName";
+  auto frontend = Frontend::Create();
   //  string storeFileSurName = " Closet.clo";
   //  string storeFileName = "FakerFileName";
   //  ofstream storeMyFile;
   ofstream myFile;
   ofstream myClo;
 
-  Closet closet;
+  //Closet closet;
 
   //  if ( there is a clo file) {
   //	  Ask if they want to use one of those files
@@ -44,7 +45,8 @@ int main(int argc, char** argv) {
       refresh();
   */
 
-  closet.MakeCloset();
+  //closet.MakeCloset();
+  frontend.MakeCloset();
 
   // endwin();
   //  }
