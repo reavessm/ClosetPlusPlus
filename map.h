@@ -17,22 +17,13 @@ using namespace std;
 #ifndef MAP_H
 #define MAP_H
 
-const string kDummyClosetName = "Fake Closet Name";
+const string kDummyClosetName = "Fake Map Name";
 
-class Closet {
+class Map {
  public:
   // Constructors and Destructors
-  Closet();
-  virtual ~Closet();
-
-  // General Functions
-  string ToXML() const;
-  string ToString() const;
-  string StoreCloset() const;
-  void ImportCloset(string filename);
-  void MakeCloset();
-
-  string GetClosetName();
+  Map();
+  virtual ~Map();
 
  private:
   // Variables
@@ -43,9 +34,9 @@ class Closet {
   map<int, Shoes> shoes_map_;
   map<int, Belt> belt_map_;
 #ifdef VULKAN
-  Vulkan window;
+  Vulkan window_;
 #else
-  Ncurses window;
+  Ncurses window_;
 #endif
 
   // Private Functions

@@ -110,6 +110,7 @@ void Ncurses::CreateCloset() {
 
   // Name Closet
   closet_name_ = this.MakeWindow(kClosetPrompt);
+  backend_.closet_name_ = this.closet_name_;
 
   // Add Shirt
   ans = this.MakeWindowChar(kShirtPrompt);
@@ -189,5 +190,159 @@ Shirt Ncurses::AddShirt() {
     shirtID = backend_.AssignID("shirt");
   } while (shirtID == -1); // AssignID returns -1 if there is an error
 
+  // Create Shirt object using the filled in variables
+  Shirt shirt(shirtID, shirtName, shirtPrimColor, shirtSecColor, shirtTertColor,
+              shirtPattern, shirtSleeveLength, shirtCollar);
+
   return shirt;
 } // end AddShirt
+
+/**
+ * AddPants
+ * @returns An instance of the 'Pants' class.
+ * @brief Creates a 'Pants' object
+ * @detail This function will take user input to record the necessary details
+ *         for making a new 'Pants'.  This function then calls the parameterized
+ *         constructor for a 'Pants' using those details.
+ */
+Pants Closet::AddPants() {
+  // instantiate variables with dummy values
+  string pantsName;
+  string pantsPrimColor;
+  string pantsSecColor;
+  string pantsTertColor;
+  string pantsMaterial;
+  string pantsLength;
+  string pantsCut;
+  int pantsID = -1;
+
+  // Begin putting in actual values
+  pantsName = this.MakeWindow(kPantsNamePrompt);
+  pantsPrimColor = this.MakeWindow(kPrimColorPrompt);
+  pantsSecColor = this.MakeWindow(kSecColorPrompt);
+  pantsTertColor = this.MakeWindow(kTertColorPrompt);
+  pantsMaterial = this.MakeWindow(kMatPrompt);
+  pantsLength = this.MakeWindow(kLenPrompt);
+  pantsCut = this.MakeWindow(kCutPrompt);
+
+  do {
+    pantsID = backend_.AssignID("pants");
+  } while (pantsID == -1);  // AssignID returns -1 if there is an error
+
+  // Create Pants using filled in variables
+  Pants pants(pantsID, pantsName, pantsPrimColor, pantsSecColor, pantsTertColor,
+              pantsMaterial, pantsLength, pantsCut);
+
+  return pants;
+}
+
+/**
+ * AddSocks
+ * @returns An instance of the 'Socks' class.
+ * @brief Creates a 'Socks' object
+ * @detail This function will take user input to record the necessary details
+ *         for making a new 'Socks'.  This function then calls the parameterized
+ *         constructor for a 'Socks' using those details.
+ */
+Socks Closet::AddSocks() {
+  // instantiate variables with dummy values
+  string socksName;
+  string socksPrimColor;
+  string socksSecColor;
+  string socksTertColor;
+  string socksPattern;
+  int socksID = -1;
+
+  // Begin putting in actual values
+  socksName = this.MakeWindow(kSocksNamePrompt);
+  socksPrimColor = this.MakeWindow(kPrimColorPrompt);
+  socksSecColor = this.MakeWindow(kSecColorPrompt);
+  socksTertColor = this.MakeWindow(kTertColorPrompt);
+  socksPattern = this.MakeWindow(kPatternPrompt);
+
+  do {
+    socksID = backend_.AssignID("socks");
+  } while (socksID == -1);  // AssignID returns -1 if there is an error
+
+  // Create Socks using filled in variables
+  Socks socks(socksID, socksName, socksPrimColor, socksSecColor, socksTertColor,
+              socksPattern);
+
+  return socks;
+}
+
+/**
+ * AddShoes
+ * @returns An instance of the 'Shoes' class.
+ * @brief Creates a 'Shoes' object
+ * @detail This function will take user input to record the necessary details
+ *         for making a new 'Shoes'.  This function then calls the parameterized
+ *         constructor for a 'Shoes' using those details.
+ */
+Shoes Closet::AddShoes() {
+  // instantiate variables with dummy values
+  string shoesName;
+  string shoesPrimColor;
+  string shoesSecColor;
+  string shoesTertColor;
+  string shoesMaterial;
+  string shoesStyle;
+  int shoesID = -1;
+
+  // Begin putting in actual values
+  shoesName = this.MakeWindow(kShoesNamePrompt);
+  shoesPrimColor = this.MakeWindow(kPrimColorPrompt);
+  shoesSecColor = this.MakeWindow(kSecColorPrompt);
+  shoesTertColor = this.MakeWindow(kTertColorPrompt);
+  shoesMaterial = this.MakeWindow(kMatPrompt);
+  shoesStyle = this.MakeWindow(kStylePrompt);
+
+  do {
+    shoesID = backend_.AssignID("shoes");
+  } while (shoesID == -1);  // AssignID returns -1 if there is an error
+
+  // Create Shoes using filled in variables
+  Shoes shoes(shoesID, shoesName, shoesPrimColor, shoesSecColor, shoesTertColor,
+              shoesMaterial, shoesStyle);
+
+  return shoes;
+}
+
+/**
+ * AddBelt
+ * @returns An instance of the 'Belt' class.
+ * @brief Creates a 'Belt' object
+ * @detail This function will take user input to record the necessary details
+ *         for making a new 'Belt'.  This function then calls the parameterized
+ *         constructor for a 'Belt' using those details.
+ */
+Belt Closet::AddBelt() {
+  // instantiate variables with dummy values
+  string beltName;
+  string beltPrimColor;
+  string beltSecColor;
+  string beltTertColor;
+  string beltMaterial;
+  string beltPattern;
+  int beltID = -1;
+
+  cin.ignore();
+
+  // Begin putting in actual values
+  beltName = this.MakeWindow(kBeltNamePrompt);
+  beltPrimColor = this.MakeWindow(kPrimColorPrompt);
+  beltSecColor = this.MakeWindow(kSecColorPrompt);
+  beltTertColor = this.MakeWindow(kTertColorPrompt);
+  beltMaterial = this.MakeWindow(kMatPrompt);
+  beltPattern = this.MakeWindow(kPatternPrompt);
+
+  do {
+    beltID = backend_.AssignID("belt");
+  } while (beltID == -1);  // AssignID returns -1 if there is an error
+
+  // Create Belt using filled in variables
+  Belt belt(beltID, beltName, beltPrimColor, beltSecColor, beltTertColor,
+            beltMaterial, beltPattern);
+
+  return belt;
+}

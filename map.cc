@@ -107,3 +107,7 @@ bool Map::Insert(int id = kDummyID, string name = kDummyName,
   
   return status;
 }
+
+string Map::GetClosetName() {
+  return this.closet_name_;
+}

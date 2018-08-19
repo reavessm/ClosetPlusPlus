@@ -21,7 +21,8 @@ using namespace std;
 #ifndef BACKEND_H
 #define BACKEND_H
 
-string k_file_name_ = "NOT_A_FILE_NAME";
+const string kDummyFileName = "NOT_A_FILE_NAME";
+const string kDummyClosetName = "Dummy Closet";
 
 class Backend {
  public:
@@ -30,12 +31,14 @@ class Backend {
   virtual ~Backend(){};
 
   // These abstract functions will be different for each type of backend
-  virtual bool Init() = 0; ///< Sets up instance of backend and returns true on success, false otherwise
-  virtual void Die() = 0; ///< Kills instance of backend
-  virtual bool Store(string file = k_file_name_)  = 0; ///< Save Closet to file
-  virtual bool Open(string file = k_file_name_) = 0; ///< Opens Closet from file
-  //virtual bool CreateCloset() = 0; ///< Creates instance of Closet
+  virtual bool Init() = 0;
+  virtual void Die() = 0;
+  virtual bool Store(string file = kDummyFileName) const = 0;
+  virtual bool Open(string file = kDummyFileName) const = 0;
   virtual int AssignID(string type) = 0;
+  virtual void MakeCloset() = 0;
+  virtual string GetClosetName() = 0;
+  virtual string ToString() const = 0;
 #ifdef SQL
   static SQL Create() { ///< Creates instance of SQL
     cerr << "Please implement SQLite3 Backend" << endl;
@@ -49,7 +52,7 @@ class Backend {
 
  protected:
   bool isInit_ = false;
-  Closet closet_;
+  string closet_name_ = kDummyClosetName;
 };
 
 #endif /* BACKEND_H */

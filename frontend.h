@@ -46,6 +46,7 @@ const string kStylePrompt = "Please enter the style: ";
 const string kMatPrompt = "Please enter the material: ";
 const string kColPrompt = "Please enter the collar type: ";
 const string kCutPrompt = "Please enter the cut: ";
+const string kLenPrompt = "Please enter the length: ";
 
 class Frontend {
  public:
