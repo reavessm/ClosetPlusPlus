@@ -39,6 +39,6 @@
 *.swp
 *.swo
 
-html/*
-man/*
-latex/*
+html*
+man*
+latex*
