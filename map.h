@@ -11,6 +11,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include "backend.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ using namespace std;
 
 const string kDummyClosetName = "Fake Map Name";
 
-class Map {
+class Map : Backend {
  public:
   // Constructors and Destructors
   Map();
