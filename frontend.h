@@ -13,12 +13,12 @@
 
 #include "backend.h"
 #include "belt.h"
+#include "ncurses.h"
 #include "pants.h"
 #include "shirt.h"
-#include "socks.h"
 #include "shoes.h"
+#include "socks.h"
 #include "vulkan.h"
-#include "ncurses.h"
 
 using namespace std;
 
@@ -55,26 +55,31 @@ class Frontend {
   virtual ~Frontend(){};
 
   // These abstract functions will be different for each type of frontend
-  virtual bool Init() = 0; ///< Starts frontend and returns boolean determining if inherited frontend was started correctly
-  virtual void Die() = 0; ///< Kills frontend
-  virtual char MakeWindowChar(string message) = 0; ///< Puts message in window and returns char
-  virtual string MakeWindow(string message) = 0; ///< Puts message in window and returns string
-  virtual void CreateCloset() = 0; ///< Initializes Backend
-  
+  virtual bool Init() = 0;  ///< Starts frontend and returns boolean determining
+                            ///< if inherited frontend was started correctly
+  virtual void Die() = 0;   ///< Kills frontend
+  virtual char MakeWindowChar(
+      string message) = 0;  ///< Puts message in window and returns char
+  virtual string MakeWindow(
+      string message) = 0;  ///< Puts message in window and returns string
+  virtual void CreateCloset() = 0;    ///< Initializes Backend
+  virtual void ToString() const = 0;  ///< Displays 'string' representing closet
+
   // Static method to handle different types of frontend
 #ifdef VULKAN
-  static Vulkan Create() { ///< Creates backend and returns instance of Vulkan
+  static Vulkan Create() {  ///< Creates backend and returns instance of Vulkan
     return Vulkan();
   }
 #else
-  static Ncurses Create() { ///< Creates backend and returns instance of Ncurses
-    return Ncurses(); 
+  static Ncurses
+  Create() {  ///< Creates backend and returns instance of Ncurses
+    return Ncurses();
   }
 #endif
 
  protected:
-  bool is_init_ = false; ///< True if window is started, fasle otherwise
-  auto backend_; ///< Instance of backend
+  bool is_init_ = false;  ///< True if window is started, fasle otherwise
+  auto backend_;          ///< Instance of backend
   string closet_name_ = kDummyClosetName;
 };
 

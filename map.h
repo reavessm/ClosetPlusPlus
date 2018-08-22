@@ -1,9 +1,9 @@
 /**
-* @class Map
-* @author Stephen M. Reaves
-* @headerfile map.h
-* @date Jul 30, 2018
-*/
+ * @class Map
+ * @author Stephen M. Reaves
+ * @headerfile map.h
+ * @date Jul 30, 2018
+ */
 
 #include <cstdlib>
 #include <cstring>

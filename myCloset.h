@@ -1,6 +1,6 @@
 /**
  * @class Closet
- * @headerfile myCloset.h 
+ * @headerfile myCloset.h
  * @author Stephen M. Reaves
  * @date July 14th, 2018
  */

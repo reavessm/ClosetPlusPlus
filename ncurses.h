@@ -22,13 +22,13 @@ class Ncurses : public Frontend {
   Ncurses();
   virtual ~Ncurses();
 
-  //bool Init();
-  //void Die();
-  //char MakeWindowChar(string message);
-  //string MakeWindow(string message);
+  // bool Init();
+  // void Die();
+  // char MakeWindowChar(string message);
+  // string MakeWindow(string message);
 
  private:
-  //bool isInit_ = false;
+  // bool isInit_ = false;
   Shirt AddShirt();
   Pants AddPants();
   Socks AddSocks();

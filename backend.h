@@ -1,20 +1,20 @@
 /**
-* @class Backend
-* @author Stephen M. Reaves
-* @headerfile backend.h
-* @date Jul 30, 2018
-*/
+ * @class Backend
+ * @author Stephen M. Reaves
+ * @headerfile backend.h
+ * @date Jul 30, 2018
+ */
 
 #include <cstdlib>
 #include <iostream>
 #include <string>
 
-#include "map.h"
 #include "belt.h"
+#include "map.h"
 #include "pants.h"
 #include "shirt.h"
-#include "socks.h"
 #include "shoes.h"
+#include "socks.h"
 
 using namespace std;
 
@@ -40,12 +40,12 @@ class Backend {
   virtual string GetClosetName() = 0;
   virtual string ToString() const = 0;
 #ifdef SQL
-  static SQL Create() { ///< Creates instance of SQL
+  static SQL Create() {  ///< Creates instance of SQL
     cerr << "Please implement SQLite3 Backend" << endl;
     exit 1;
   }
 #else
-  static Map Create() { ///< Returns instance of Map
+  static Map Create() {  ///< Returns instance of Map
     return Map();
   }
 #endif

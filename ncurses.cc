@@ -40,7 +40,7 @@ bool Ncurses::Init() {
   is_init_ = true;
 
   return is_init_;
-} // end Init
+}  // end Init
 
 /**
  * Die
@@ -65,7 +65,7 @@ char Ncurses::MakeWindowChar(string message) {
   mvprintw(row / 2, (col - message.length()) / 2, "%s", message.c_str());
 
   return getch();
-} // end MakeWindowChar
+}  // end MakeWindowChar
 
 /**
  * MakeWindow
@@ -92,7 +92,7 @@ string Ncurses::MakeWindow(string message) {
   }
 
   return s;
-} // end MakeWindow
+}  // end MakeWindow
 
 /**
  * Make Closet
@@ -105,7 +105,7 @@ string Ncurses::MakeWindow(string message) {
  */
 void Ncurses::CreateCloset() {
   // Initialize variables
-  char ans = 'k'; // dummy char
+  char ans = 'k';  // dummy char
   string str = "";
 
   // Name Closet
@@ -156,16 +156,16 @@ void Ncurses::CreateCloset() {
     backend_.Insert(shoes.GetID(), shoes);
     ans = this.MakeWindowChar(kShoesPrompt);
   }
-} // end CreateCloset
+}  // end CreateCloset
 
 /**
  * AddShirt
  * @brief Creates a 'Shirt' object
- * 
+ *
  * @detail This function will take user input to record the necessary details
  * for making a new 'Shirt'.  This calls the parameterized constructor for a
  * 'Shirt' using those details.
- * 
+ *
  * @returns an instance of the 'Shirt' class
  */
 Shirt Ncurses::AddShirt() {
@@ -188,14 +188,14 @@ Shirt Ncurses::AddShirt() {
 
   do {
     shirtID = backend_.AssignID("shirt");
-  } while (shirtID == -1); // AssignID returns -1 if there is an error
+  } while (shirtID == -1);  // AssignID returns -1 if there is an error
 
   // Create Shirt object using the filled in variables
   Shirt shirt(shirtID, shirtName, shirtPrimColor, shirtSecColor, shirtTertColor,
               shirtPattern, shirtSleeveLength, shirtCollar);
 
   return shirt;
-} // end AddShirt
+}  // end AddShirt
 
 /**
  * AddPants
@@ -205,7 +205,7 @@ Shirt Ncurses::AddShirt() {
  *         for making a new 'Pants'.  This function then calls the parameterized
  *         constructor for a 'Pants' using those details.
  */
-Pants Closet::AddPants() {
+Pants Ncurses::AddPants() {
   // instantiate variables with dummy values
   string pantsName;
   string pantsPrimColor;
@@ -244,7 +244,7 @@ Pants Closet::AddPants() {
  *         for making a new 'Socks'.  This function then calls the parameterized
  *         constructor for a 'Socks' using those details.
  */
-Socks Closet::AddSocks() {
+Socks Ncurses::AddSocks() {
   // instantiate variables with dummy values
   string socksName;
   string socksPrimColor;
@@ -279,7 +279,7 @@ Socks Closet::AddSocks() {
  *         for making a new 'Shoes'.  This function then calls the parameterized
  *         constructor for a 'Shoes' using those details.
  */
-Shoes Closet::AddShoes() {
+Shoes Ncurses::AddShoes() {
   // instantiate variables with dummy values
   string shoesName;
   string shoesPrimColor;
@@ -316,7 +316,7 @@ Shoes Closet::AddShoes() {
  *         for making a new 'Belt'.  This function then calls the parameterized
  *         constructor for a 'Belt' using those details.
  */
-Belt Closet::AddBelt() {
+Belt Ncurses::AddBelt() {
   // instantiate variables with dummy values
   string beltName;
   string beltPrimColor;
@@ -346,3 +346,8 @@ Belt Closet::AddBelt() {
 
   return belt;
 }
+/**
+ * ToString
+ * @brief displays 'string' representing the closet
+ */
+void Ncurses::ToString() const { this.MakeWindow(backend_.ToString()); }

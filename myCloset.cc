@@ -485,3 +485,91 @@ string Closet::ToString() const {
 
   return s;
 }
+/**
+ * AddBelt
+ * @returns An instance of the 'Belt' class.
+ * @brief Creates a 'Belt' object
+ * @detail This function will take user input to record the necessary details
+ *         for making a new 'Belt'.  This function then calls the parameterized
+ *         constructor for a 'Belt' using those details.
+ */
+Belt Closet::AddBelt() {
+  // instantiate variables with dummy values
+  int beltID = -1;
+  string beltName = "N/A";
+  string beltPrimColor = "N/A";
+  string beltSecColor = "N/A";
+  string beltTertColor = "N/A";
+  string beltMaterial = "N/A";
+  string beltPattern = "N/A";
+
+  cin.ignore();
+
+  // Begin putting in actual values
+  beltName = window.MakeWindow("Please enter a name for this belt: ");
+  beltPrimColor = window.MakeWindow("Please enter the primary color for " +
+                                    beltName + ": ");
+  beltSecColor = window.MakeWindow("Please enter the secondary color for " +
+                                   beltName + ": ");
+  beltTertColor = window.MakeWindow("Please enter the tertiary color for " +
+                                    beltName + ": ");
+  beltMaterial =
+      window.MakeWindow("Please enter the material for " + beltName + ": ");
+  beltPattern =
+      window.MakeWindow("Please enter the style for " + beltName + ": ");
+
+  do {
+    beltID = AssignID("belt");
+  } while (beltID == -1);  // AssignID returns -1 if there is an error
+
+  // Create Belt using filled in variables
+  Belt belt(beltID, beltName, beltPrimColor, beltSecColor, beltTertColor,
+            beltMaterial, beltPattern);
+
+  return belt;
+}
+}
+/**
+ * AddBelt
+ * @returns An instance of the 'Belt' class.
+ * @brief Creates a 'Belt' object
+ * @detail This function will take user input to record the necessary details
+ *         for making a new 'Belt'.  This function then calls the parameterized
+ *         constructor for a 'Belt' using those details.
+ */
+Belt Closet::AddBelt() {
+  // instantiate variables with dummy values
+  int beltID = -1;
+  string beltName = "N/A";
+  string beltPrimColor = "N/A";
+  string beltSecColor = "N/A";
+  string beltTertColor = "N/A";
+  string beltMaterial = "N/A";
+  string beltPattern = "N/A";
+
+  cin.ignore();
+
+  // Begin putting in actual values
+  beltName = window.MakeWindow("Please enter a name for this belt: ");
+  beltPrimColor = window.MakeWindow("Please enter the primary color for " +
+                                    beltName + ": ");
+  beltSecColor = window.MakeWindow("Please enter the secondary color for " +
+                                   beltName + ": ");
+  beltTertColor = window.MakeWindow("Please enter the tertiary color for " +
+                                    beltName + ": ");
+  beltMaterial =
+      window.MakeWindow("Please enter the material for " + beltName + ": ");
+  beltPattern =
+      window.MakeWindow("Please enter the style for " + beltName + ": ");
+
+  do {
+    beltID = AssignID("belt");
+  } while (beltID == -1);  // AssignID returns -1 if there is an error
+
+  // Create Belt using filled in variables
+  Belt belt(beltID, beltName, beltPrimColor, beltSecColor, beltTertColor,
+            beltMaterial, beltPattern);
+
+  return belt;
+}
+}
