@@ -20,7 +20,7 @@
 #include "shoes.h"
 #include "socks.h"
 #include "vulkan.h"
-#include "window.h"
+//#include "window.h"
 
 using namespace std;
 

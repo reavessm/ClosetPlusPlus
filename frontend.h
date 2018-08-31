@@ -6,6 +6,9 @@
  * @brief Abstract class for User Interfaces
  */
 
+#ifndef FRONTEND_H
+#define FRONTEND_H
+
 #include <ncurses.h>
 #include <cstdlib>
 #include <iostream>
@@ -22,8 +25,6 @@
 
 using namespace std;
 
-#ifndef FRONTEND_H
-#define FRONTEND_H
 
 const string kDummyClosetName = "Fake Closet Name";
 const string kClosetPrompt = "Enter a Closet Name: ";
@@ -79,7 +80,7 @@ class Frontend {
 
  protected:
   bool is_init_ = false;  ///< True if window is started, fasle otherwise
-  auto backend_;          ///< Instance of backend
+  static auto backend_;          ///< Instance of backend
   string closet_name_ = kDummyClosetName;
 };
 

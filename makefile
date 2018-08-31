@@ -15,7 +15,7 @@ gui: $A $C $S $P $B $(Sh) $(So)
 	$(GCC) -D VULKAN -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
 
 %.o : %.cc $(DEP)
-	$(GCC) -c $< -o $@
+	$(GCC) $(LIBS) -c $< -o $@
 
 clean:
 	$(RM) Closet++ *.o *.gch *~ *Closet.txt *.clo *.log *.i

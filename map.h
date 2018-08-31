@@ -5,6 +5,7 @@
  * @date Jul 30, 2018
  */
 
+
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
@@ -20,7 +21,9 @@ using namespace std;
 
 const string kDummyClosetName = "Fake Map Name";
 
-class Map : Backend {
+class Backend;
+
+class Map : public Backend {
  public:
   // Constructors and Destructors
   Map();

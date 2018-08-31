@@ -12,10 +12,10 @@
 
 #include "backend.h"
 #include "frontend.h"
-#include "myCloset.h"
-#include "ncurses.h"
-#include "vulkan.h"
-#include "window.h"
+//#include "myCloset.h"
+//#include "ncurses.h"
+//#include "vulkan.h"
+//#include "window.h"
 
 using namespace std;
 

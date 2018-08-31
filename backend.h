@@ -5,12 +5,13 @@
  * @date Jul 30, 2018
  */
 
+
 #include <cstdlib>
 #include <iostream>
 #include <string>
 
 #include "belt.h"
-#include "map.h"
+//#include "map.h"
 #include "pants.h"
 #include "shirt.h"
 #include "shoes.h"
@@ -21,8 +22,10 @@ using namespace std;
 #ifndef BACKEND_H
 #define BACKEND_H
 
-const string kDummyFileName = "NOT_A_FILE_NAME";
-const string kDummyClosetName = "Dummy Closet";
+//const string kDummyFileName = "NOT_A_FILE_NAME";
+//const string kDummyClosetName = "Dummy Closet";
+
+class Map;
 
 class Backend {
  public:
@@ -40,12 +43,12 @@ class Backend {
   virtual string GetClosetName() = 0;
   virtual string ToString() const = 0;
 #ifdef SQL
-  static SQL Create() {  ///< Creates instance of SQL
+  static *SQL Create() {  ///< Creates instance of SQL
     cerr << "Please implement SQLite3 Backend" << endl;
     exit 1;
   }
 #else
-  static Map Create() {  ///< Returns instance of Map
+  static *Map Create() {  ///< Returns instance of Map
     return Map();
   }
 #endif
