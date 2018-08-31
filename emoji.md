@@ -9,7 +9,7 @@ Taken graciously from [here](https://gitmoji.carloscuesta.me/)
 
 :fire: Removing code or files.
 
-:buggun: Fixing a bug.
+:bug::gun: Fixing a bug.
 
 :ambulance: Critical hotfix.
 
