@@ -16,14 +16,12 @@
 #include "shirt.h"
 #include "shoes.h"
 #include "socks.h"
+#include "label.h"
 
 using namespace std;
 
 #ifndef BACKEND_H
 #define BACKEND_H
-
-//const string kDummyFileName = "NOT_A_FILE_NAME";
-//const string kDummyClosetName = "Dummy Closet";
 
 class Map;
 
@@ -42,16 +40,15 @@ class Backend {
   virtual void MakeCloset() = 0;
   virtual string GetClosetName() = 0;
   virtual string ToString() const = 0;
+
+  static Backend* Create() {
 #ifdef SQL
-  static *SQL Create() {  ///< Creates instance of SQL
-    cerr << "Please implement SQLite3 Backend" << endl;
-    exit 1;
-  }
+  SQL* backend;
 #else
-  static *Map Create() {  ///< Returns instance of Map
-    return Map();
-  }
+  Map* backend;
 #endif
+  return backend;
+  }
 
  protected:
   bool isInit_ = false;

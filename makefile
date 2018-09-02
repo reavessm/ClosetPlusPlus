@@ -9,8 +9,7 @@ DEP = $(wildcard *.h)
 .PHONY: clean todo debug doc format
 
 Closet++: $(OBJ)
-	@echo $(OBJ) $(SRC) $(DEP)
-#	$(CXX) $(CFLAGS) $(LIBS) -o $@ $^
+	$(CXX) $(CFLAGS) $(LIBS) -o $@ $^
 
 gui: $A $C $S $P $B $(Sh) $(So)
 	$(GCC) -D VULKAN -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
