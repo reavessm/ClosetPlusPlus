@@ -1,5 +1,0 @@
-<map id="Pants" name="Pants">
-<area shape="rect" id="node2" href="$classClothes.html" title="Clothes abstract class to be used by members of closet. Handles the light work. " alt="" coords="9,477,115,599"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="68,147,155,224"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="42,5,181,97"/>
-</map>

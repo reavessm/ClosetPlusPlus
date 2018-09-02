@@ -1,8 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classClothes.html" title="Clothes abstract class to be used by members of closet. Handles the light work. " alt="" coords="5,107,76,133"/>
-<area shape="rect" id="node2" href="$classBelt.html" title="Belt" alt="" coords="131,5,179,32"/>
-<area shape="rect" id="node3" href="$classPants.html" title="Pants" alt="" coords="126,56,183,83"/>
-<area shape="rect" id="node4" href="$classShirt.html" title="Shirt" alt="" coords="129,107,181,133"/>
-<area shape="rect" id="node5" href="$classShoes.html" title="Shoes" alt="" coords="124,157,185,184"/>
-<area shape="rect" id="node6" href="$classSocks.html" title="Socks" alt="" coords="125,208,185,235"/>
-</map>
