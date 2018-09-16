@@ -40,5 +40,4 @@ string cloname = "fakeCLoName";
 ofstream myFile;
 ofstream myClo;
 
-
 #endif /* MAIN_H */

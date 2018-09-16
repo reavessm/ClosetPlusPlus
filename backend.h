@@ -5,17 +5,16 @@
  * @date Jul 30, 2018
  */
 
-
 #include <cstdlib>
 #include <iostream>
 #include <string>
 
 #include "belt.h"
+#include "label.h"
 #include "pants.h"
 #include "shirt.h"
 #include "shoes.h"
 #include "socks.h"
-#include "label.h"
 
 using namespace std;
 
@@ -37,37 +36,22 @@ class Backend {
   virtual string GetClosetName() = 0;
   virtual string ToString() const = 0;
   void SetClosetName(string name = kDummyClosetName) { closet_name_ = name; }
-  virtual bool InsertShirt(string name,
-                           string primary_color,
-                           string secondary_color,
-                           string tertiary_color,
-                           string pattern,
-                           string sleeve_length,
+  virtual bool InsertShirt(string name, string primary_color,
+                           string secondary_color, string tertiary_color,
+                           string pattern, string sleeve_length,
                            string collar) = 0;
-  virtual bool InsertPants(string name,
-                           string primary_color, 
-                           string secondary_color,
-                           string tertiary_color,
-                           string material,
-                           string length,
-                           string cut) = 0;
-  virtual bool InsertSocks(string name,
-                           string primary_color, 
-                           string secondary_color,
-                           string tertiary_color,
+  virtual bool InsertPants(string name, string primary_color,
+                           string secondary_color, string tertiary_color,
+                           string material, string length, string cut) = 0;
+  virtual bool InsertSocks(string name, string primary_color,
+                           string secondary_color, string tertiary_color,
                            string pattern) = 0;
-  virtual bool InsertShoes(string name,
-                           string primary_color,
-                           string secondary_color,
-                           string tertiary_color,
-                           string material,
-                           string style) = 0;
-  virtual bool InsertBelt(string name,
-                          string primary_color, 
-                          string secondary_color,
-                          string tertiary_color,
-                          string material,
-                          string pattern) = 0;
+  virtual bool InsertShoes(string name, string primary_color,
+                           string secondary_color, string tertiary_color,
+                           string material, string style) = 0;
+  virtual bool InsertBelt(string name, string primary_color,
+                          string secondary_color, string tertiary_color,
+                          string material, string pattern) = 0;
 
  protected:
   bool isInit_ = false;

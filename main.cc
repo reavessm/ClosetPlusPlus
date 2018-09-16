@@ -13,17 +13,17 @@ int main(int argc, char** argv) {
   cloname = fileFrontName + cloSurname;
 
   myFile.open(filename.c_str());
-  //myClo.open(cloname.c_str());
+  // myClo.open(cloname.c_str());
 
   frontend_.CreateCloset();
 
   myFile << frontend_.ToString();
   cout << frontend_.ToString();
-  //myClo << frontend_.StoreCloset();
+  // myClo << frontend_.StoreCloset();
   //  storeMyFile << closet.StoreCloset();
 
   myFile.close();
-  //myClo.close();
+  // myClo.close();
 
   return 0;
 }

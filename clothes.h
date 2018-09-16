@@ -50,18 +50,18 @@ class Clothes {
                                         ///< article of clothing to the next.
 
  protected:
-  int id_ = kDummyID;                          ///< Global unique identifier
-  string name_ = kDummyName;                   ///< User readable name
-  string primary_color_ = kDummyPrimColor;     ///< Primary color
-  string secondary_color_ = kDummySecColor;    ///< Secondary color
-  string tertiary_color_ = kDummyTertColor;    ///< Tertiary color
-  string pattern_ = kDummyPattern;             ///< Design pattern
-  string material_ = kDummyMaterial;           ///< Material
-  string style_ = kDummyStyle;                 ///< Design style
-  string length_ = kDummyLen;                  ///< Length of the clothing
-  string cut_ = kDummyCut;                     ///< Cut of the clothing
-  string sleeve_length_ = kDummySleeveLen;     ///< Length of the sleeve
-  string collar_ = kDummyCollar;               ///< Type of collar
+  int id_ = kDummyID;                        ///< Global unique identifier
+  string name_ = kDummyName;                 ///< User readable name
+  string primary_color_ = kDummyPrimColor;   ///< Primary color
+  string secondary_color_ = kDummySecColor;  ///< Secondary color
+  string tertiary_color_ = kDummyTertColor;  ///< Tertiary color
+  string pattern_ = kDummyPattern;           ///< Design pattern
+  string material_ = kDummyMaterial;         ///< Material
+  string style_ = kDummyStyle;               ///< Design style
+  string length_ = kDummyLen;                ///< Length of the clothing
+  string cut_ = kDummyCut;                   ///< Cut of the clothing
+  string sleeve_length_ = kDummySleeveLen;   ///< Length of the sleeve
+  string collar_ = kDummyCollar;             ///< Type of collar
 };
 
 #endif /* CLOTHES_H */

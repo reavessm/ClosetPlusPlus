@@ -15,11 +15,11 @@
 #include <string>
 
 #include "belt.h"
+#include "label.h"
 #include "pants.h"
 #include "shirt.h"
 #include "shoes.h"
 #include "socks.h"
-#include "label.h"
 
 #ifdef SQL
 #include "sql.h"
@@ -36,17 +36,19 @@ class Frontend {
   virtual ~Frontend(){};
 
   // These abstract functions will be different for each type of frontend
-  virtual bool Init() = 0;                         ///< Starts frontend and returns boolean determining
-                                                   ///< if inherited frontend was started correctly
-  virtual void Die()                          = 0; ///< Kills frontend
-  virtual void CreateCloset()                 = 0; ///< Initializes Backend
-  virtual string MakeWindow(string message)   = 0; ///< Puts message in window and returns string
-  virtual char MakeWindowChar(string message) = 0; ///< Puts message in window and returns char
+  virtual bool Init() = 0;  ///< Starts frontend and returns boolean determining
+                            ///< if inherited frontend was started correctly
+  virtual void Die() = 0;   ///< Kills frontend
+  virtual void CreateCloset() = 0;  ///< Initializes Backend
+  virtual string MakeWindow(
+      string message) = 0;  ///< Puts message in window and returns string
+  virtual char MakeWindowChar(
+      string message) = 0;  ///< Puts message in window and returns char
   string GetClosetName() { return backend_.GetClosetName(); };
   string ToString() const { return backend_.ToString(); };
 
  protected:
-  bool is_init_ = false;    ///< True if window is started, fasle otherwise
+  bool is_init_ = false;  ///< True if window is started, fasle otherwise
   string closet_name_ = kDummyClosetName;
 
 #ifdef SQL

@@ -5,7 +5,6 @@
  * @date Jul 30, 2018
  */
 
-
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
@@ -28,7 +27,7 @@ class Map : public Backend {
   void Die();
   bool Store(string file = kDummyFileName) const { return true; };
   bool Open(string file = kDummyFileName) const { return true; };
-  void MakeCloset() {};
+  void MakeCloset(){};
   string GetClosetName();
   string ToString() const;
 
@@ -38,7 +37,7 @@ class Map : public Backend {
                    string tertiary_color, string pattern, string sleeve_length,
                    string collar);
   bool InsertPants(string name, string primary_color, string secondary_color,
-                   string tertiary_color, string material, string length, 
+                   string tertiary_color, string material, string length,
                    string cut);
   bool InsertSocks(string name, string primary_color, string secondary_color,
                    string tertiary_color, string pattern);
@@ -56,11 +55,11 @@ class Map : public Backend {
   map<int, Socks> socks_map_;
   map<int, Shoes> shoes_map_;
   map<int, Belt> belt_map_;
-/* #ifdef VULKAN */
-/*   Vulkan window_; */
-/* #else */
-/*   Ncurses window_; */
-/* #endif */
+  /* #ifdef VULKAN */
+  /*   Vulkan window_; */
+  /* #else */
+  /*   Ncurses window_; */
+  /* #endif */
 
   // Private Functions
   Shirt AddShirt();
@@ -68,7 +67,6 @@ class Map : public Backend {
   Socks AddSocks();
   Shoes AddShoes();
   Belt AddBelt();
-
 };
 
 #endif /* MAP_H */

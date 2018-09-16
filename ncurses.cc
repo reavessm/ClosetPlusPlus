@@ -35,7 +35,7 @@ bool Ncurses::Init() {
   wbkgd(stdscr, COLOR_PAIR(1));
   refresh();
 
-  //backend_ = Backend::Create();
+  // backend_ = Backend::Create();
 
   is_init_ = true;
 
@@ -175,9 +175,8 @@ void Ncurses::AddShirt() {
   shirtCollar = this->MakeWindow(kColPrompt);
 
   // Send info to backend
-  backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor,
-                       shirtTertColor, shirtPattern, shirtSleeveLen,
-                       shirtCollar);
+  backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor, shirtTertColor,
+                       shirtPattern, shirtSleeveLen, shirtCollar);
 }  // end AddShirt
 
 /**
@@ -199,17 +198,17 @@ void Ncurses::AddPants() {
   string pantsCut;
 
   // Begin putting in actual values
-  pantsName      = this->MakeWindow(kPantsNamePrompt);
+  pantsName = this->MakeWindow(kPantsNamePrompt);
   pantsPrimColor = this->MakeWindow(kPrimColorPrompt);
-  pantsSecColor  = this->MakeWindow(kSecColorPrompt);
+  pantsSecColor = this->MakeWindow(kSecColorPrompt);
   pantsTertColor = this->MakeWindow(kTertColorPrompt);
-  pantsMaterial  = this->MakeWindow(kMatPrompt);
-  pantsLength    = this->MakeWindow(kLenPrompt);
-  pantsCut       = this->MakeWindow(kCutPrompt);
+  pantsMaterial = this->MakeWindow(kMatPrompt);
+  pantsLength = this->MakeWindow(kLenPrompt);
+  pantsCut = this->MakeWindow(kCutPrompt);
 
   // Send info to backend
-  backend_.InsertPants(pantsName, pantsPrimColor, pantsSecColor, 
-                       pantsTertColor, pantsMaterial, pantsLength, pantsCut);
+  backend_.InsertPants(pantsName, pantsPrimColor, pantsSecColor, pantsTertColor,
+                       pantsMaterial, pantsLength, pantsCut);
 }
 
 /**
@@ -237,7 +236,7 @@ void Ncurses::AddSocks() {
 
   // Send info to backend
   backend_.InsertSocks(socksName, socksPrimColor, socksSecColor, socksTertColor,
-              socksPattern);
+                       socksPattern);
 }
 
 /**
@@ -258,16 +257,16 @@ void Ncurses::AddShoes() {
   string shoesStyle;
 
   // Begin putting in actual values
-  shoesName      = this->MakeWindow(kShoesNamePrompt);
+  shoesName = this->MakeWindow(kShoesNamePrompt);
   shoesPrimColor = this->MakeWindow(kPrimColorPrompt);
-  shoesSecColor  = this->MakeWindow(kSecColorPrompt);
+  shoesSecColor = this->MakeWindow(kSecColorPrompt);
   shoesTertColor = this->MakeWindow(kTertColorPrompt);
-  shoesMaterial  = this->MakeWindow(kMatPrompt);
-  shoesStyle     = this->MakeWindow(kStylePrompt);
+  shoesMaterial = this->MakeWindow(kMatPrompt);
+  shoesStyle = this->MakeWindow(kStylePrompt);
 
   // Send info to backend
   backend_.InsertShoes(shoesName, shoesPrimColor, shoesSecColor, shoesTertColor,
-              shoesMaterial, shoesStyle);
+                       shoesMaterial, shoesStyle);
 }
 
 /**
@@ -297,5 +296,5 @@ void Ncurses::AddBelt() {
 
   // Send info to backend
   backend_.InsertBelt(beltName, beltPrimColor, beltSecColor, beltTertColor,
-            beltMaterial, beltPattern);
+                      beltMaterial, beltPattern);
 }

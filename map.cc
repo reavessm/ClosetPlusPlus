@@ -39,28 +39,23 @@ bool Map::Init() {
  */
 void Map::Die() {}
 
-
 /**
  * InsertShirt
  * @returns true if insert was succesful, false otherwise
  * @brief Inserts 'Shirt' into 'shirt_map_'
  */
-bool Map::InsertShirt(string name,
-                      string primary_color,
-                      string secondary_color,
-                      string tertiary_color,
-                      string pattern,
-                      string sleeve_length,
-                      string collar) {
+bool Map::InsertShirt(string name, string primary_color, string secondary_color,
+                      string tertiary_color, string pattern,
+                      string sleeve_length, string collar) {
   int status = false;
   int id = -1;
 
   do {
     this->AssignID("shirt");
-  } while (id == -1); // This should never happen
+  } while (id == -1);  // This should never happen
 
-  Shirt shirt(id, name, primary_color, secondary_color, tertiary_color,
-              pattern, sleeve_length, collar);
+  Shirt shirt(id, name, primary_color, secondary_color, tertiary_color, pattern,
+              sleeve_length, collar);
 
   shirt_map_.insert(pair<int, Shirt>(id, shirt));
 
@@ -74,19 +69,15 @@ bool Map::InsertShirt(string name,
  * @returns true if insert was successful, false otherwise
  * @brief Inserts 'Pants' into 'pants_map_'
  */
-bool Map::InsertPants(string name,
-                 string primary_color, 
-                 string secondary_color,
-                 string tertiary_color,
-                 string material,
-                 string length,
-                 string cut) {
+bool Map::InsertPants(string name, string primary_color, string secondary_color,
+                      string tertiary_color, string material, string length,
+                      string cut) {
   int status = false;
   int id = -1;
 
   do {
     this->AssignID("pants");
-  } while (id == -1); // This should never happen
+  } while (id == -1);  // This should never happen
 
   Pants pants(id, name, primary_color, secondary_color, tertiary_color,
               material, length, cut);
@@ -98,19 +89,16 @@ bool Map::InsertPants(string name,
   return status;
 }
 
-bool Map::InsertSocks(string name,
-                 string primary_color, 
-                 string secondary_color,
-                 string tertiary_color,
-                 string pattern) {
+bool Map::InsertSocks(string name, string primary_color, string secondary_color,
+                      string tertiary_color, string pattern) {
   int status = false;
   int id = -1;
 
   do {
     this->AssignID("socks");
-  } while (id == -1); // This should never happen
+  } while (id == -1);  // This should never happen
 
-  Socks socks(id, name, primary_color, secondary_color, tertiary_color, 
+  Socks socks(id, name, primary_color, secondary_color, tertiary_color,
               pattern);
 
   socks_map_.insert(pair<int, Socks>(id, socks));
@@ -120,18 +108,14 @@ bool Map::InsertSocks(string name,
   return status;
 }
 
-bool Map::InsertShoes(string name,
-                 string primary_color,
-                 string secondary_color,
-                 string tertiary_color,
-                 string material,
-                 string style) {
+bool Map::InsertShoes(string name, string primary_color, string secondary_color,
+                      string tertiary_color, string material, string style) {
   int status = false;
   int id = -1;
 
   do {
     this->AssignID("shoes");
-  } while (id == -1); // This should never happen
+  } while (id == -1);  // This should never happen
 
   Shoes shoes(id, name, primary_color, secondary_color, tertiary_color,
               material, style);
@@ -141,20 +125,16 @@ bool Map::InsertShoes(string name,
   status = !status;
 
   return status;
-}                   
+}
 
-bool Map::InsertBelt(string name,
-                string primary_color, 
-                string secondary_color,
-                string tertiary_color,
-                string material,
-                string pattern) {
+bool Map::InsertBelt(string name, string primary_color, string secondary_color,
+                     string tertiary_color, string material, string pattern) {
   int status = false;
   int id = -1;
 
   do {
     this->AssignID("belt");
-  } while (id == -1); // if this happens i will dye
+  } while (id == -1);  // if this happens i will dye
 
   Belt belt(id, name, primary_color, secondary_color, tertiary_color, material,
             pattern);
@@ -164,7 +144,7 @@ bool Map::InsertBelt(string name,
   status = true;
 
   return status;
-}                
+}
 
 /**
  * GetClosetName
@@ -241,9 +221,9 @@ string Map::ToString() const {
  */
 int Map::AssignID(string type) {
   int id = -1;  // dummy id number
-                      // switch (type){
-                        //  case "shirt":
-                          ///<  @todo Use Switch-case for Closet::AssignID
+                // switch (type){
+                //  case "shirt":
+                ///<  @todo Use Switch-case for Closet::AssignID
   if (type == "shirt") {
     id = 100 + static_cast<int>(shirt_map_.size());
   } else if (type == "pants") {
@@ -255,6 +235,6 @@ int Map::AssignID(string type) {
   } else if (type == "shoes") {
     id = 500 + static_cast<int>(shoes_map_.size());
   }
-  
+
   return id;
 }
