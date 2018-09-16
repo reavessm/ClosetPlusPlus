@@ -1,6 +1,5 @@
-# TODO
+# Things to work on
 
-- Insert methods for each type of clothing...
 - Implement SQLite API for opening and closing closets
     * Option for SQLite, Redis, or MongoDB
 - Create function to pick random article of clothing and suggested clothing
