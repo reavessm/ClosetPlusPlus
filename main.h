@@ -36,6 +36,7 @@ string cloSurname = " Closet.clo";
 string fileFrontName = "Dummy";
 string filename = "FakeFileName";
 string cloname = "fakeCLoName";
+string output = "";
 
 ofstream myFile;
 ofstream myClo;

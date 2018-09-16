@@ -15,10 +15,15 @@ int main(int argc, char** argv) {
   myFile.open(filename.c_str());
   // myClo.open(cloname.c_str());
 
+  frontend_.Init();
   frontend_.CreateCloset();
 
-  myFile << frontend_.ToString();
-  cout << frontend_.ToString();
+  output = frontend_.ToString();
+
+  frontend_.Die();
+
+  myFile << output;
+  cout << output;
   // myClo << frontend_.StoreCloset();
   //  storeMyFile << closet.StoreCloset();
 

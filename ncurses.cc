@@ -64,6 +64,8 @@ char Ncurses::MakeWindowChar(string message) {
   // Print Message
   mvprintw(row / 2, (col - message.length()) / 2, "%s", message.c_str());
 
+  std::cout << "Here I am" << std::endl;
+
   return getch();
 }  // end MakeWindowChar
 
@@ -122,28 +124,32 @@ void Ncurses::CreateCloset() {
   ans = this->MakeWindowChar(kPantsPrompt);
   while (ans == 'y' || ans == 'Y') {
     this->AddPants();
-    ans = this->MakeWindowChar(kPantsPrompt);
+    ans = 'n';
+    //ans = this->MakeWindowChar(kPantsPrompt);
   }
 
   // Add Belt
   ans = this->MakeWindowChar(kBeltPrompt);
   while (ans == 'y' || ans == 'Y') {
     this->AddBelt();
-    ans = this->MakeWindowChar(kBeltPrompt);
+    ans = 'n';
+    //ans = this->MakeWindowChar(kBeltPrompt);
   }
 
   // Add Socks
   ans = this->MakeWindowChar(kSocksPrompt);
   while (ans == 'y' || ans == 'Y') {
     this->AddSocks();
-    ans = this->MakeWindowChar(kSocksPrompt);
+    ans = 'n';
+    //ans = this->MakeWindowChar(kSocksPrompt);
   }
 
   // Add Shoes
   ans = this->MakeWindowChar(kShoesPrompt);
   while (ans == 'y' || ans == 'Y') {
     this->AddShoes();
-    ans = this->MakeWindowChar(kShoesPrompt);
+    ans = 'n';
+    //ans = this->MakeWindowChar(kShoesPrompt);
   }
 }  // end CreateCloset
 
@@ -174,9 +180,15 @@ void Ncurses::AddShirt() {
   shirtSleeveLen = this->MakeWindow(kSleeveLenPrompt);
   shirtCollar = this->MakeWindow(kColPrompt);
 
+  std::cout << "About to send" << std::endl;
+
   // Send info to backend
-  backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor, shirtTertColor,
+  bool status = backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor, shirtTertColor,
                        shirtPattern, shirtSleeveLen, shirtCollar);
+
+  std::cout << "sent" << std::endl;
+
+  return;
 }  // end AddShirt
 
 /**
