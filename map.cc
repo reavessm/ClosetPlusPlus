@@ -234,7 +234,7 @@ int Map::AssignID(string type) {
     id = 400 + static_cast<int>(socks_map_.size());
   } else if (type == "shoes") {
     id = 500 + static_cast<int>(shoes_map_.size());
-  } 
+  }
 
   return id;
 }
