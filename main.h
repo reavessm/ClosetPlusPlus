@@ -10,11 +10,14 @@
 #include <iostream>
 #include <string>
 
-#include "backend.h"
-#include "frontend.h"
+//#include "backend.h"
+//#include "frontend.h"
 //#include "myCloset.h"
-//#include "ncurses.h"
-//#include "vulkan.h"
+#ifdef VULKAN
+#include "vulkan.h"
+#else
+#include "ncurses.h"
+#endif
 //#include "window.h"
 
 using namespace std;
@@ -23,9 +26,19 @@ using namespace std;
 #define MAIN_H
 
 #ifdef VULKAN
-string window_type_ = "vulkan";
+Vulkan frontend_;
 #else
-string window_type_ = "ncurses";
+Ncurses frontend_;
 #endif
+
+string fileSurname = " Closet.txt";
+string cloSurname = " Closet.clo";
+string fileFrontName = "Dummy";
+string filename = "FakeFileName";
+string cloname = "fakeCLoName";
+
+ofstream myFile;
+ofstream myClo;
+
 
 #endif /* MAIN_H */

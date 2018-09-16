@@ -5,7 +5,6 @@
  * @date July 14th, 2018
  */
 
-#include "frontend.h"
 #include "ncurses.h"
 
 using namespace std;
@@ -36,7 +35,7 @@ bool Ncurses::Init() {
   wbkgd(stdscr, COLOR_PAIR(1));
   refresh();
 
-  backend_ = Backend::Create();
+  //backend_ = Backend::Create();
 
   is_init_ = true;
 
@@ -110,52 +109,41 @@ void Ncurses::CreateCloset() {
   string str = "";
 
   // Name Closet
-  closet_name_ = this.MakeWindow(kClosetPrompt);
-  backend_.closet_name_ = this.closet_name_;
+  backend_.SetClosetName(this->MakeWindow(kClosetPrompt));
 
   // Add Shirt
-  ans = this.MakeWindowChar(kShirtPrompt);
+  ans = this->MakeWindowChar(kShirtPrompt);
   while (ans == 'y' || ans == 'Y') {
-    Shirt shirt;
-    shirt = this.AddShirt();
-    backend_.Insert(shirt.GetID(), shirt);
-    ans = this.MakeWindowChar(kShirtPrompt);
+    this->AddShirt();
+    ans = this->MakeWindowChar(kShirtPrompt);
   }
 
   // Add Pants
-  ans = this.MakeWindowChar(kPantsPrompt);
+  ans = this->MakeWindowChar(kPantsPrompt);
   while (ans == 'y' || ans == 'Y') {
-    Pants pants;
-    pants = this.AddPants();
-    backend_.Insert(pants.GetID(), pants);
-    ans = this.MakeWindowChar(kPantsPrompt);
+    this->AddPants();
+    ans = this->MakeWindowChar(kPantsPrompt);
   }
 
   // Add Belt
-  ans = this.MakeWindowChar(kBeltPrompt);
+  ans = this->MakeWindowChar(kBeltPrompt);
   while (ans == 'y' || ans == 'Y') {
-    Belt belt;
-    belt = this.AddBelt();
-    backend_.Insert(belt.GetID(), belt);
-    ans = this.MakeWindowChar(kBeltPrompt);
+    this->AddBelt();
+    ans = this->MakeWindowChar(kBeltPrompt);
   }
 
   // Add Socks
-  ans = this.MakeWindowChar(kSocksPrompt);
+  ans = this->MakeWindowChar(kSocksPrompt);
   while (ans == 'y' || ans == 'Y') {
-    Socks socks;
-    socks = this.AddSocks();
-    backend_.Insert(socks.GetID(), socks);
-    ans = this.MakeWindowChar(kSocksPrompt);
+    this->AddSocks();
+    ans = this->MakeWindowChar(kSocksPrompt);
   }
 
   // Add Shoes
-  ans = this.MakeWindowChar(kShoesPrompt);
-  while (ans = 'y' || ans == 'Y') {
-    Shoes shoes;
-    shoes - this.AddShoes();
-    backend_.Insert(shoes.GetID(), shoes);
-    ans = this.MakeWindowChar(kShoesPrompt);
+  ans = this->MakeWindowChar(kShoesPrompt);
+  while (ans == 'y' || ans == 'Y') {
+    this->AddShoes();
+    ans = this->MakeWindowChar(kShoesPrompt);
   }
 }  // end CreateCloset
 
@@ -169,7 +157,7 @@ void Ncurses::CreateCloset() {
  *
  * @returns an instance of the 'Shirt' class
  */
-Shirt Ncurses::AddShirt() {
+void Ncurses::AddShirt() {
   string shirtName;
   string shirtPrimColor;
   string shirtSecColor;
@@ -177,25 +165,19 @@ Shirt Ncurses::AddShirt() {
   string shirtPattern;
   string shirtSleeveLen;
   string shirtCollar;
-  int shirtID = -1;
 
-  shirtName = this.MakeWindow(kShirtNamePrompt);
-  shirtPrimColor = this.MakeWindow(kPrimColorPrompt);
-  shirtSecColor = this.MakeWindow(kSecColorPrompt);
-  shirtTertColor = this.MakeWindow(kTertColorPrompt);
-  shirtPattern = this.MakeWindow(kPatternPrompt);
-  shirtSleeveLen = this.MakeWindow(kSleeveLenPrompt);
-  shirtCollar = this.MakeWindow(kColPrompt);
+  shirtName = this->MakeWindow(kShirtNamePrompt);
+  shirtPrimColor = this->MakeWindow(kPrimColorPrompt);
+  shirtSecColor = this->MakeWindow(kSecColorPrompt);
+  shirtTertColor = this->MakeWindow(kTertColorPrompt);
+  shirtPattern = this->MakeWindow(kPatternPrompt);
+  shirtSleeveLen = this->MakeWindow(kSleeveLenPrompt);
+  shirtCollar = this->MakeWindow(kColPrompt);
 
-  do {
-    shirtID = backend_.AssignID("shirt");
-  } while (shirtID == -1);  // AssignID returns -1 if there is an error
-
-  // Create Shirt object using the filled in variables
-  Shirt shirt(shirtID, shirtName, shirtPrimColor, shirtSecColor, shirtTertColor,
-              shirtPattern, shirtSleeveLength, shirtCollar);
-
-  return shirt;
+  // Send info to backend
+  backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor,
+                       shirtTertColor, shirtPattern, shirtSleeveLen,
+                       shirtCollar);
 }  // end AddShirt
 
 /**
@@ -206,7 +188,7 @@ Shirt Ncurses::AddShirt() {
  *         for making a new 'Pants'.  This function then calls the parameterized
  *         constructor for a 'Pants' using those details.
  */
-Pants Ncurses::AddPants() {
+void Ncurses::AddPants() {
   // instantiate variables with dummy values
   string pantsName;
   string pantsPrimColor;
@@ -215,26 +197,19 @@ Pants Ncurses::AddPants() {
   string pantsMaterial;
   string pantsLength;
   string pantsCut;
-  int pantsID = -1;
 
   // Begin putting in actual values
-  pantsName = this.MakeWindow(kPantsNamePrompt);
-  pantsPrimColor = this.MakeWindow(kPrimColorPrompt);
-  pantsSecColor = this.MakeWindow(kSecColorPrompt);
-  pantsTertColor = this.MakeWindow(kTertColorPrompt);
-  pantsMaterial = this.MakeWindow(kMatPrompt);
-  pantsLength = this.MakeWindow(kLenPrompt);
-  pantsCut = this.MakeWindow(kCutPrompt);
+  pantsName      = this->MakeWindow(kPantsNamePrompt);
+  pantsPrimColor = this->MakeWindow(kPrimColorPrompt);
+  pantsSecColor  = this->MakeWindow(kSecColorPrompt);
+  pantsTertColor = this->MakeWindow(kTertColorPrompt);
+  pantsMaterial  = this->MakeWindow(kMatPrompt);
+  pantsLength    = this->MakeWindow(kLenPrompt);
+  pantsCut       = this->MakeWindow(kCutPrompt);
 
-  do {
-    pantsID = backend_.AssignID("pants");
-  } while (pantsID == -1);  // AssignID returns -1 if there is an error
-
-  // Create Pants using filled in variables
-  Pants pants(pantsID, pantsName, pantsPrimColor, pantsSecColor, pantsTertColor,
-              pantsMaterial, pantsLength, pantsCut);
-
-  return pants;
+  // Send info to backend
+  backend_.InsertPants(pantsName, pantsPrimColor, pantsSecColor, 
+                       pantsTertColor, pantsMaterial, pantsLength, pantsCut);
 }
 
 /**
@@ -245,31 +220,24 @@ Pants Ncurses::AddPants() {
  *         for making a new 'Socks'.  This function then calls the parameterized
  *         constructor for a 'Socks' using those details.
  */
-Socks Ncurses::AddSocks() {
+void Ncurses::AddSocks() {
   // instantiate variables with dummy values
   string socksName;
   string socksPrimColor;
   string socksSecColor;
   string socksTertColor;
   string socksPattern;
-  int socksID = -1;
 
   // Begin putting in actual values
-  socksName = this.MakeWindow(kSocksNamePrompt);
-  socksPrimColor = this.MakeWindow(kPrimColorPrompt);
-  socksSecColor = this.MakeWindow(kSecColorPrompt);
-  socksTertColor = this.MakeWindow(kTertColorPrompt);
-  socksPattern = this.MakeWindow(kPatternPrompt);
+  socksName = this->MakeWindow(kSocksNamePrompt);
+  socksPrimColor = this->MakeWindow(kPrimColorPrompt);
+  socksSecColor = this->MakeWindow(kSecColorPrompt);
+  socksTertColor = this->MakeWindow(kTertColorPrompt);
+  socksPattern = this->MakeWindow(kPatternPrompt);
 
-  do {
-    socksID = backend_.AssignID("socks");
-  } while (socksID == -1);  // AssignID returns -1 if there is an error
-
-  // Create Socks using filled in variables
-  Socks socks(socksID, socksName, socksPrimColor, socksSecColor, socksTertColor,
+  // Send info to backend
+  backend_.InsertSocks(socksName, socksPrimColor, socksSecColor, socksTertColor,
               socksPattern);
-
-  return socks;
 }
 
 /**
@@ -280,7 +248,7 @@ Socks Ncurses::AddSocks() {
  *         for making a new 'Shoes'.  This function then calls the parameterized
  *         constructor for a 'Shoes' using those details.
  */
-Shoes Ncurses::AddShoes() {
+void Ncurses::AddShoes() {
   // instantiate variables with dummy values
   string shoesName;
   string shoesPrimColor;
@@ -288,25 +256,18 @@ Shoes Ncurses::AddShoes() {
   string shoesTertColor;
   string shoesMaterial;
   string shoesStyle;
-  int shoesID = -1;
 
   // Begin putting in actual values
-  shoesName = this.MakeWindow(kShoesNamePrompt);
-  shoesPrimColor = this.MakeWindow(kPrimColorPrompt);
-  shoesSecColor = this.MakeWindow(kSecColorPrompt);
-  shoesTertColor = this.MakeWindow(kTertColorPrompt);
-  shoesMaterial = this.MakeWindow(kMatPrompt);
-  shoesStyle = this.MakeWindow(kStylePrompt);
+  shoesName      = this->MakeWindow(kShoesNamePrompt);
+  shoesPrimColor = this->MakeWindow(kPrimColorPrompt);
+  shoesSecColor  = this->MakeWindow(kSecColorPrompt);
+  shoesTertColor = this->MakeWindow(kTertColorPrompt);
+  shoesMaterial  = this->MakeWindow(kMatPrompt);
+  shoesStyle     = this->MakeWindow(kStylePrompt);
 
-  do {
-    shoesID = backend_.AssignID("shoes");
-  } while (shoesID == -1);  // AssignID returns -1 if there is an error
-
-  // Create Shoes using filled in variables
-  Shoes shoes(shoesID, shoesName, shoesPrimColor, shoesSecColor, shoesTertColor,
+  // Send info to backend
+  backend_.InsertShoes(shoesName, shoesPrimColor, shoesSecColor, shoesTertColor,
               shoesMaterial, shoesStyle);
-
-  return shoes;
 }
 
 /**
@@ -317,7 +278,7 @@ Shoes Ncurses::AddShoes() {
  *         for making a new 'Belt'.  This function then calls the parameterized
  *         constructor for a 'Belt' using those details.
  */
-Belt Ncurses::AddBelt() {
+void Ncurses::AddBelt() {
   // instantiate variables with dummy values
   string beltName;
   string beltPrimColor;
@@ -325,30 +286,16 @@ Belt Ncurses::AddBelt() {
   string beltTertColor;
   string beltMaterial;
   string beltPattern;
-  int beltID = -1;
-
-  cin.ignore();
 
   // Begin putting in actual values
-  beltName = this.MakeWindow(kBeltNamePrompt);
-  beltPrimColor = this.MakeWindow(kPrimColorPrompt);
-  beltSecColor = this.MakeWindow(kSecColorPrompt);
-  beltTertColor = this.MakeWindow(kTertColorPrompt);
-  beltMaterial = this.MakeWindow(kMatPrompt);
-  beltPattern = this.MakeWindow(kPatternPrompt);
+  beltName = this->MakeWindow(kBeltNamePrompt);
+  beltPrimColor = this->MakeWindow(kPrimColorPrompt);
+  beltSecColor = this->MakeWindow(kSecColorPrompt);
+  beltTertColor = this->MakeWindow(kTertColorPrompt);
+  beltMaterial = this->MakeWindow(kMatPrompt);
+  beltPattern = this->MakeWindow(kPatternPrompt);
 
-  do {
-    beltID = backend_.AssignID("belt");
-  } while (beltID == -1);  // AssignID returns -1 if there is an error
-
-  // Create Belt using filled in variables
-  Belt belt(beltID, beltName, beltPrimColor, beltSecColor, beltTertColor,
+  // Send info to backend
+  backend_.InsertBelt(beltName, beltPrimColor, beltSecColor, beltTertColor,
             beltMaterial, beltPattern);
-
-  return belt;
 }
-/**
- * ToString
- * @brief displays 'string' representing the closet
- */
-void Ncurses::ToString() const { this.MakeWindow(backend_.ToString()); }

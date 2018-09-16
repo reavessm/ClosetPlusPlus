@@ -11,7 +11,6 @@
 #include <string>
 
 #include "belt.h"
-//#include "map.h"
 #include "pants.h"
 #include "shirt.h"
 #include "shoes.h"
@@ -22,8 +21,6 @@ using namespace std;
 
 #ifndef BACKEND_H
 #define BACKEND_H
-
-//class Map;
 
 class Backend {
  public:
@@ -36,29 +33,46 @@ class Backend {
   virtual void Die() = 0;
   virtual bool Store(string file = kDummyFileName) const = 0;
   virtual bool Open(string file = kDummyFileName) const = 0;
-  virtual int AssignID(string type) = 0;
   virtual void MakeCloset() = 0;
   virtual string GetClosetName() = 0;
   virtual string ToString() const = 0;
-  static Backend* Create();
+  void SetClosetName(string name = kDummyClosetName) { closet_name_ = name; }
+  virtual bool InsertShirt(string name,
+                           string primary_color,
+                           string secondary_color,
+                           string tertiary_color,
+                           string pattern,
+                           string sleeve_length,
+                           string collar) = 0;
+  virtual bool InsertPants(string name,
+                           string primary_color, 
+                           string secondary_color,
+                           string tertiary_color,
+                           string material,
+                           string length,
+                           string cut) = 0;
+  virtual bool InsertSocks(string name,
+                           string primary_color, 
+                           string secondary_color,
+                           string tertiary_color,
+                           string pattern) = 0;
+  virtual bool InsertShoes(string name,
+                           string primary_color,
+                           string secondary_color,
+                           string tertiary_color,
+                           string material,
+                           string style) = 0;
+  virtual bool InsertBelt(string name,
+                          string primary_color, 
+                          string secondary_color,
+                          string tertiary_color,
+                          string material,
+                          string pattern) = 0;
 
  protected:
   bool isInit_ = false;
   string closet_name_ = kDummyClosetName;
+  virtual int AssignID(string type) = 0;
 };
-
-class Map : Backend;
-
-Backend* Backend::Create() {
-#ifdef SQL
-  //SQL* backend;
-#else
-  Map* backend;
-  //return &backend;
-  return backend;
-  //return new Backend;
-#endif
-  //return backend;
-  }
 
 #endif /* BACKEND_H */

@@ -6,9 +6,7 @@
  * @brief
  */
 
-//#include "backend.h"
 #include "map.h"
-#include "clothes.h"
 
 using namespace std;
 
@@ -41,78 +39,138 @@ bool Map::Init() {
  */
 void Map::Die() {}
 
+
 /**
- * Insert
- * @returns true if insert was successful, false otherwise
- * @brief Inserts clothing into correct map according to clothing ID
+ * InsertShirt
+ * @returns true if insert was succesful, false otherwise
+ * @brief Inserts 'Shirt' into 'shirt_map_'
  */
-bool Map::Insert(int id = kDummyID, string name = kDummyName,
-                 string primary_color = kDummyPrimColor,
-                 string secondary_color = kDummySecColor,
-                 string tertiary_color = kDummyTertColor,
-                 string pattern = kDummyPattern,
-                 string material = kDummyMaterial, string style = kDummyStyle,
-                 string length = kDummyLength, string cut = kDummyCut,
-                 string sleeve_length = kDummySleeveLength,
-                 string collar = kDummyCollar) {
+bool Map::InsertShirt(string name,
+                      string primary_color,
+                      string secondary_color,
+                      string tertiary_color,
+                      string pattern,
+                      string sleeve_length,
+                      string collar) {
   int status = false;
+  int id = -1;
 
-  // id tells us Clothes type
-  switch (id / 100) {
-    // Shirt
-    case 1:
-      Shirt shirt(id, name, primary_color, secondary_color, tertiary_color,
-                  pattern, sleevelength, collar);
-      shirt_map_.insert(pair<int, Shirt>(shirt.GetID(), shirt));
-      status = true;
-      break;
+  do {
+    this->AssignID("shirt");
+  } while (id == -1); // This should never happen
 
-    // Pants
-    case 2:
-      Pants pants(id, name, primary_color, secondary_color, tertiary_color,
-                  material, length, cut);
-      pants_map_.insert(pair<int, Pants>(pants.GetID(), pants));
-      status = true;
-      break;
+  Shirt shirt(id, name, primary_color, secondary_color, tertiary_color,
+              pattern, sleeve_length, collar);
 
-    // Belt
-    case 3:
-      Belt belt(id, name, primary_color, secondary_color, tertiary_color,
-                material, pattern);
-      belt_map_.insert(pair<int, Belt>(belt.GetID(), belt));
-      status = true;
-      break;
+  shirt_map_.insert(pair<int, Shirt>(id, shirt));
 
-    // Socks
-    case 4:
-      Socks socks(id, name, primary_color, secondary_color, tertiary_color,
-                  pattern);
-      socks_map_.insert(pair<int, Socks>(socks.GetID(), socks));
-      status = true;
-      break;
-
-    // Shoes
-    case 5:
-      Shoes shoes(id, name, primary_color, secondary_color, tertiary_color,
-                  material, style);
-      shoes_map_.insert(pair<int, Shoes>(shoes.GetID(), shoes);
-      status = true;
-      break;
-
-    // Other
-    default :
-      cerr << "Please Enter Appropiate ID" << endl;
-      break;
-  }
+  status = true;
 
   return status;
 }
 
 /**
+ * InsertPants
+ * @returns true if insert was successful, false otherwise
+ * @brief Inserts 'Pants' into 'pants_map_'
+ */
+bool Map::InsertPants(string name,
+                 string primary_color, 
+                 string secondary_color,
+                 string tertiary_color,
+                 string material,
+                 string length,
+                 string cut) {
+  int status = false;
+  int id = -1;
+
+  do {
+    this->AssignID("pants");
+  } while (id == -1); // This should never happen
+
+  Pants pants(id, name, primary_color, secondary_color, tertiary_color,
+              material, length, cut);
+
+  pants_map_.insert(pair<int, Pants>(id, pants));
+
+  status = true;
+
+  return status;
+}
+
+bool Map::InsertSocks(string name,
+                 string primary_color, 
+                 string secondary_color,
+                 string tertiary_color,
+                 string pattern) {
+  int status = false;
+  int id = -1;
+
+  do {
+    this->AssignID("socks");
+  } while (id == -1); // This should never happen
+
+  Socks socks(id, name, primary_color, secondary_color, tertiary_color, 
+              pattern);
+
+  socks_map_.insert(pair<int, Socks>(id, socks));
+
+  status = true;
+
+  return status;
+}
+
+bool Map::InsertShoes(string name,
+                 string primary_color,
+                 string secondary_color,
+                 string tertiary_color,
+                 string material,
+                 string style) {
+  int status = false;
+  int id = -1;
+
+  do {
+    this->AssignID("shoes");
+  } while (id == -1); // This should never happen
+
+  Shoes shoes(id, name, primary_color, secondary_color, tertiary_color,
+              material, style);
+
+  shoes_map_.insert(pair<int, Shoes>(id, shoes));
+
+  status = !status;
+
+  return status;
+}                   
+
+bool Map::InsertBelt(string name,
+                string primary_color, 
+                string secondary_color,
+                string tertiary_color,
+                string material,
+                string pattern) {
+  int status = false;
+  int id = -1;
+
+  do {
+    this->AssignID("belt");
+  } while (id == -1); // if this happens i will dye
+
+  Belt belt(id, name, primary_color, secondary_color, tertiary_color, material,
+            pattern);
+
+  belt_map_.insert(pair<int, Belt>(id, belt));
+
+  status = true;
+
+  return status;
+}                
+
+/**
  * GetClosetName
  * @returns Closet Name
  */
-string Map::GetClosetName() { return this.closet_name_; }
+string Map::GetClosetName() { return this->closet_name_; }
 
 /**
  * ToString
@@ -152,4 +210,51 @@ string Map::ToString() const {
   }
 
   return s;
+}
+
+/**
+ * AssignID
+ * @param type A string dictating the type of clothing to check.
+ * @return An integer corrosponding to the next available ID for the given
+ * type, or -1 for an error.
+ * @brief Assigns unique ID to clothes
+ * @detail This function assigns the next available ID number for a given
+ * type.
+ * The last two numbers represent the number of the given type, while the
+ * other
+ * numbers represent the type.  For Example, if there are currently 4
+ * shirts, then the next shirt will have the ID of 105.  The 100
+ * represents
+ * shirts, while the 05 means it is the fifth shirt. This allows
+ * for 99
+ * items of a given type and (2^29)-1 types???
+ *
+ * @note So far the types are hard coded in.  Meaning you can only
+ * create
+ * clothes that are either shirts, pants, belts, socks,
+ * or shoes.
+ * There is currently no way to dynamically add types.
+ * Underwear
+ * types were intentionally left out to test the best
+ * way to
+ * dynamically add new types.
+ */
+int Map::AssignID(string type) {
+  int id = -1;  // dummy id number
+                      // switch (type){
+                        //  case "shirt":
+                          ///<  @todo Use Switch-case for Closet::AssignID
+  if (type == "shirt") {
+    id = 100 + static_cast<int>(shirt_map_.size());
+  } else if (type == "pants") {
+    id = 200 + static_cast<int>(pants_map_.size());
+  } else if (type == "belt") {
+    id = 300 + static_cast<int>(belt_map_.size());
+  } else if (type == "socks") {
+    id = 400 + static_cast<int>(socks_map_.size());
+  } else if (type == "shoes") {
+    id = 500 + static_cast<int>(shoes_map_.size());
+  }
+  
+  return id;
 }

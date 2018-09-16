@@ -13,36 +13,54 @@
 #include <map>
 #include <string>
 #include "backend.h"
-#include "label.h"
 
 using namespace std;
 
 #ifndef MAP_H
 #define MAP_H
 
-//const string kDummyClosetName = "Fake Map Name";
-
-//class Backend;
-
 class Map : public Backend {
  public:
   // Constructors and Destructors
   Map();
   virtual ~Map();
+  bool Init();
+  void Die();
+  bool Store(string file = kDummyFileName) const { return true; };
+  bool Open(string file = kDummyFileName) const { return true; };
+  void MakeCloset() {};
+  string GetClosetName();
+  string ToString() const;
+
+  // Inserts for each type of clothing
+  // @todo Refactor?
+  bool InsertShirt(string name, string primary_color, string secondary_color,
+                   string tertiary_color, string pattern, string sleeve_length,
+                   string collar);
+  bool InsertPants(string name, string primary_color, string secondary_color,
+                   string tertiary_color, string material, string length, 
+                   string cut);
+  bool InsertSocks(string name, string primary_color, string secondary_color,
+                   string tertiary_color, string pattern);
+  bool InsertShoes(string name, string primary_color, string secondary_color,
+                   string tertiary_color, string material, string style);
+  bool InsertBelt(string name, string primary_color, string secondary_color,
+                  string tertiary_color, string material, string pattern);
 
  private:
   // Variables
   string closet_name_ = kDummyClosetName;
+  int AssignID(string type);
   map<int, Shirt> shirt_map_;
   map<int, Pants> pants_map_;
   map<int, Socks> socks_map_;
   map<int, Shoes> shoes_map_;
   map<int, Belt> belt_map_;
-#ifdef VULKAN
-  Vulkan window_;
-#else
-  Ncurses window_;
-#endif
+/* #ifdef VULKAN */
+/*   Vulkan window_; */
+/* #else */
+/*   Ncurses window_; */
+/* #endif */
 
   // Private Functions
   Shirt AddShirt();
@@ -51,7 +69,6 @@ class Map : public Backend {
   Shoes AddShoes();
   Belt AddBelt();
 
-  int AssignID(string type);
 };
 
 #endif /* MAP_H */
