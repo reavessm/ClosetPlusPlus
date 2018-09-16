@@ -3,116 +3,116 @@ An emoji guide for your commit messages
 
 Taken graciously from [here](https://gitmoji.carloscuesta.me/)
 
-:art: Improving structure / format of the code.
+`:art:` Improving structure / format of the code.
 
-:zap: Improving performance.
+`:zap:` Improving performance.
 
-:fire: Removing code or files.
+`:fire:` Removing code or files.
 
-:bug::gun: Fixing a bug.
+`:bug::gun:` Fixing a bug.
 
-:ambulance: Critical hotfix.
+`:ambulance:` Critical hotfix.
 
-:sparkles: Fixing UI
+`:sparkles:` Fixing UI
 
-:memo: Writing docs.
+`:memo:` Writing docs.
 
-:rocket: Implementing new features
+`:rocket:` Implementing new features
 
-:trollface: Initial commit.
+`:trollface:` Initial commit.
 
-:white_check_mark: Adding tests.
+`:white_check_mark:` Adding tests.
 
-:lock: Fixing security issues.
+`:lock:` Fixing security issues.
 
-:apple: Fixing something on macOS.
+`:apple:` Fixing something on macOS.
 
-:penguin: Fixing something on Linux.
+`:penguin:` Fixing something on Linux.
 
-:checkered_flag: Fixing something on Windows.
+`:checkered_flag:` Fixing something on Windows.
 
-:robot: Fixing something on Android.
+`:robot:` Fixing something on Android.
 
-:green_apple: Fixing something on iOS.
+`:green_apple:` Fixing something on iOS.
 
-:bookmark: Releasing / Version tags.
+`:bookmark:` Releasing / Version tags.
 
-:rotating_light: Removing linter warnings.
+`:rotating_light:` Removing linter warnings.
 
-:construction: Work in progress.
+`:construction:` Work in progress.
 
-:green_heart: Fixing CI Build.
+`:green_heart:` Fixing CI Build.
 
-:arrow_down: Downgrading dependencies.
+`:arrow_down:` Downgrading dependencies.
 
-:arrow_up: Upgrading dependencies.
+`:arrow_up:` Upgrading dependencies.
 
-:pushpin: Pinning dependencies to specific versions.
+`:pushpin:` Pinning dependencies to specific versions.
 
-:construction_worker: Adding CI build system.
+`:construction_worker:` Adding CI build system.
 
-:chart_with_upwards_trend: Adding analytics or tracking code.
+`:chart_with_upwards_trend:` Adding analytics or tracking code.
 
-:recycle: Refactoring code.
+`:recycle:` Refactoring code.
 
-:heavy_minus_sign: Removing a dependency.
+`:heavy_minus_sign:` Removing a dependency.
 
-:whale: Work about Docker.
+`:whale:` Work about Docker.
 
-:heavy_plus_sign: Adding a dependency.
+`:heavy_plus_sign:` Adding a dependency.
 
-:wrench: Changing configuration files.
+`:wrench:` Changing configuration files.
 
-:globe_with_meridians: Internationalization and localization.
+`:globe_with_meridians:` Internationalization and localization.
 
-:pencil2: Fixing typos.
+`:pencil2:` Fixing typos.
 
-:hankey: Writing bad code that needs to be improved.
+`:hankey:` Writing bad code that needs to be improved.
 
-:rewind: Reverting changes.
+`:rewind:` Reverting changes.
 
-:twisted_rightwards_arrows: Merging branches.
+`:twisted_rightwards_arrows:` Merging branches.
 
-:package: Updating compiled files or packages.
+`:package:` Updating compiled files or packages.
 
-:alien: Updating code due to external API changes.
+`:alien:` Updating code due to external API changes.
 
-:truck: Moving or renaming files.
+`:truck:` Moving or renaming files.
 
-:page_facing_up: Adding or updating license.
+`:page_facing_up:` Adding or updating license.
 
-:boom: Introducing breaking changes.
+`:boom:` Introducing breaking changes.
 
-:bento: Adding or updating assets.
+`:bento:` Adding or updating assets.
 
-:ok_hand: Updating code due to code review changes.
+`:ok_hand:` Updating code due to code review changes.
 
-:wheelchair: Improving accessibility.
+`:wheelchair:` Improving accessibility.
 
-:bulb: Documenting source code.
+`:bulb:` Documenting source code.
 
-:beers: Writing code drunkenly. 
+`:beers:` Writing code drunkenly. 
 
-:speech_balloon: Updating text and literals.
+`:speech_balloon:` Updating text and literals.
 
- :card_file_box: Performing database related changes.
+`:card_file_box:` Performing database related changes.
 
-:loud_sound: Adding logs.
+`:loud_sound:` Adding logs.
 
-:mute: Removing logs.
+`:mute:` Removing logs.
 
-:busts_in_silhouette: Adding contributor(s).
+`:busts_in_silhouette:` Adding contributor(s).
 
-:children_crossing: Improving user experience / usability.
+`:children_crossing:` Improving user experience / usability.
 
-:building_construction: Making architectural changes.
+`:building_construction:` Making architectural changes.
 
-:iphone: Working on responsive design.
+`:iphone:` Working on responsive design.
 
-:clown_face: Mocking things.
+`:clown_face:` Mocking things.
 
-:egg: Adding an easter egg.
+`:egg:` Adding an easter egg.
 
-:see_no_evil: Adding or updating a .gitignore file
+`:see_no_evil:` Adding or updating a .gitignore file
 
-:camera_flash: Adding or updating snapshots
+`:camera_flash:` Adding or updating snapshots
