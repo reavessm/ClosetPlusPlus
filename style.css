@@ -1,20 +1,43 @@
+
+:root {
+  --light-blue: #2BBBD8;
+  --golden-rod: #FCD271;
+  --orange-red: #F78D3F;
+  --dark: #102E37;
+  --white: #E8EDE0;
+  background: var(--light-blue);
+}
+
 body {
-  background: lightblue;
+  background: var(--light-blue);
+  color: var(--dark);
 }
 
-h1 {
-  color: navy;
+table tr {
+  background: var(--light-blue);
+  color: var(--dark);
 }
 
-div {
-  margin: auto;
-  width: 75%;
+ul {
+  background-color: var(--golden-rod);
 }
 
-table {
-  background: goldenrod;
+ul li a {
+  color: var(--dark);
+  text-decoration: none;
 }
-  
-.nav-tree {
-  background: goldenrod;
+
+ul li a:hover:not(.active) {
+  background-color: var(--orange-red);
+  color: var(--white);
+}
+
+ul a.active {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+#side-nav {
+  background-color: var(--golden-rod);
+  color: var(--dark);
 }
