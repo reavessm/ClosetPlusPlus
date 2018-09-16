@@ -10,7 +10,7 @@
 #include <string>
 
 #include "belt.h"
-#include "label.h"
+//#include "label.h"
 #include "pants.h"
 #include "shirt.h"
 #include "shoes.h"
