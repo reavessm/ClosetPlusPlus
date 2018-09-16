@@ -37,7 +37,11 @@
 
 # Vim Open File things
 *.swp
+*.swo
 
-html/*
-man/*
-latex/*
+html*
+man*
+latex*
+
+error.txt
+Closet++

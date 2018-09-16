@@ -1,5 +1,5 @@
-GCC = g++ -O3 -Wall -std=c++11
-CLFAGS = -O3 -Wall -std=c++11
+#GCC = g++ -O3 -Wall -std=c++11
+CFLAGS = -O3 -pipe -Wall -std=c++11
 LIBS = -lncurses
 
 SRC = $(wildcard *.cc)
@@ -9,19 +9,19 @@ DEP = $(wildcard *.h)
 .PHONY: clean todo debug doc format
 
 Closet++: $(OBJ)
-	$(GCC) $(LIBS) -o $@ $^
+	@g++ $(CFLAGS) $(LIBS) -o $@ $^
 
 gui: $A $C $S $P $B $(Sh) $(So)
 	$(GCC) -D VULKAN -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
 
 %.o : %.cc $(DEP)
-	$(GCC) -c $< -o $@
+	$(CXX) $(CFLAGS) $(LIBS) -c $< -o $@
 
 clean:
 	$(RM) Closet++ *.o *.gch *~ *Closet.txt *.clo *.log *.i
 
 todo:
-	@vim TODO
+	@vim TODO.md
 
 debug: $(OBJ)
 	$(GCC) $(LIBS) -g -o Closet++ $(OBJ)

@@ -1,6 +1,6 @@
 /**
  * @class Closet
- * @headerfile myCloset.h 
+ * @headerfile myCloset.h
  * @author Stephen M. Reaves
  * @date July 14th, 2018
  */
@@ -14,13 +14,14 @@
 #include <string>
 
 #include "belt.h"
-#include "ncurses.h"
+//#include "ncurses.h"
 #include "pants.h"
 #include "shirt.h"
 #include "shoes.h"
 #include "socks.h"
-#include "vulkan.h"
-#include "window.h"
+//#include "vulkan.h"
+//#include "window.h"
+#include "frontend.h"
 
 using namespace std;
 
