@@ -9,19 +9,22 @@
 #ifndef FRONTEND_H
 #define FRONTEND_H
 
+class Vulkan;
+class Ncurses;
+
 #include <ncurses.h>
 #include <cstdlib>
 #include <iostream>
 #include <string>
 
 #include "backend.h"
-#include "belt.h"
-#include "ncurses.h"
-#include "pants.h"
-#include "shirt.h"
-#include "shoes.h"
-#include "socks.h"
-#include "vulkan.h"
+/* #include "belt.h" */
+/* //#include "ncurses.h" */
+/* #include "pants.h" */
+/* #include "shirt.h" */
+/* #include "shoes.h" */
+/* #include "socks.h" */
+/* //#include "vulkan.h" */
 #include "label.h"
 
 using namespace std;
@@ -33,32 +36,32 @@ class Frontend {
   virtual ~Frontend(){};
 
   // These abstract functions will be different for each type of frontend
-  virtual bool Init() = 0;  ///< Starts frontend and returns boolean determining
-                            ///< if inherited frontend was started correctly
-  virtual void Die() = 0;   ///< Kills frontend
-  virtual char MakeWindowChar(
-      string message) = 0;  ///< Puts message in window and returns char
-  virtual string MakeWindow(
-      string message) = 0;  ///< Puts message in window and returns string
-  virtual void CreateCloset() = 0;    ///< Initializes Backend
-  virtual void ToString() const = 0;  ///< Displays 'string' representing closet
+  virtual bool Init() = 0;                         ///< Starts frontend and returns boolean determining
+                                                   ///< if inherited frontend was started correctly
+  virtual void Die()                          = 0; ///< Kills frontend
+  virtual void CreateCloset()                 = 0; ///< Initializes Backend
+  virtual void ToString() const               = 0; ///< Displays 'string' representing closet
+  virtual string MakeWindow(string message)   = 0; ///< Puts message in window and returns string
+  virtual char MakeWindowChar(string message) = 0; ///< Puts message in window and returns char
+  string GetClosetName() { return kDummyClosetName; }
 
   // Static method to handle different types of frontend
 #ifdef VULKAN
-  static Frontend* Create() {  ///< Creates backend and returns instance of Vulkan
+  static Frontend* Create() { ///< Creates backend and returns instance of Vulkan
     Vulkan vulkan;
     return vulkan;
   }
 #else
-  static Frontend* Create() {  ///< Creates backend and returns instance of Ncurses
+  static Frontend* Create() { ///< Creates backend and returns instance of Ncurses
     Ncurses ncurses;
-    return ncurses;
+    return &ncurses;
+    //return new Ncurses;
   }
 #endif
 
  protected:
-  bool is_init_ = false;  ///< True if window is started, fasle otherwise
-  static Backend* backend_;          ///< Instance of backend
+  bool is_init_ = false;    ///< True if window is started, fasle otherwise
+  static Backend* backend_; ///< Instance of backend
   string closet_name_ = kDummyClosetName;
 };
 

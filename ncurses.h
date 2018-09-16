@@ -10,9 +10,10 @@
 #include <iostream>
 #include <string>
 
-#include "frontend.h"
+//#include "frontend.h"
 
 using namespace std;
+class Frontend;
 
 #ifndef CUST_NCURSES_H
 #define CUST_NCURSES_H

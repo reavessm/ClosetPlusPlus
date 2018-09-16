@@ -13,15 +13,16 @@
 #include <map>
 #include <string>
 #include "backend.h"
+#include "label.h"
 
 using namespace std;
 
 #ifndef MAP_H
 #define MAP_H
 
-const string kDummyClosetName = "Fake Map Name";
+//const string kDummyClosetName = "Fake Map Name";
 
-class Backend;
+//class Backend;
 
 class Map : public Backend {
  public:

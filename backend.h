@@ -23,7 +23,7 @@ using namespace std;
 #ifndef BACKEND_H
 #define BACKEND_H
 
-class Map;
+//class Map;
 
 class Backend {
  public:
@@ -40,19 +40,25 @@ class Backend {
   virtual void MakeCloset() = 0;
   virtual string GetClosetName() = 0;
   virtual string ToString() const = 0;
-
-  static Backend* Create() {
-#ifdef SQL
-  SQL* backend;
-#else
-  Map* backend;
-#endif
-  return backend;
-  }
+  static Backend* Create();
 
  protected:
   bool isInit_ = false;
   string closet_name_ = kDummyClosetName;
 };
+
+class Map : Backend;
+
+Backend* Backend::Create() {
+#ifdef SQL
+  //SQL* backend;
+#else
+  Map* backend;
+  //return &backend;
+  return backend;
+  //return new Backend;
+#endif
+  //return backend;
+  }
 
 #endif /* BACKEND_H */

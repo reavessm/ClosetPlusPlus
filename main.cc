@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
   string fileFrontName = "Dummy";
   string filename = "FakeFileName";
   string cloname = "fakeCLoName";
-  auto frontend = Frontend::Create();
+  Frontend* frontend = Frontend::Create();
   //  string storeFileSurName = " Closet.clo";
   //  string storeFileName = "FakerFileName";
   //  ofstream storeMyFile;
@@ -46,12 +46,12 @@ int main(int argc, char** argv) {
   */
 
   // closet.MakeCloset();
-  frontend.MakeCloset();
+  frontend->CreateCloset();
 
   // endwin();
   //  }
 
-  fileFrontName = closet.GetClosetName();
+  fileFrontName = frontend->GetClosetName();
   filename = fileFrontName + fileSurname;
   cloname = fileFrontName + cloSurname;
   //  storeFileName = fileFrontName + storeFileSurname;

@@ -5,6 +5,7 @@
  * @date July 14th, 2018
  */
 
+#include "frontend.h"
 #include "ncurses.h"
 
 using namespace std;
