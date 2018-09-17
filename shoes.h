@@ -1,12 +1,10 @@
-/******************************************************************************
- * File Name: shoes.h
- * Created by: Stephen M. Reaves
- * Date Last Modified:
- *
- * Summary: Header File for 'Shoes' class in the Closet++ program
- *
- */
-
+/**
+* @class shoes
+* @author Stephen M. Reaves
+* @headerfile shoes.h
+* @date July 14, 2018
+* @brief 
+*/
 #include <cstdlib>
 #include <iostream>
 #include <string>

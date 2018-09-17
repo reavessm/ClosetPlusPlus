@@ -2,7 +2,7 @@
  * @class Shirt
  * @headerfile shirt.h ""
  * @author Stephen M. Reaves
- * @date
+ * @date July 14, 2018
  */
 
 #ifndef SHIRT_H

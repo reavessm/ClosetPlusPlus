@@ -2,7 +2,7 @@
  * @class Ncurses
  * @headerfile ncurses.h
  * @author Stephen M. Reaves
- * @date July 14th, 2018
+ * @date Sep 16, 2018
  */
 
 #include <ncurses.h>
@@ -29,7 +29,6 @@ class Ncurses : public Frontend {
   string MakeWindow(string message);
 
  private:
-  // bool isInit_ = false;
   void AddShirt();
   void AddPants();
   void AddSocks();

@@ -2,7 +2,7 @@
  * @class Frontend
  * @author Stephen M. Reaves
  * @headerfile frontend.h
- * @date Jul 19, 2018
+ * @date Sep 16, 2018
  * @brief Abstract class for User Interfaces
  */
 
@@ -15,7 +15,6 @@
 #include <string>
 
 #include "belt.h"
-//#include "label.h"
 #include "pants.h"
 #include "shirt.h"
 #include "shoes.h"
@@ -37,7 +36,7 @@ class Frontend {
 
   // These abstract functions will be different for each type of frontend
   virtual bool Init() = 0;  ///< Starts frontend and returns boolean determining
-                            ///< if inherited frontend was started correctly
+                            ///< if frontend was started correctly
   virtual void Die() = 0;   ///< Kills frontend
   virtual void CreateCloset() = 0;  ///< Initializes Backend
   virtual string MakeWindow(

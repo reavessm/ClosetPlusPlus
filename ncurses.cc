@@ -2,7 +2,8 @@
  * @class Ncurses
  * @file ncurses.cc
  * @author Stephen M. Reaves
- * @date July 14th, 2018
+ * @date Sep 16, 2018
+ * @brief This class uses Ncurses for a frontend
  */
 
 #include "ncurses.h"
@@ -155,13 +156,11 @@ void Ncurses::CreateCloset() {
 
 /**
  * AddShirt
- * @brief Creates a 'Shirt' object
+ * @brief Inserts a 'Shirt' into 'backend_'
  *
  * @detail This function will take user input to record the necessary details
- * for making a new 'Shirt'.  This calls the parameterized constructor for a
+ * for making a new 'Shirt'.  This calls the 'Backend::Insert' for a
  * 'Shirt' using those details.
- *
- * @returns an instance of the 'Shirt' class
  */
 void Ncurses::AddShirt() {
   string shirtName;
@@ -180,25 +179,20 @@ void Ncurses::AddShirt() {
   shirtSleeveLen = this->MakeWindow(kSleeveLenPrompt);
   shirtCollar = this->MakeWindow(kColPrompt);
 
-  std::cout << "About to send" << std::endl;
-
   // Send info to backend
   bool status = backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor,
                                      shirtTertColor, shirtPattern,
                                      shirtSleeveLen, shirtCollar);
-
-  std::cout << "sent" << std::endl;
-
-  return;
 }  // end AddShirt
 
 /**
  * AddPants
- * @returns An instance of the 'Pants' class.
- * @brief Creates a 'Pants' object
+ *
+ * @brief Inserts a 'Pants' object into 'backend_'
+ * 
  * @detail This function will take user input to record the necessary details
- *         for making a new 'Pants'.  This function then calls the parameterized
- *         constructor for a 'Pants' using those details.
+ *         for making a new 'Pants'.  This function then calls
+ *         'Backend::Insert' for a 'Pants' object using those details.
  */
 void Ncurses::AddPants() {
   // instantiate variables with dummy values
@@ -226,11 +220,12 @@ void Ncurses::AddPants() {
 
 /**
  * AddSocks
- * @returns An instance of the 'Socks' class.
- * @brief Creates a 'Socks' object
+ *
+ * @brief Inserts a 'Socks' object into 'backend_'
+ *
  * @detail This function will take user input to record the necessary details
- *         for making a new 'Socks'.  This function then calls the parameterized
- *         constructor for a 'Socks' using those details.
+ *         for making a new 'Socks'.  This function then calls the
+ *         'Backend::Insert' for a 'Socks' using those details.
  */
 void Ncurses::AddSocks() {
   // instantiate variables with dummy values
@@ -254,11 +249,12 @@ void Ncurses::AddSocks() {
 
 /**
  * AddShoes
- * @returns An instance of the 'Shoes' class.
- * @brief Creates a 'Shoes' object
+ * 
+ * @brief Inserts a 'Shoes' object into 'backend_'
+ * 
  * @detail This function will take user input to record the necessary details
- *         for making a new 'Shoes'.  This function then calls the parameterized
- *         constructor for a 'Shoes' using those details.
+ *         for making a new 'Shoes'.  This function then calls the
+ *         'Backend::Insert' for a 'Shoes' using those details.
  */
 void Ncurses::AddShoes() {
   // instantiate variables with dummy values
@@ -284,11 +280,12 @@ void Ncurses::AddShoes() {
 
 /**
  * AddBelt
- * @returns An instance of the 'Belt' class.
- * @brief Creates a 'Belt' object
+ * 
+ * @brief Inserts a 'Belt' object into 'backend_'
+ *
  * @detail This function will take user input to record the necessary details
- *         for making a new 'Belt'.  This function then calls the parameterized
- *         constructor for a 'Belt' using those details.
+ *         for making a new 'Belt'.  This function then calls the
+ *         'Backend::Insert' for a 'Belt' using those details.
  */
 void Ncurses::AddBelt() {
   // instantiate variables with dummy values

@@ -2,7 +2,7 @@
  * @class Map
  * @author Stephen M. Reaves
  * @headerfile map.h
- * @date Jul 30, 2018
+ * @date Sep 16, 2018
  */
 
 #include <cstdlib>
@@ -55,11 +55,6 @@ class Map : public Backend {
   map<int, Socks> socks_map_;
   map<int, Shoes> shoes_map_;
   map<int, Belt> belt_map_;
-  /* #ifdef VULKAN */
-  /*   Vulkan window_; */
-  /* #else */
-  /*   Ncurses window_; */
-  /* #endif */
 
   // Private Functions
   Shirt AddShirt();

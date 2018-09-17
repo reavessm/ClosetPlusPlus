@@ -1,6 +1,6 @@
 /**
  * @class Clothes
- * @headerfile clothes.h ""
+ * @headerfile clothes.h
  * @author Stephen M. Reaves
  * @date July 14th, 2018
  *
@@ -21,19 +21,6 @@
 #include "label.h"
 
 using namespace std;
-
-/* static const int kDummyID = -1; */
-/* static const string kDummyName = "Fake Name"; */
-/* static const string kDummyPrimColor = "Fake Primary Color"; */
-/* static const string kDummySecColor = "Fake Secondary Color"; */
-/* static const string kDummyTertColor = "Fake Tertiary Color"; */
-/* static const string kDummyPattern = "Fake Pattern"; */
-/* static const string kDummyMaterial = "Fake Material"; */
-/* static const string kDummyStyle = "Fake Style"; */
-/* static const string kDummyLength = "Fake Length"; */
-/* static const string kDummyCut = "Fake Cut"; */
-/* static const string kDummySleeveLength = "Fake Sleeve Length"; */
-/* static const string kDummyCollar = "Fake Collar"; */
 
 class Clothes {
  public:

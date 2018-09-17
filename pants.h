@@ -1,8 +1,8 @@
 /**
  * @class Pants
- * @headerfile pants.h ""
+ * @headerfile pants.h
  * @author Stephen M. Reaves
- * @date
+ * @date July 14, 2018
  */
 
 #include <cstdlib>

@@ -1,7 +1,7 @@
 /**
  * @headerfile main.h
  * @author Stephen M. Reaves
- * @date July 14th, 2018
+ * @date Sep 16, 2018
  */
 
 #include <ncurses.h>
@@ -10,22 +10,18 @@
 #include <iostream>
 #include <string>
 
-//#include "backend.h"
-//#include "frontend.h"
-//#include "myCloset.h"
-#ifdef VULKAN
+#ifdef VULKAN ///< Type of frontend is determined at compile-time
 #include "vulkan.h"
 #else
 #include "ncurses.h"
 #endif
-//#include "window.h"
 
 using namespace std;
 
 #ifndef MAIN_H
 #define MAIN_H
 
-#ifdef VULKAN
+#ifdef VULKAN ///< Type of frontend is determined at compile-time
 Vulkan frontend_;
 #else
 Ncurses frontend_;

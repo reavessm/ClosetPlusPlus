@@ -1,6 +1,6 @@
 /**
  * @class Belt
- * @headerfile belt.h ""
+ * @headerfile belt.h
  * @author Stephen M. Reaves
  * @date July 14th, 2018
  */
