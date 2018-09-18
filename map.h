@@ -56,12 +56,12 @@ class Map : public Backend {
   map<int, Shoes> shoes_map_;
   map<int, Belt> belt_map_;
 
-  // Private Functions
-  Shirt AddShirt();
-  Pants AddPants();
-  Socks AddSocks();
-  Shoes AddShoes();
-  Belt AddBelt();
+  /* // Private Functions */
+  /* Shirt AddShirt(); */
+  /* Pants AddPants(); */
+  /* Socks AddSocks(); */
+  /* Shoes AddShoes(); */
+  /* Belt AddBelt(); */
 };
 
 #endif /* MAP_H */
