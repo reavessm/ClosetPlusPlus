@@ -43,15 +43,16 @@ void Map::Die() {}
  * InsertShirt
  * @param name Name of the shirt
  * @brief Inserts 'Shirt' into 'shirt_map_'
- * 
+ *
  * @param primary_color Primary color of the shirt
  * @param secondary_color Secondary color of the shirt
  * @param tertiary_color Third color of the shirt
  * @param pattern Color pattern of the shirt
  * @param sleeve_length Length of the sleeve, not in not in number, 'short,
- * 											long', etc
+ * 											long',
+ * etc
  * @param collar Type of collar
- * 
+ *
  * @returns true if insert was succesful, false otherwise
  */
 bool Map::InsertShirt(string name, string primary_color, string secondary_color,
@@ -77,7 +78,7 @@ bool Map::InsertShirt(string name, string primary_color, string secondary_color,
 /**
  * InsertPants
  * @brief Inserts 'Pants' into 'pants_map_'
- * 
+ *
  * @param name Name of the pants
  * @param primary_color Primary color of the pants
  * @param secondary_color Secondary color of the pants
@@ -85,7 +86,7 @@ bool Map::InsertShirt(string name, string primary_color, string secondary_color,
  * @param material Material of the pants, 'denim', 'chino' etc.
  * @param length Length of pants, not in number, 'shorts', 'long', etc.
  * @param cut Cut of pants
- * 
+ *
  * @returns true if insert was successful, false otherwise
  */
 bool Map::InsertPants(string name, string primary_color, string secondary_color,
@@ -111,13 +112,13 @@ bool Map::InsertPants(string name, string primary_color, string secondary_color,
 /**
  * InsertSocks
  * @brief Inserts 'Socks' into 'socks_map_'
- * 
+ *
  * @param name Name of the socks
  * @param primary_color Primary color of the socks
  * @param secondary_color Secondary color of the socks
  * @param tertiary_color Third color of the socks
  * @param pattern Pattern of the socks
- * 
+ *
  * @returns true if insert was successful, false otherwise
  */
 bool Map::InsertSocks(string name, string primary_color, string secondary_color,
@@ -142,14 +143,14 @@ bool Map::InsertSocks(string name, string primary_color, string secondary_color,
 /**
  * InsertShoes
  * @brief Inserts 'Shoes' into 'shoes_map_'
- * 
+ *
  * @param name Name of the shoes
  * @param primary_color Primary color of the shoes
  * @param secondary_color Secondary color of the shoes
  * @param tertiary_color Third color of the shoes
  * @param material Material of the shoes, 'leather', 'suede', etc.
  * @param style Style of the shoes
- * 
+ *
  * @returns true if insert was successful, false otherwise
  */
 bool Map::InsertShoes(string name, string primary_color, string secondary_color,
@@ -174,14 +175,14 @@ bool Map::InsertShoes(string name, string primary_color, string secondary_color,
 /**
  * InsertBelt
  * @brief Inserts 'Belt' into 'belt_map_'
- * 
+ *
  * @param name Name of the belt
  * @param primary_color Primary color of the belt
  * @param secondary_color Secondary color of the belt
  * @param tertiary_color Third color of the belt
  * @param material Material of the belt, 'leather', 'tweed', etc.
  * @param pattern Pattern of the belt
- * 
+ *
  * @returns true if insert was successful, false otherwise
  */
 bool Map::InsertBelt(string name, string primary_color, string secondary_color,
@@ -256,16 +257,16 @@ string Map::ToString() const {
  * 				 type, or -1 for an error.
  * @brief Assigns unique ID to clothes
  * @detail This function assigns the next available ID number for a given
- * 				 type.  The last two numbers represent the number of the given type, 
- *				 while the other numbers represent the type.  For Example, if there 
- *				 are currently 4 shirts, then the next shirt will have the ID of 105.
- * 				 The 100 represents shirts, while the 05 means it is the fifth shirt.
- *				 This allows for 99 items of a given type and (2^29)-1 types???
+ * 				 type.  The last two numbers represent the number of
+ *the given type, while the other numbers represent the type.  For Example, if
+ *there are currently 4 shirts, then the next shirt will have the ID of 105. The
+ *100 represents shirts, while the 05 means it is the fifth shirt. This allows
+ *for 99 items of a given type and (2^29)-1 types???
  * @note So far the types are hard coded in.  Meaning you can only
- * 			 create clothes that are either shirts, pants, belts, socks, or shoes.
- * 			 There is currently no way to dynamically add types. Underwear types 
- *			 were intentionally left out to test the best way to dynamically add 
- *			 new types.
+ * 			 create clothes that are either shirts, pants, belts,
+ *socks, or shoes. There is currently no way to dynamically add types. Underwear
+ *types were intentionally left out to test the best way to dynamically add new
+ *types.
  */
 int Map::AssignID(string type) {
   int id = -1;  // dummy id number

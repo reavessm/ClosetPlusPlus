@@ -10,7 +10,7 @@
 #include <iostream>
 #include <string>
 
-#ifdef VULKAN ///< Type of frontend is determined at compile-time
+#ifdef VULKAN  ///< Type of frontend is determined at compile-time
 #include "vulkan.h"
 #else
 #include "ncurses.h"
@@ -21,7 +21,7 @@ using namespace std;
 #ifndef MAIN_H
 #define MAIN_H
 
-#ifdef VULKAN ///< Type of frontend is determined at compile-time
+#ifdef VULKAN  ///< Type of frontend is determined at compile-time
 Vulkan frontend_;
 #else
 Ncurses frontend_;

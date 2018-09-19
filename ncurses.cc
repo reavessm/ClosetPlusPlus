@@ -189,7 +189,7 @@ void Ncurses::AddShirt() {
  * AddPants
  *
  * @brief Inserts a 'Pants' object into 'backend_'
- * 
+ *
  * @detail This function will take user input to record the necessary details
  *         for making a new 'Pants'.  This function then calls
  *         'Backend::Insert' for a 'Pants' object using those details.
@@ -249,9 +249,9 @@ void Ncurses::AddSocks() {
 
 /**
  * AddShoes
- * 
+ *
  * @brief Inserts a 'Shoes' object into 'backend_'
- * 
+ *
  * @detail This function will take user input to record the necessary details
  *         for making a new 'Shoes'.  This function then calls the
  *         'Backend::Insert' for a 'Shoes' using those details.
@@ -280,7 +280,7 @@ void Ncurses::AddShoes() {
 
 /**
  * AddBelt
- * 
+ *
  * @brief Inserts a 'Belt' object into 'backend_'
  *
  * @detail This function will take user input to record the necessary details

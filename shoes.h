@@ -1,10 +1,10 @@
 /**
-* @class shoes
-* @author Stephen M. Reaves
-* @headerfile shoes.h
-* @date July 14, 2018
-* @brief 
-*/
+ * @class shoes
+ * @author Stephen M. Reaves
+ * @headerfile shoes.h
+ * @date July 14, 2018
+ * @brief
+ */
 #include <cstdlib>
 #include <iostream>
 #include <string>

@@ -13,6 +13,7 @@
 using namespace std;
 
 const int kDummyID = -1;
+
 const string kDummyLen = "Fake Length";
 const string kDummyCut = "Fake Cut";
 const string kDummyName = "Fake Name";
@@ -47,5 +48,7 @@ const string kSocksNamePrompt = "Please enter the name of the socks: ";
 const string kPrimColorPrompt = "Please enter the primary color: ";
 const string kTertColorPrompt = "Please enter the tertiary color: ";
 const string kSleeveLenPrompt = "Please enter the sleeve length: ";
+
+const enum class Type { Shirt, Pants, Socks, Shoes, Belt };
 
 #endif /* LABEL_H */
