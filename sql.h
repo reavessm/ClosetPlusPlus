@@ -5,13 +5,13 @@
  * @date Sep 18, 2018
  */
 
+#include <sqlite3.h>
 #include <cstdlib>
 #include <cstring>
-#include <stdio>
 #include <fstream>
 #include <iostream>
+#include <stdio>
 #include <string>
-#include <sqlite3.h>
 #include "backend.h"
 
 using namespace std;
@@ -46,18 +46,20 @@ class SQL : public Backend {
                    string tertiary_color, string material, string style);
   bool InsertBelt(string name, string primary_color, string secondary_color,
                   string tertiary_color, string material, string pattern);
+  bool SelectShirt(int id);
+  bool SelectAllShirts();
 
  private:
   // Variables
   string closet_name_ = kDummyClosetName;
-  sqlite3 *db; ///< DB connection
-  char *sql; ///< Prepared SQL statements
+  sqlite3 *db;  ///< DB connection
+  char *sql;    ///< Prepared SQL statements
   char *zErrMsg = 0;
   int rc;
 
   // Functions
   int AssignID(string type);
-  static int callback(void *NotUsed, int argc, char **argv, char **azColName);
+  static int callback(void *data, int argc, char **argv, char **azColName);
 };
 
 #endif /* SQL_H */
