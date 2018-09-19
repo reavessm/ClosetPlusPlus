@@ -1,0 +1,9 @@
+/
+  -src
+    -frontend
+      -headers
+    -backend
+      -headers
+  -bin
+  -build
+  -doc
