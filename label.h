@@ -49,6 +49,6 @@ const string kPrimColorPrompt = "Please enter the primary color: ";
 const string kTertColorPrompt = "Please enter the tertiary color: ";
 const string kSleeveLenPrompt = "Please enter the sleeve length: ";
 
-const enum class Type { Shirt, Pants, Socks, Shoes, Belt };
+ enum class Type { Shirt, Pants, Socks, Shoes, Belt };
 
 #endif /* LABEL_H */
