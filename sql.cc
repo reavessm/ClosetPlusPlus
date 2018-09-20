@@ -133,9 +133,9 @@ void SQL::Die() { sqlite3_close(db); }
 int SQL::Callback(void *unused, int count, char **data,
                          char **columns) {
   for (int i = 0; i < count; ++i) {
-    results += to_string(*columns[i]) + '\t' + to_string(*data[i]);
+    myResults += to_string(*columns[i]) + '\t' + to_string(*data[i]);
   }
-  results += '\n';
+  myResults += '\n';
   return 0;
 }
 
@@ -299,7 +299,7 @@ string SQL::SelectShirt(int id){
   bool isSuccessful = false;
   
   // Clean result buffer
-  results = "";
+  myResults = "";
 
   sql = "SELECT * FROM Shirts WHERE ID == " + to_string(id);
 
@@ -310,7 +310,7 @@ string SQL::SelectShirt(int id){
     isSuccessful = true;
   }
 
-  return results;
+  return myResults;
 }
 
 /**
@@ -320,7 +320,7 @@ string SQL::SelectAllShirts(){
   bool isSuccessful = false;
 
   // Clean result buffer
-  results = "";
+  myResults = "";
 
   sql = "SELECT * FROM Shirts";
 
@@ -331,7 +331,7 @@ string SQL::SelectAllShirts(){
     isSuccessful = true;
   }
 
-  return results;
+  return myResults;
 }
 
 /**

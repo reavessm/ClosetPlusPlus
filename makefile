@@ -1,6 +1,6 @@
 #GCC = g++ -O3 -Wall -std=c++11
 CFLAGS = -O3 -pipe -Wall -std=c++11
-LIBS = -lncurses -lsqlite3
+LIBS = -lncurses -lsqlite3 -ldl -lm -lz -lpthread
 
 SRC = $(wildcard *.cc)
 OBJ = $(SRC:.cc=.o)
@@ -15,7 +15,7 @@ gui: $A $C $S $P $B $(Sh) $(So)
 	$(GCC) -D VULKAN -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
 
 %.o : %.cc $(DEP)
-	$(CXX) $(CFLAGS) $(LIBS) -c $< -o $@
+	$(CXX) $(CFLAGS) -c $< -o $@ $(LIBS)
 
 clean:
 	$(RM) Closet++ *.o *.gch *~ *Closet.txt *.clo *.log *.i

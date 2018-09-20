@@ -5,18 +5,18 @@
  * @date Sep 18, 2018
  */
 
-#include <sqlite3.h>
+#ifndef SQL_H
+#define SQL_H
+
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <sqlite3.h>
 #include "backend.h"
 
 using namespace std;
-
-#ifndef SQL_H
-#define SQL_H
 
 class SQL : public Backend {
  public:
@@ -56,7 +56,7 @@ class SQL : public Backend {
   string sql;    ///< Prepared SQL statements
   char *zErrMsg = 0;
   int rc;
-  static string results;
+  static string myResults;
 
   // Functions
   int AssignID(string type);
