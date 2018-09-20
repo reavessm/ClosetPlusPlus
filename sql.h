@@ -10,7 +10,6 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
-#include <stdio>
 #include <string>
 #include "backend.h"
 
@@ -31,6 +30,7 @@ class SQL : public Backend {
   void MakeCloset(){};
   string GetClosetName();
   string ToString() const;
+  string ToString();
 
   // Inserts for each type of clothing
   // @todo Refactor?
@@ -46,20 +46,21 @@ class SQL : public Backend {
                    string tertiary_color, string material, string style);
   bool InsertBelt(string name, string primary_color, string secondary_color,
                   string tertiary_color, string material, string pattern);
-  bool SelectShirt(int id);
-  bool SelectAllShirts();
+  string SelectShirt(int id);
+  string SelectAllShirts();
 
  private:
   // Variables
   string closet_name_ = kDummyClosetName;
   sqlite3 *db;  ///< DB connection
-  char *sql;    ///< Prepared SQL statements
+  string sql;    ///< Prepared SQL statements
   char *zErrMsg = 0;
   int rc;
+  static string results;
 
   // Functions
   int AssignID(string type);
-  static int callback(void *data, int argc, char **argv, char **azColName);
+  static int Callback(void *unused, int count, char **data, char **columns);
 };
 
 #endif /* SQL_H */

@@ -25,10 +25,11 @@ SQL::~SQL() {}
  * @returns Boolean representing success (or failure) of initialization
  */
 bool SQL::Init() {
-  isInit = false;
+  bool isInit = false;
 
   // Create a connection to the db
-  rc = sqlite3_open(closet_name_ + ".db", &db);
+  closet_name_ += ".db";
+  rc = sqlite3_open(closet_name_.c_str(), &db);
 
   // Check if connection failed
   if (!rc) {
@@ -47,7 +48,7 @@ bool SQL::Init() {
   sql += "COLLAR          TEXT  NOT NULL);";
 
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
     isInit = false;
   }
@@ -64,7 +65,7 @@ bool SQL::Init() {
   sql += "STYLE           TEXT  NOT NULL);";
 
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
     isInit = false;
   }
@@ -79,7 +80,7 @@ bool SQL::Init() {
   sql += "PATTERN         TEXT  NOT NULL);";
 
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
     isInit = false;
   }
@@ -95,7 +96,7 @@ bool SQL::Init() {
   sql += "STYLE           TEXT  NOT NULL);";
 
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
     isInit = false;
   }
@@ -111,7 +112,7 @@ bool SQL::Init() {
   sql += "PATTERN         TEXT  NOT NULL);";
 
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
     isInit = false;
   }
@@ -129,12 +130,12 @@ void SQL::Die() { sqlite3_close(db); }
  * Callback
  * @brief Buffer to replay Select statements
  */
-static int SQL::Callback(void *data, int argc, char **argv,
-                         char **azColName) {
-  for (int i = 0; i < argc; ++i) {
-    printf("%s = %s\n", azColName[i], argv[i], ? argv[i] : "NULL");
+int SQL::Callback(void *unused, int count, char **data,
+                         char **columns) {
+  for (int i = 0; i < count; ++i) {
+    results += to_string(*columns[i]) + '\t' + to_string(*data[i]);
   }
-  printf("\n");
+  results += '\n';
   return 0;
 }
 
@@ -144,7 +145,7 @@ static int SQL::Callback(void *data, int argc, char **argv,
 bool SQL::InsertShirt(string name, string primary_color, string secondary_color,
                       string tertiary_color, string pattern,
                       string sleeve_length, string collar) {
-  isSuccessful = false;
+  bool isSuccessful = false;
 
   // Get ID
   int id = this->AssignID("shirt");
@@ -161,7 +162,7 @@ bool SQL::InsertShirt(string name, string primary_color, string secondary_color,
   sql += "'" + collar + "');";
 
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
     isSuccessful = true;
@@ -176,7 +177,7 @@ bool SQL::InsertShirt(string name, string primary_color, string secondary_color,
 bool SQL::InsertPants(string name, string primary_color, string secondary_color,
                  string tertiary_color, string material, string length,
                  string cut) {
-  isSuccessful = false;
+  bool isSuccessful = false;
 
   // Get ID
   int id = this->AssignID("pants");
@@ -193,7 +194,7 @@ bool SQL::InsertPants(string name, string primary_color, string secondary_color,
   sql += "'"  +  cut             +  "');";
 
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
     isSuccessful = true;
@@ -207,7 +208,7 @@ bool SQL::InsertPants(string name, string primary_color, string secondary_color,
  */
 bool SQL::InsertSocks(string name, string primary_color, string secondary_color, 
                       string tertiary_color, string pattern) {
-  isSuccessful = false;
+  bool isSuccessful = false;
 
   // Get ID
   int id = this ->AssignID("socks");
@@ -222,7 +223,7 @@ bool SQL::InsertSocks(string name, string primary_color, string secondary_color,
   sql += "'" + pattern + "');";
   
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
     isSuccessful = true;
@@ -236,7 +237,7 @@ bool SQL::InsertSocks(string name, string primary_color, string secondary_color,
  */
 bool SQL::InsertShoes(string name, string primary_color, string secondary_color, 
                       string tertiary_color, string material, string style) {
-  isSuccessful = false;
+  bool isSuccessful = false;
 
   // Get ID
   int id = this ->AssignID("shoes");
@@ -252,7 +253,7 @@ bool SQL::InsertShoes(string name, string primary_color, string secondary_color,
   sql += "'" + style + "');";
   
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
     isSuccessful = true;
@@ -266,7 +267,7 @@ bool SQL::InsertShoes(string name, string primary_color, string secondary_color,
  */
 bool SQL::InsertBelt(string name, string primary_color, string secondary_color, 
                      string tertiary_color, string material, string pattern) {
-  isSuccessful = false;
+  bool isSuccessful = false;
 
   // Get ID
   int id = this ->AssignID("belt");
@@ -282,11 +283,60 @@ bool SQL::InsertBelt(string name, string primary_color, string secondary_color,
   sql += "'" + pattern + "');";
   
   // Insert and check for errors
-  if (sqlite3_exec(db, sql, callback, 0, &zErrMsg) != SQLITE_OK) {
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
     isSuccessful = true;
   }
 
   return isSuccessful;
+}
+
+/**
+ * SelectShirt
+ */
+string SQL::SelectShirt(int id){
+  bool isSuccessful = false;
+  
+  // Clean result buffer
+  results = "";
+
+  sql = "SELECT * FROM Shirts WHERE ID == " + to_string(id);
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
+    isSuccessful = true;
+  }
+
+  return results;
+}
+
+/**
+ * SelectAllShirts
+ */
+string SQL::SelectAllShirts(){
+  bool isSuccessful = false;
+
+  // Clean result buffer
+  results = "";
+
+  sql = "SELECT * FROM Shirts";
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
+    isSuccessful = true;
+  }
+
+  return results;
+}
+
+/**
+ *
+ */
+string SQL::ToString() {
+  return this->SelectAllShirts();
 }
