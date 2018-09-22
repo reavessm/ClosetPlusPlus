@@ -300,7 +300,7 @@ bool SQL::InsertBelt(string name, string primary_color, string secondary_color,
  * SelectShirt
  */
 string SQL::SelectShirt(int id) {
-  bool isSuccessful = false;
+  //bool isSuccessful = false;
 
   // Clean result buffer
   myResults = "";
@@ -311,7 +311,7 @@ string SQL::SelectShirt(int id) {
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
-    isSuccessful = true;
+    //isSuccessful = true;
   }
 
   return myResults;
@@ -321,7 +321,7 @@ string SQL::SelectShirt(int id) {
  * SelectAllShirts
  */
 string SQL::SelectAllShirts() {
-  bool isSuccessful = false;
+ // bool isSuccessful = false;
 
   // Clean result buffer
   myResults = "";
@@ -332,7 +332,7 @@ string SQL::SelectAllShirts() {
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
-    isSuccessful = true;
+    //isSuccessful = true;
   }
 
   return myResults;

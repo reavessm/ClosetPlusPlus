@@ -180,7 +180,7 @@ void Ncurses::AddShirt() {
   shirtCollar = this->MakeWindow(kColPrompt);
 
   // Send info to backend
-  bool status = backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor,
+  backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor,
                                      shirtTertColor, shirtPattern,
                                      shirtSleeveLen, shirtCollar);
 }  // end AddShirt
