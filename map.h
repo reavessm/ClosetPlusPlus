@@ -49,7 +49,7 @@ class Map : public Backend {
  private:
   // Variables
   string closet_name_ = kDummyClosetName;
-  int AssignID(string type);
+  // int AssignID(string type);
   map<int, Shirt> shirt_map_;
   map<int, Pants> pants_map_;
   map<int, Socks> socks_map_;

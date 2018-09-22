@@ -61,8 +61,55 @@ class Backend {
  protected:
   bool isInit_ = false;
   string closet_name_ = kDummyClosetName;
-  virtual int AssignID(string type) = 0;  ///< Assigns and ID based on the type
-                                          ///< of clothing
+  // virtual int AssignID(string type) = 0;  ///< Assigns and ID based on the
+  // type
+  ///< of clothing
+  unsigned int num_of_shirts_ = 0;
+  unsigned int num_of_pants_ = 0;
+  unsigned int num_of_socks_ = 0;
+  unsigned int num_of_shoes_ = 0;
+  unsigned int num_of_belts_ = 0;
+  ///< @todo Find a way to get num of clothes
+  int AssignID(Type type) {
+    int id = -1;
+
+    switch (type) {
+      case Type::Shirt:
+        id = 100 + num_of_shirts_;
+        break;
+      case Type::Pants:
+        id = 200 + num_of_pants_;
+        break;
+      case Type::Belt:
+        id = 300 + num_of_belts_;
+        break;
+      case Type::Socks:
+        id = 400 + num_of_socks_;
+        break;
+      case Type::Shoes:
+        id = 500 + num_of_shoes_;
+        break;
+    }
+
+    return id;
+  }
+  int AssignID(string type) {  ///< @todo User std::unordered_set<string, Enum>
+    int id = -1;
+
+    if (type == "shirt") {
+      id = 100 + num_of_shirts_;
+    } else if (type == "pants") {
+      id = 200 + num_of_pants_;
+    } else if (type == "belt") {
+      id = 300 + num_of_belts_;
+    } else if (type == "socks") {
+      id = 400 + num_of_socks_;
+    } else if (type == "shoes") {
+      id = 500 + num_of_shoes_;
+    }
+
+    return id;
+  }
 };
 
 #endif /* BACKEND_H */

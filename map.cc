@@ -69,6 +69,7 @@ bool Map::InsertShirt(string name, string primary_color, string secondary_color,
               sleeve_length, collar);
 
   shirt_map_.insert(pair<int, Shirt>(id, shirt));
+  num_of_shirts_++;
 
   status = true;
 
@@ -103,6 +104,7 @@ bool Map::InsertPants(string name, string primary_color, string secondary_color,
               material, length, cut);
 
   pants_map_.insert(pair<int, Pants>(id, pants));
+  num_of_pants_++;
 
   status = true;
 
@@ -134,6 +136,7 @@ bool Map::InsertSocks(string name, string primary_color, string secondary_color,
               pattern);
 
   socks_map_.insert(pair<int, Socks>(id, socks));
+  num_of_socks_++;
 
   status = true;
 
@@ -166,6 +169,7 @@ bool Map::InsertShoes(string name, string primary_color, string secondary_color,
               material, style);
 
   shoes_map_.insert(pair<int, Shoes>(id, shoes));
+  num_of_shoes_++;
 
   status = !status;
 
@@ -198,6 +202,7 @@ bool Map::InsertBelt(string name, string primary_color, string secondary_color,
             pattern);
 
   belt_map_.insert(pair<int, Belt>(id, belt));
+  num_of_belts_++;
 
   status = true;
 
@@ -257,33 +262,33 @@ string Map::ToString() const {
  * 				 type, or -1 for an error.
  * @brief Assigns unique ID to clothes
  * @detail This function assigns the next available ID number for a given
- * 				 type.  The last two numbers represent the number of
- *the given type, while the other numbers represent the type.  For Example, if
- *there are currently 4 shirts, then the next shirt will have the ID of 105. The
- *100 represents shirts, while the 05 means it is the fifth shirt. This allows
- *for 99 items of a given type and (2^29)-1 types???
+ * 				 type.  The last two numbers represent the
+ *number of the given type, while the other numbers represent the type.  For
+ *Example, if there are currently 4 shirts, then the next shirt will have the ID
+ *of 105. The 100 represents shirts, while the 05 means it is the fifth shirt.
+ *This allows for 99 items of a given type and (2^29)-1 types???
  * @note So far the types are hard coded in.  Meaning you can only
  * 			 create clothes that are either shirts, pants, belts,
  *socks, or shoes. There is currently no way to dynamically add types. Underwear
  *types were intentionally left out to test the best way to dynamically add new
  *types.
  */
-int Map::AssignID(string type) {
-  int id = -1;  // dummy id number
-                // switch (type){
-                //  case "shirt":
-                ///<  @todo Use Switch-case for Closet::AssignID
-  if (type == "shirt") {
-    id = 100 + static_cast<int>(shirt_map_.size());
-  } else if (type == "pants") {
-    id = 200 + static_cast<int>(pants_map_.size());
-  } else if (type == "belt") {
-    id = 300 + static_cast<int>(belt_map_.size());
-  } else if (type == "socks") {
-    id = 400 + static_cast<int>(socks_map_.size());
-  } else if (type == "shoes") {
-    id = 500 + static_cast<int>(shoes_map_.size());
-  }
-
-  return id;
-}
+/* int Map::AssignID(string type) { */
+/*   int id = -1;  // dummy id number */
+/*                 // switch (type){ */
+/*                 //  case "shirt": */
+/*                 ///<  @todo Use Switch-case for Closet::AssignID */
+/*   if (type == "shirt") { */
+/*     id = 100 + static_cast<int>(shirt_map_.size()); */
+/*   } else if (type == "pants") { */
+/*     id = 200 + static_cast<int>(pants_map_.size()); */
+/*   } else if (type == "belt") { */
+/*     id = 300 + static_cast<int>(belt_map_.size()); */
+/*   } else if (type == "socks") { */
+/*     id = 400 + static_cast<int>(socks_map_.size()); */
+/*   } else if (type == "shoes") { */
+/*     id = 500 + static_cast<int>(shoes_map_.size()); */
+/*   } */
+/*  */
+/*   return id; */
+/* } */
