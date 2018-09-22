@@ -11,6 +11,9 @@ DEP = $(wildcard *.h)
 Closet++: $(OBJ)
 	@g++ $(CFLAGS) -o $@ $^ $(LIBS)
 
+sql: $(OBJ)
+	@g++ $(CFLAGS) -DSQL -o $@ $^ $(LIBS)
+
 gui: $A $C $S $P $B $(Sh) $(So)
 	$(GCC) -D VULKAN -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
 
