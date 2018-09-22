@@ -1,5 +1,5 @@
 /**
- * @class sql
+ * @class SQL
  * @author Stephen M. Reaves
  * @file sql.cc
  * @date Sep 17, 2018
@@ -130,8 +130,7 @@ void SQL::Die() { sqlite3_close(db); }
  * Callback
  * @brief Buffer to replay Select statements
  */
-int SQL::Callback(void *unused, int count, char **data,
-                         char **columns) {
+int SQL::Callback(void *unused, int count, char **data, char **columns) {
   for (int i = 0; i < count; ++i) {
     myResults += to_string(*columns[i]) + '\t' + to_string(*data[i]);
   }
@@ -165,6 +164,7 @@ bool SQL::InsertShirt(string name, string primary_color, string secondary_color,
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
+    num_of_shirts_++;
     isSuccessful = true;
   }
 
@@ -175,28 +175,29 @@ bool SQL::InsertShirt(string name, string primary_color, string secondary_color,
  * InsertPants
  */
 bool SQL::InsertPants(string name, string primary_color, string secondary_color,
-                 string tertiary_color, string material, string length,
-                 string cut) {
+                      string tertiary_color, string material, string length,
+                      string cut) {
   bool isSuccessful = false;
 
   // Get ID
   int id = this->AssignID("pants");
 
   // Prepare Insert Statement
-  sql =  "INSERT INTO Pants VALUES(";
+  sql = "INSERT INTO Pants VALUES(";
   sql += id;
-  sql += ",'" +  name            +  "'";
-  sql += "'"  +  primary_color   +  "'";
-  sql += "'"  +  secondary_color +  "'";
-  sql += "'"  +  tertiary_color  +  "'";
-  sql += "'"  +  material        +  "'";
-  sql += "'"  +  length          +  "'";
-  sql += "'"  +  cut             +  "');";
+  sql += ",'" + name + "'";
+  sql += "'" + primary_color + "'";
+  sql += "'" + secondary_color + "'";
+  sql += "'" + tertiary_color + "'";
+  sql += "'" + material + "'";
+  sql += "'" + length + "'";
+  sql += "'" + cut + "');";
 
   // Insert and check for errors
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
+    num_of_pants_++;
     isSuccessful = true;
   }
 
@@ -206,12 +207,12 @@ bool SQL::InsertPants(string name, string primary_color, string secondary_color,
 /**
  * InsertSocks
  */
-bool SQL::InsertSocks(string name, string primary_color, string secondary_color, 
+bool SQL::InsertSocks(string name, string primary_color, string secondary_color,
                       string tertiary_color, string pattern) {
   bool isSuccessful = false;
 
   // Get ID
-  int id = this ->AssignID("socks");
+  int id = this->AssignID("socks");
 
   // Prepare Insert Statement
   sql = "INSERT INTO Socks VALUES(";
@@ -221,11 +222,12 @@ bool SQL::InsertSocks(string name, string primary_color, string secondary_color,
   sql += "'" + secondary_color + "'";
   sql += "'" + tertiary_color + "'";
   sql += "'" + pattern + "');";
-  
+
   // Insert and check for errors
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
+    num_of_socks_++;
     isSuccessful = true;
   }
 
@@ -235,12 +237,12 @@ bool SQL::InsertSocks(string name, string primary_color, string secondary_color,
 /**
  * InsertShoes
  */
-bool SQL::InsertShoes(string name, string primary_color, string secondary_color, 
+bool SQL::InsertShoes(string name, string primary_color, string secondary_color,
                       string tertiary_color, string material, string style) {
   bool isSuccessful = false;
 
   // Get ID
-  int id = this ->AssignID("shoes");
+  int id = this->AssignID("shoes");
 
   // Prepare Insert Statement
   sql = "INSERT INTO Shoes VALUES(";
@@ -251,11 +253,12 @@ bool SQL::InsertShoes(string name, string primary_color, string secondary_color,
   sql += "'" + tertiary_color + "'";
   sql += "'" + material + "'";
   sql += "'" + style + "');";
-  
+
   // Insert and check for errors
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
+    num_of_shoes_++;
     isSuccessful = true;
   }
 
@@ -265,12 +268,12 @@ bool SQL::InsertShoes(string name, string primary_color, string secondary_color,
 /**
  * InsertBelt
  */
-bool SQL::InsertBelt(string name, string primary_color, string secondary_color, 
+bool SQL::InsertBelt(string name, string primary_color, string secondary_color,
                      string tertiary_color, string material, string pattern) {
   bool isSuccessful = false;
 
   // Get ID
-  int id = this ->AssignID("belt");
+  int id = this->AssignID("belt");
 
   // Prepare Insert Statement
   sql = "INSERT INTO Belt VALUES(";
@@ -281,11 +284,12 @@ bool SQL::InsertBelt(string name, string primary_color, string secondary_color,
   sql += "'" + tertiary_color + "'";
   sql += "'" + material + "'";
   sql += "'" + pattern + "');";
-  
+
   // Insert and check for errors
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
+    num_of_belts_++;
     isSuccessful = true;
   }
 
@@ -295,9 +299,9 @@ bool SQL::InsertBelt(string name, string primary_color, string secondary_color,
 /**
  * SelectShirt
  */
-string SQL::SelectShirt(int id){
+string SQL::SelectShirt(int id) {
   bool isSuccessful = false;
-  
+
   // Clean result buffer
   myResults = "";
 
@@ -316,7 +320,7 @@ string SQL::SelectShirt(int id){
 /**
  * SelectAllShirts
  */
-string SQL::SelectAllShirts(){
+string SQL::SelectAllShirts() {
   bool isSuccessful = false;
 
   // Clean result buffer
@@ -337,6 +341,4 @@ string SQL::SelectAllShirts(){
 /**
  *
  */
-string SQL::ToString() {
-  return this->SelectAllShirts();
-}
+string SQL::ToString() { return this->SelectAllShirts(); }

@@ -8,12 +8,12 @@
 #ifndef SQL_H
 #define SQL_H
 
+#include <sqlite3.h>
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <sqlite3.h>
 #include "backend.h"
 
 using namespace std;
@@ -28,8 +28,8 @@ class SQL : public Backend {
   bool Store(string file = kDummyFileName) const { return true; };
   bool Open(string file = kDummyFileName) const { return true; };
   void MakeCloset(){};
-  string GetClosetName();
-  string ToString() const;
+  string GetClosetName() { return closet_name_; };
+  string ToString() const { return ""; };
   string ToString();
 
   // Inserts for each type of clothing
@@ -53,14 +53,18 @@ class SQL : public Backend {
   // Variables
   string closet_name_ = kDummyClosetName;
   sqlite3 *db;  ///< DB connection
-  string sql;    ///< Prepared SQL statements
+  string sql;   ///< Prepared SQL statements
   char *zErrMsg = 0;
   int rc;
   static string myResults;
 
   // Functions
-  int AssignID(string type);
+  // int AssignID(string type);
   static int Callback(void *unused, int count, char **data, char **columns);
 };
+
+// Define statics
+string SQL::myResults;
+// int SQL::Callback(void *unused, int count, char **data, char **columns);
 
 #endif /* SQL_H */
