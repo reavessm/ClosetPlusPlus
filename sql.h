@@ -24,6 +24,7 @@ class SQL : public Backend {
   SQL();
   virtual ~SQL();
   bool Init();
+  bool Init(string name);
   void Die();
   bool Store(string file = kDummyFileName) const { return true; };
   bool Open(string file = kDummyFileName) const { return true; };
@@ -64,7 +65,7 @@ class SQL : public Backend {
 };
 
 // Define statics
-string SQL::myResults;
+// string SQL::myResults;
 // int SQL::Callback(void *unused, int count, char **data, char **columns);
 
 #endif /* SQL_H */

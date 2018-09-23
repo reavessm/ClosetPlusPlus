@@ -10,6 +10,8 @@
 
 using namespace std;
 
+string SQL::myResults = "";
+
 /**
  * Default Constructor
  */
@@ -20,8 +22,14 @@ SQL::SQL() {}
  */
 SQL::~SQL() {}
 
+bool SQL::Init(string name) {
+  this->closet_name_ = name;
+  return this->Init();
+}
+
 /**
  * Init
+ * @brief Creates the tables
  * @returns Boolean representing success (or failure) of initialization
  */
 bool SQL::Init() {
@@ -29,6 +37,7 @@ bool SQL::Init() {
 
   // Create a connection to the db
   closet_name_ += ".db";
+  std::cout << closet_name_ << std::endl;
   rc = sqlite3_open(closet_name_.c_str(), &db);
 
   // Check if connection failed
@@ -300,7 +309,7 @@ bool SQL::InsertBelt(string name, string primary_color, string secondary_color,
  * SelectShirt
  */
 string SQL::SelectShirt(int id) {
-  //bool isSuccessful = false;
+  // bool isSuccessful = false;
 
   // Clean result buffer
   myResults = "";
@@ -311,7 +320,7 @@ string SQL::SelectShirt(int id) {
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
-    //isSuccessful = true;
+    // isSuccessful = true;
   }
 
   return myResults;
@@ -321,7 +330,7 @@ string SQL::SelectShirt(int id) {
  * SelectAllShirts
  */
 string SQL::SelectAllShirts() {
- // bool isSuccessful = false;
+  // bool isSuccessful = false;
 
   // Clean result buffer
   myResults = "";
@@ -332,7 +341,7 @@ string SQL::SelectAllShirts() {
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
-    //isSuccessful = true;
+    // isSuccessful = true;
   }
 
   return myResults;

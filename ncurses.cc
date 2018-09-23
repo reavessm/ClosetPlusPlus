@@ -36,8 +36,6 @@ bool Ncurses::Init() {
   wbkgd(stdscr, COLOR_PAIR(1));
   refresh();
 
-  // backend_ = Backend::Create();
-
   is_init_ = true;
 
   return is_init_;
@@ -46,8 +44,12 @@ bool Ncurses::Init() {
 /**
  * Die
  * @brief Kills the window
+ * @todo Test if we need to call backend_.Die()
  */
-void Ncurses::Die() { endwin(); }
+void Ncurses::Die() {
+  endwin();
+  backend_.Die();
+}
 
 /**
  * MakeWindowChar
@@ -111,8 +113,8 @@ void Ncurses::CreateCloset() {
   char ans = 'k';  // dummy char
   string str = "";
 
-  // Name Closet
-  backend_.SetClosetName(this->MakeWindow(kClosetPrompt));
+  // Initialize backend and Name Closet
+  backend_.Init(this->MakeWindow(kClosetPrompt));
 
   // Add Shirt
   ans = this->MakeWindowChar(kShirtPrompt);
@@ -180,9 +182,8 @@ void Ncurses::AddShirt() {
   shirtCollar = this->MakeWindow(kColPrompt);
 
   // Send info to backend
-  backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor,
-                                     shirtTertColor, shirtPattern,
-                                     shirtSleeveLen, shirtCollar);
+  backend_.InsertShirt(shirtName, shirtPrimColor, shirtSecColor, shirtTertColor,
+                       shirtPattern, shirtSleeveLen, shirtCollar);
 }  // end AddShirt
 
 /**
