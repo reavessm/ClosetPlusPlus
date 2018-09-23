@@ -11,17 +11,20 @@ DEP = $(wildcard *.h)
 Closet++: $(OBJ)
 	@g++ $(CFLAGS) -o $@ $^ $(LIBS)
 
-sql: $(OBJ)
-	@g++ $(CFLAGS) -DSQL -o $@ $^ $(LIBS)
+sql: 
+	@make Closet++-sql CFLAGS='$(CFLAGS) -D USE_SQL'
+
+Closet++-sql: $(OBJ)
+	@g++ $(CFLAGS) -o $@ $^ $(LIBS)
 
 gui: $A $C $S $P $B $(Sh) $(So)
-	$(GCC) -D VULKAN -s -o Closet++ $A $C $S $P $B $(Sh) $(So)
+	$(GCC) -D VULKAN -s -o Closet++-$@ $A $C $S $P $B $(Sh) $(So)
 
 %.o : %.cc $(DEP)
 	$(CXX) $(CFLAGS) -c $< -o $@ $(LIBS)
 
 clean:
-	$(RM) Closet++ *.o *.gch *~ *Closet.txt *.clo *.log *.i
+	$(RM) Closet++{,-*} *.o *.gch *~ *Closet.txt *.clo *.log *.i *.db
 
 todo:
 	@vim TODO.md

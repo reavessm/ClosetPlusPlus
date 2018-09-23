@@ -20,7 +20,7 @@
 #include "shoes.h"
 #include "socks.h"
 
-#ifdef SQL
+#ifdef USE_SQL
 #include "sql.h"
 #else
 #include "map.h"
@@ -50,7 +50,7 @@ class Frontend {
   bool is_init_ = false;  ///< True if window is started, fasle otherwise
   string closet_name_ = kDummyClosetName;
 
-#ifdef SQL
+#ifdef USE_SQL
   SQL backend_;
 #else
   Map backend_;
