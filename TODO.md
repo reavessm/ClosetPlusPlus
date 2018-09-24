@@ -1,7 +1,8 @@
 # Things to work on
 
+- Only add compile neccessary files in makefile
 - Implement SQLite API for opening and closing closets
-    * Make 'string myResults' into 'char[] results'
+    * Fix Insert bugs
     * Option for SQLite, Redis, or MongoDB
 - Create function to pick random article of clothing and suggested clothing
 - Create function for suggested clothing

@@ -1,6 +1,21 @@
 #GCC = g++ -O3 -Wall -std=c++11
 CFLAGS = -O3 -pipe -Wall -std=c++11
-LIBS = -lncurses -lsqlite3 -ldl -lm -lz -lpthread
+FRONTEND =
+BACKEND =
+LIBS = 
+
+ifeq ($(BACKEND), SQL)
+LIBS += -lsqlite3 -ldl -lm -lz -lpthread
+CFLAGS += -DUSE_SQL
+else
+		
+endif
+
+ifeq ($(FRONTEND), VULKAN)
+		
+else
+LIBS += -lncurses
+endif
 
 SRC = $(wildcard *.cc)
 OBJ = $(SRC:.cc=.o)
@@ -9,18 +24,9 @@ DEP = $(wildcard *.h)
 .PHONY: clean todo debug doc format
 
 Closet++: $(OBJ)
-	@g++ $(CFLAGS) -o $@ $^ $(LIBS)
+	$(CXX) $(CFLAGS) -o $@ $^ $(LIBS)
 
-sql: 
-	@make Closet++-sql CFLAGS='$(CFLAGS) -D USE_SQL'
-
-Closet++-sql: $(OBJ)
-	@g++ $(CFLAGS) -o $@ $^ $(LIBS)
-
-gui: $A $C $S $P $B $(Sh) $(So)
-	$(GCC) -D VULKAN -s -o Closet++-$@ $A $C $S $P $B $(Sh) $(So)
-
-%.o : %.cc $(DEP)
+%.o : %.cc #$(DEP)
 	$(CXX) $(CFLAGS) -c $< -o $@ $(LIBS)
 
 clean:
