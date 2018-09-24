@@ -24,6 +24,7 @@ class Map : public Backend {
   Map();
   virtual ~Map();
   bool Init();
+  bool Init(string filename);
   void Die();
   bool Store(string file = kDummyFileName) const { return true; };
   bool Open(string file = kDummyFileName) const { return true; };

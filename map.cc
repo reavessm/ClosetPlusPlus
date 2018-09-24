@@ -20,6 +20,11 @@ Map::Map() {}
  */
 Map::~Map() {}
 
+bool Map::Init(string filename) {
+  closet_name_ = filename;
+  return this->Init();
+}
+
 /**
  * Init
  * @returns Boolean representing success (or failure) of initialization
