@@ -158,7 +158,7 @@ int SQL::Callback(void *unused, int count, char **data, char **columns) {
 /**
  * InsertShirt
  * @brief Inserts shirt into 'Shirts' table using params
- * 
+ *
  * @param name String for name of the shirt
  * @param primary_color String for the primary color of shirt
  * @param secondary_color String for the secondary color of shirt
@@ -203,13 +203,13 @@ bool SQL::InsertShirt(string name, string primary_color, string secondary_color,
 /**
  * InsertPants
  * @brief Inserts pants into 'Pants' table using params
- * 
+ *
  * @param name String for name of the pants
  * @param primary_color String for the primary color of pants
  * @param secondary_color String for the secondary color of pants
  * @param tertiary_color String for the 3rd color of pants
  * @param material String for the material of the pants
- * @param length String for the length of pants. 'Short', 'Long', etc, 
+ * @param length String for the length of pants. 'Short', 'Long', etc,
  *        NOT numeric.
  * @param cut String for type of cut
  *
@@ -248,15 +248,12 @@ bool SQL::InsertPants(string name, string primary_color, string secondary_color,
 /**
  * InsertSocks
  * @brief Inserts socks into 'Socks' table using params
- * 
- * @param name String for name of the pants
- * @param primary_color String for the primary color of pants
- * @param secondary_color String for the secondary color of pants
- * @param tertiary_color String for the 3rd color of pants
- * @param material String for the material of the pants
- * @param length String for the length of pants. 'Short', 'Long', etc, 
- *        NOT numeric.
- * @param cut String for type of cut
+ *
+ * @param name String for name of the socks
+ * @param primary_color String for the primary color of socks
+ * @param secondary_color String for the secondary color of socks
+ * @param tertiary_color String for the 3rd color of socks
+ * @param pattern String for pattern of socks
  *
  * @returns Boolean for success (or failure) or insert
  */
@@ -290,7 +287,7 @@ bool SQL::InsertSocks(string name, string primary_color, string secondary_color,
 /**
  * InsertShoes
  * @brief Inserts shoes into 'Shoes' table using params
- * 
+ *
  * @param name String for name of the shoes
  * @param primary_color String for the primary color of shoes
  * @param secondary_color String for the secondary color of shoes
@@ -331,7 +328,7 @@ bool SQL::InsertShoes(string name, string primary_color, string secondary_color,
 /**
  * InsertBelt
  * @brief Inserts belts into 'Belts' table using params
- * 
+ *
  * @param name String for name of the belts
  * @param primary_color String for the primary color of belts
  * @param secondary_color String for the secondary color of belts
