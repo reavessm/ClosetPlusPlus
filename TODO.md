@@ -1,8 +1,7 @@
 # Things to work on
 
-- Only add compile neccessary files in makefile
 - Implement SQLite API for opening and closing closets
-    * Fix Insert bugs
+    * Increase `num_of_clothes` on backend_.Init() by `SELECT count(*) from Shirts;` etc.
     * Option for SQLite, Redis, or MongoDB
 - Create function to pick random article of clothing and suggested clothing
 - Create function for suggested clothing
