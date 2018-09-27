@@ -34,7 +34,7 @@ class SQL : public Backend {
   string ToString();
 
   // Inserts for each type of clothing
-  // @todo Refactor?
+  ///< @todo Refactor?
   bool InsertShirt(string name, string primary_color, string secondary_color,
                    string tertiary_color, string pattern, string sleeve_length,
                    string collar);
@@ -65,7 +65,6 @@ class SQL : public Backend {
 };
 
 // Define statics
-// string SQL::myResults;
 // int SQL::Callback(void *unused, int count, char **data, char **columns);
 
 #endif /* SQL_H */
