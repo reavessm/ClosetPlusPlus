@@ -111,7 +111,7 @@ bool SQL::Init() {
   }
 
   // Create Belt Table
-  sql = "CREATE TABLE IF NOT EXISTS Belt(";
+  sql = "CREATE TABLE IF NOT EXISTS Belts(";
   sql += "ID INT PRIMARY KEY NOT NULL,";
   sql += "NAME            TEXT  NOT NULL,";
   sql += "PRIMARY_COLOR   TEXT  NOT NULL,";
@@ -159,8 +159,8 @@ bool SQL::InsertShirt(string name, string primary_color, string secondary_color,
   int id = this->AssignID("shirt");
 
   // Prepare Insert statement
-  sql = "INSERT INTO Shirt VALUES (";
-  sql += id;
+  sql = "INSERT INTO Shirts VALUES (";
+  sql += to_string(id);
   sql += ",'" + name + "',";
   sql += "'" + primary_color + "',";
   sql += "'" + secondary_color + "',";
@@ -193,7 +193,7 @@ bool SQL::InsertPants(string name, string primary_color, string secondary_color,
 
   // Prepare Insert Statement
   sql = "INSERT INTO Pants VALUES(";
-  sql += id;
+  sql += to_string(id);
   sql += ",'" + name + "'";
   sql += "'" + primary_color + "'";
   sql += "'" + secondary_color + "'";
@@ -225,7 +225,7 @@ bool SQL::InsertSocks(string name, string primary_color, string secondary_color,
 
   // Prepare Insert Statement
   sql = "INSERT INTO Socks VALUES(";
-  sql += id;
+  sql += to_string(id);
   sql += ",'" + name + "'";
   sql += "'" + primary_color + "'";
   sql += "'" + secondary_color + "'";
@@ -255,7 +255,7 @@ bool SQL::InsertShoes(string name, string primary_color, string secondary_color,
 
   // Prepare Insert Statement
   sql = "INSERT INTO Shoes VALUES(";
-  sql += id;
+  sql += to_string(id);
   sql += ",'" + name + "'";
   sql += "'" + primary_color + "'";
   sql += "'" + secondary_color + "'";
@@ -286,7 +286,7 @@ bool SQL::InsertBelt(string name, string primary_color, string secondary_color,
 
   // Prepare Insert Statement
   sql = "INSERT INTO Belt VALUES(";
-  sql += id;
+  sql += to_string(id);
   sql += ",'" + name + "'";
   sql += "'" + primary_color + "'";
   sql += "'" + secondary_color + "'";
