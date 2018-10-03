@@ -133,6 +133,8 @@ bool SQL::Init() {
     isInit = false;
   }
 
+  this->UpdateNumbers();
+
   // could `return exec1 || exec2 || ..`
   return isInit;
 }
@@ -412,3 +414,31 @@ string SQL::SelectAllShirts() {
  * ToString
  */
 string SQL::ToString() { return this->SelectAllShirts(); }
+
+void SQL::UpdateNumbers() {
+ 
+  // Declare basic stuffs
+  int rc;
+  sqlite3_stmt *stmt;
+ 
+  // Prepare statement
+  sql = "SELECT * FROM Shirts";
+  rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
+
+  // Count shirts
+  do {
+    rc = sqlite3_step(stmt);
+    cerr << ++num_of_shirts_ << endl;
+  } while (rc == SQLITE_ROW);
+  
+  // Prepare statement
+  sql = "SELECT * FROM Pants";
+  rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
+
+  // Count Pants
+  do {
+    rc = sqlite3_step(stmt);
+    cerr << ++num_of_pants_ << endl;
+  } while (rc == SQLITE_ROW);
+
+}

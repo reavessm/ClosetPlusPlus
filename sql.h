@@ -62,6 +62,7 @@ class SQL : public Backend {
   // Functions
   // int AssignID(string type);
   static int Callback(void *unused, int count, char **data, char **columns);
+  void UpdateNumbers();
 };
 
 // Define statics

@@ -2,6 +2,6 @@
 
 rm -f error.txt
 make clean 
-make -j 2> error.txt || view error.txt
+make -j BACKEND=SQL 2> error.txt || view error.txt
 
 
