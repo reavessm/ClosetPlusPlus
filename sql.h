@@ -48,7 +48,15 @@ class SQL : public Backend {
   bool InsertBelt(string name, string primary_color, string secondary_color,
                   string tertiary_color, string material, string pattern);
   string SelectShirt(int id);
+  string SelectPants(int id);
+  string SelectSocks(int id);
+  string SelectShoes(int id);
+  string SelectBelt(int id);
   string SelectAllShirts();
+  string SelectAllPants();
+  string SelectAllSocks();
+  string SelectAllShoes();
+  string SelectAllBelts();
 
  private:
   // Variables

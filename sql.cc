@@ -372,7 +372,6 @@ bool SQL::InsertBelt(string name, string primary_color, string secondary_color,
  * SelectShirt
  */
 string SQL::SelectShirt(int id) {
-  // bool isSuccessful = false;
 
   // Clean result buffer
   myResults = "";
@@ -383,7 +382,82 @@ string SQL::SelectShirt(int id) {
   if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
     cerr << "SQL error: " << zErrMsg << endl;
   } else {
-    // isSuccessful = true;
+  }
+
+  return myResults;
+}
+
+/**
+ * SelectPants
+ */
+string SQL::SelectPants(int id) {
+
+  // Clean result buffer
+  myResults = "";
+
+  sql = "SELECT * FROM Pants WHERE ID == " + to_string(id);
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
+  }
+
+  return myResults;
+}
+
+/**
+ * SelectSocks
+ */
+string SQL::SelectSocks(int id) {
+
+  // Clean result buffer
+  myResults = "";
+
+  sql = "SELECT * FROM Socks WHERE ID == " + to_string(id);
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
+  }
+
+  return myResults;
+}
+
+/**
+ * SelectShoes
+ */
+string SQL::SelectShoes(int id) {
+
+  // Clean result buffer
+  myResults = "";
+
+  sql = "SELECT * FROM Shoes WHERE ID == " + to_string(id);
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
+  }
+
+  return myResults;
+}
+
+/**
+ * SelectBelt
+ */
+string SQL::SelectBelt(int id) {
+
+  // Clean result buffer
+  myResults = "";
+
+  sql = "SELECT * FROM Belt WHERE ID == " + to_string(id);
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
   }
 
   return myResults;
@@ -393,7 +467,6 @@ string SQL::SelectShirt(int id) {
  * SelectAllShirts
  */
 string SQL::SelectAllShirts() {
-  // bool isSuccessful = false;
 
   // Clean result buffer
   myResults = "";
@@ -411,9 +484,96 @@ string SQL::SelectAllShirts() {
 }
 
 /**
+ * SelectAllPants
+ */
+string SQL::SelectAllPants() {
+
+  // Clean result buffer
+  myResults = "";
+
+  sql = "SELECT * FROM Pants";
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
+  }
+
+  return myResults;
+}
+
+/**
+ * SelectAllSocks
+ */
+string SQL::SelectAllSocks() {
+
+  // Clean result buffer
+  myResults = "";
+
+  sql = "SELECT * FROM Socks";
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
+  }
+
+  return myResults;
+}
+
+/**
+ * SelectAllShoes
+ */
+string SQL::SelectAllShoes() {
+
+  // Clean result buffer
+  myResults = "";
+
+  sql = "SELECT * FROM Shoes";
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
+  }
+
+  return myResults;
+}
+
+/**
+ * SelectAllBelts
+ */
+string SQL::SelectAllBelts() {
+
+  // Clean result buffer
+  myResults = "";
+
+  sql = "SELECT * FROM Belts";
+
+  // Insert and check for errors
+  if (sqlite3_exec(db, sql.c_str(), Callback, 0, &zErrMsg) != SQLITE_OK) {
+    cerr << "SQL error: " << zErrMsg << endl;
+  } else {
+  }
+
+  return myResults;
+}
+
+/**
  * ToString
  */
-string SQL::ToString() { return this->SelectAllShirts(); }
+string SQL::ToString() {
+  
+  string s = "";
+
+  s += this->SelectAllShirts();
+  s += this->SelectAllPants();
+  s += this->SelectAllSocks();
+  s += this->SelectAllShoes();
+  s += this->SelectAllBelts();
+
+  return s;
+}
 
 void SQL::UpdateNumbers() {
  
@@ -428,7 +588,7 @@ void SQL::UpdateNumbers() {
   // Count shirts
   do {
     rc = sqlite3_step(stmt);
-    cerr << ++num_of_shirts_ << endl;
+    ++num_of_shirts_;
   } while (rc == SQLITE_ROW);
   
   // Prepare statement
@@ -438,7 +598,37 @@ void SQL::UpdateNumbers() {
   // Count Pants
   do {
     rc = sqlite3_step(stmt);
-    cerr << ++num_of_pants_ << endl;
+    ++num_of_pants_;
+  } while (rc == SQLITE_ROW);
+  
+  // Prepare statement
+  sql = "SELECT * FROM Socks";
+  rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
+
+  // Count Socks
+  do {
+    rc = sqlite3_step(stmt);
+    ++num_of_socks_;
+  } while (rc == SQLITE_ROW);
+
+  // Prepare statement
+  sql = "SELECT * FROM Shoes";
+  rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
+
+  // Count Shoes
+  do {
+    rc = sqlite3_step(stmt);
+    ++num_of_shoes_;
+  } while (rc == SQLITE_ROW);
+
+  // Prepare statement
+  sql = "SELECT * FROM Belts";
+  rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
+
+  // Count Belts
+  do {
+    rc = sqlite3_step(stmt);
+    ++num_of_belts_;
   } while (rc == SQLITE_ROW);
 
 }
