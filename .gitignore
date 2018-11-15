@@ -46,3 +46,4 @@ latex*
 error.txt
 Closet++
 *.db
+.gdb_history
