@@ -372,7 +372,6 @@ bool SQL::InsertBelt(string name, string primary_color, string secondary_color,
  * SelectShirt
  */
 string SQL::SelectShirt(int id) {
-
   // Clean result buffer
   myResults = "";
 
@@ -391,7 +390,6 @@ string SQL::SelectShirt(int id) {
  * SelectPants
  */
 string SQL::SelectPants(int id) {
-
   // Clean result buffer
   myResults = "";
 
@@ -410,7 +408,6 @@ string SQL::SelectPants(int id) {
  * SelectSocks
  */
 string SQL::SelectSocks(int id) {
-
   // Clean result buffer
   myResults = "";
 
@@ -429,7 +426,6 @@ string SQL::SelectSocks(int id) {
  * SelectShoes
  */
 string SQL::SelectShoes(int id) {
-
   // Clean result buffer
   myResults = "";
 
@@ -448,7 +444,6 @@ string SQL::SelectShoes(int id) {
  * SelectBelt
  */
 string SQL::SelectBelt(int id) {
-
   // Clean result buffer
   myResults = "";
 
@@ -467,7 +462,6 @@ string SQL::SelectBelt(int id) {
  * SelectAllShirts
  */
 string SQL::SelectAllShirts() {
-
   // Clean result buffer
   myResults = "";
 
@@ -487,7 +481,6 @@ string SQL::SelectAllShirts() {
  * SelectAllPants
  */
 string SQL::SelectAllPants() {
-
   // Clean result buffer
   myResults = "";
 
@@ -506,7 +499,6 @@ string SQL::SelectAllPants() {
  * SelectAllSocks
  */
 string SQL::SelectAllSocks() {
-
   // Clean result buffer
   myResults = "";
 
@@ -525,7 +517,6 @@ string SQL::SelectAllSocks() {
  * SelectAllShoes
  */
 string SQL::SelectAllShoes() {
-
   // Clean result buffer
   myResults = "";
 
@@ -544,7 +535,6 @@ string SQL::SelectAllShoes() {
  * SelectAllBelts
  */
 string SQL::SelectAllBelts() {
-
   // Clean result buffer
   myResults = "";
 
@@ -563,7 +553,6 @@ string SQL::SelectAllBelts() {
  * ToString
  */
 string SQL::ToString() {
-  
   string s = "";
 
   s += this->SelectAllShirts();
@@ -576,11 +565,10 @@ string SQL::ToString() {
 }
 
 void SQL::UpdateNumbers() {
- 
   // Declare basic stuffs
   int rc;
   sqlite3_stmt *stmt;
- 
+
   // Prepare statement
   sql = "SELECT * FROM Shirts";
   rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
@@ -590,7 +578,7 @@ void SQL::UpdateNumbers() {
     rc = sqlite3_step(stmt);
     ++num_of_shirts_;
   } while (rc == SQLITE_ROW);
-  
+
   // Prepare statement
   sql = "SELECT * FROM Pants";
   rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
@@ -600,7 +588,7 @@ void SQL::UpdateNumbers() {
     rc = sqlite3_step(stmt);
     ++num_of_pants_;
   } while (rc == SQLITE_ROW);
-  
+
   // Prepare statement
   sql = "SELECT * FROM Socks";
   rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
@@ -630,5 +618,4 @@ void SQL::UpdateNumbers() {
     rc = sqlite3_step(stmt);
     ++num_of_belts_;
   } while (rc == SQLITE_ROW);
-
 }

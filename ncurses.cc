@@ -28,13 +28,27 @@ Ncurses::~Ncurses() {}
 bool Ncurses::Init() {
   is_init_ = false;
 
+  int startx;
+  int starty;
+  int width;
+  int height;
+
   initscr();
+  cbreak();
+  keypad(stdscr, TRUE);
   start_color();
 
   init_pair(1, COLOR_BLUE, COLOR_RED);
 
   wbkgd(stdscr, COLOR_PAIR(1));
   refresh();
+
+  width = 10;
+  height = 10;
+  startx = (COLS - width) / 2;
+  starty = (LINES - height) / 2;
+
+  win = CreateNewWindow(height, width, starty, startx);
 
   is_init_ = true;
 
@@ -47,6 +61,7 @@ bool Ncurses::Init() {
  * @todo Test if we need to call backend_.Die()
  */
 void Ncurses::Die() {
+  this->DestroyWindow(win);
   endwin();
   backend_.Die();
 }
@@ -308,4 +323,36 @@ void Ncurses::AddBelt() {
   // Send info to backend
   backend_.InsertBelt(beltName, beltPrimColor, beltSecColor, beltTertColor,
                       beltMaterial, beltPattern);
+}
+
+/**
+ * CreateNewWindow
+ * @param height
+ * @param width
+ * @param starty
+ * @param startx
+ * @returns Window object
+ * @brief Creates a new window
+ */
+WINDOW *Ncurses::CreateNewWindow(int height, int width, int starty,
+                                 int startx) {
+  WINDOW *local_win;
+
+  local_win = newwin(height, width, starty, startx);
+  box(local_win, 0, 0);  ///< 0, 0 gives us default characters
+  wrefresh(local_win);
+
+  return local_win;
+}
+
+/**
+ * DestroyWindow
+ * @param local_win Window to be destroyed
+ * @brief Destroys window
+ * @detail Changes border to be invisible, then deletes the window
+ */
+void Ncurses::DestroyWindow(WINDOW *local_win) {
+  wborder(local_win, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+  wrefresh(local_win);
+  delwin(local_win);
 }

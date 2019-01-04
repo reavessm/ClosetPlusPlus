@@ -27,6 +27,8 @@ class Ncurses : public Frontend {
   void CreateCloset();
   char MakeWindowChar(string message);
   string MakeWindow(string message);
+  WINDOW *CreateNewWindow(int height, int width, int starty, int startx);
+  void DestroyWindow(WINDOW *local_win);
 
  private:
   void AddShirt();
@@ -34,6 +36,7 @@ class Ncurses : public Frontend {
   void AddSocks();
   void AddShoes();
   void AddBelt();
+  WINDOW *win;
 };
 
 #endif /* CUST_NCURSES_H */
